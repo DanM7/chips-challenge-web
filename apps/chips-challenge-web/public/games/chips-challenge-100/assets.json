@@ -1,0 +1,24 @@
+{
+  "images": {
+    "ms_window": "/games/chips-challenge-100/sprites/spritesheet_window.png"
+  },
+  "spritesheets": {
+    "ms_tiles": {
+      "url": "/ms-assets/tiles.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    }
+  },
+  "tilemaps": {},
+  "audio": {
+    "blip": "/ms-audio/BLIP2.WAV",
+    "door": "/ms-audio/DOOR.WAV",
+    "bump": "/ms-audio/OOF3.WAV",
+    "pop": "/ms-audio/POP2.WAV",
+    "water": "/ms-audio/WATER2.WAV",
+    "teleport": "/ms-audio/TELEPORT.WAV"
+  },
+  "meta": {
+    "description": "Graphics and audio served from vendor/chips-challenge-ms (gitignored)."
+  }
+}

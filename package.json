@@ -1,0 +1,33 @@
+{
+  "name": "chips-challenge-100",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/predev.mjs && vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "vendor:ensure": "node scripts/ensureVendor.mjs",
+    "ms:extract": "tsx scripts/extractMsTiles.ts",
+    "dat-to-json": "tsx src/dat/cli.ts",
+    "dat:level1": "tsx src/dat/cli.ts vendor/chips-challenge-ms/CHIPS.DAT public/games/chips-challenge-100/levels/level-001.json --level 1",
+    "dat:all": "tsx src/dat/cli.ts vendor/chips-challenge-ms/CHIPS.DAT output/CHIPS.json",
+    "prebuild": "node scripts/predev.mjs",
+    "data:original-levels": "node scripts/buildOriginalLevelReference.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "bmp-js": "^0.1.0",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.34.5",
+    "tsx": "^4.16.2",
+    "typescript": "~5.4.5",
+    "vite": "^5.4.10",
+    "vitest": "^2.0.5"
+  }
+}

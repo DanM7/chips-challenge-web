@@ -1,0 +1,10 @@
+{
+  "levels": [
+    {
+      "id": "level-001",
+      "name": "Prototype",
+      "url": "/games/chips-challenge-100/levels/level-001.json"
+    }
+  ],
+  "defaultLevelId": "level-001"
+}

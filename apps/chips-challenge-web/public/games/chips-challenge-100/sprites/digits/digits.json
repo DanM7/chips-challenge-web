@@ -1,0 +1,101 @@
+{
+  "source": "spritesheet_window.png",
+  "strip": {
+    "left": 12,
+    "top": 375,
+    "width": 195,
+    "height": 22
+  },
+  "cellWidth": 14,
+  "chars": "0123456789-",
+  "glyphs": {
+    "0": {
+      "file": "0.png",
+      "x": 15,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "1": {
+      "file": "1.png",
+      "x": 39,
+      "y": 376,
+      "width": 3,
+      "height": 19,
+      "slotWidth": 3
+    },
+    "2": {
+      "file": "2.png",
+      "x": 43,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "3": {
+      "file": "3.png",
+      "x": 58,
+      "y": 375,
+      "width": 12,
+      "height": 21,
+      "slotWidth": 12
+    },
+    "4": {
+      "file": "4.png",
+      "x": 71,
+      "y": 376,
+      "width": 13,
+      "height": 19,
+      "slotWidth": 13
+    },
+    "5": {
+      "file": "5.png",
+      "x": 85,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "6": {
+      "file": "6.png",
+      "x": 99,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "7": {
+      "file": "7.png",
+      "x": 114,
+      "y": 375,
+      "width": 12,
+      "height": 20,
+      "slotWidth": 12
+    },
+    "8": {
+      "file": "8.png",
+      "x": 127,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "9": {
+      "file": "9.png",
+      "x": 141,
+      "y": 375,
+      "width": 13,
+      "height": 21,
+      "slotWidth": 13
+    },
+    "-": {
+      "file": "dash.png",
+      "x": 156,
+      "y": 384,
+      "width": 11,
+      "height": 3,
+      "slotWidth": 11
+    }
+  }
+}

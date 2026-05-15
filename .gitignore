@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+.DS_Store
+
+# Proprietary Chip's Challenge (MS) — place zip/DAT/EXE here; never commit
+vendor/
+chips_challenge.zip
+_zip_preview/
+
+# Generated from proprietary assets (reproducible via npm run ms:extract)
+output/

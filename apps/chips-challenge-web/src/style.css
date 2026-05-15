@@ -1,0 +1,281 @@
+*,
+
+*::before,
+
+*::after {
+
+  box-sizing: border-box;
+
+}
+
+
+
+html,
+
+body {
+
+  margin: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  font-family: Tahoma, "MS Sans Serif", system-ui, sans-serif;
+
+  background: #000000;
+
+  color: #ffffff;
+
+  touch-action: manipulation;
+
+}
+
+
+
+#app {
+
+  min-height: 100%;
+
+  min-height: 100dvh;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+
+    env(safe-area-inset-left);
+
+}
+
+
+
+.app-header {
+
+  flex: 0 0 auto;
+
+  padding: 0.25rem 0.5rem;
+
+  background: #000080;
+
+  border-bottom: 2px solid #c0c0c0;
+
+}
+
+
+
+.app-title {
+
+  margin: 0;
+
+  font-size: 0.875rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+}
+
+
+
+.game-shell {
+
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  background: #000000;
+
+  container-type: size;
+
+}
+
+
+
+.game-container {
+
+  aspect-ratio: 511 / 351;
+
+  width: min(100cqw, calc(100cqh * 511 / 351));
+
+  height: min(100cqh, calc(100cqw * 351 / 511));
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #000000;
+
+}
+
+
+
+.game-container canvas {
+
+  display: block;
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  margin: 0;
+
+  image-rendering: pixelated;
+
+  image-rendering: crisp-edges;
+
+}
+
+
+
+.u-hidden {
+
+  display: none !important;
+
+}
+
+
+
+.zoom-controls {
+
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+}
+
+
+
+.zoom-btn {
+
+  min-width: 2.25rem;
+
+  min-height: 2rem;
+
+  border: 2px solid;
+
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+
+  background: #c0c0c0;
+
+  color: #000000;
+
+  font-size: 1.1rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+
+
+.zoom-btn:active {
+
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+
+}
+
+
+
+.zoom-label {
+
+  min-width: 2.5rem;
+
+  text-align: center;
+
+  font-size: 0.875rem;
+
+  color: #c0c0c0;
+
+}
+
+
+
+.dpad {
+
+  width: min(100%, 280px);
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-rows: auto auto auto;
+
+  gap: 0.25rem;
+
+  user-select: none;
+
+}
+
+
+
+.dpad-spacer {
+
+  min-height: 2.5rem;
+
+}
+
+
+
+.dpad-center {
+
+  visibility: hidden;
+
+}
+
+
+
+.dpad-btn {
+
+  min-height: 2.5rem;
+
+  border: 2px solid;
+
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+
+  background: #c0c0c0;
+
+  color: #000000;
+
+  font-size: 1.2rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+
+
+.dpad-btn:active {
+
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+
+  padding-top: 2px;
+
+  padding-left: 2px;
+
+}
+
+

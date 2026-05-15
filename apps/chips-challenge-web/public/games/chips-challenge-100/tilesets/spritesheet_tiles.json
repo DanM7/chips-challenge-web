@@ -1,0 +1,36 @@
+{
+  "id": "spritesheet_tiles",
+  "imageUrl": "/games/chips-challenge-100/sprites/spritesheet_tiles.png",
+  "frameWidth": 34,
+  "frameHeight": 34,
+  "columns": 8,
+  "rows": 22,
+  "tileIds": [
+    ["chip_walk_idle", "chip_walk_left", "chip_walk_up", "chip_walk_right", "", "", "", ""],
+    ["chip_swim_idle", "chip_swim_left", "chip_swim_up", "chip_swim_right", "chip_drown", "chip_fire_burn", "", ""],
+    ["item_key_red", "item_key_blue", "item_key_yellow", "item_key_green", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""]
+  ],
+  "meta": {
+    "layout": "Row-major: row 0 = top of PNG, col 0 = left. Empty string = unused frame."
+  }
+}

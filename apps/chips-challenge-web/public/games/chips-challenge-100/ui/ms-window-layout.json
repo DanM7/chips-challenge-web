@@ -1,0 +1,37 @@
+{
+  "id": "ms-cc1-window",
+  "ruleset": "ms-cc1",
+  "source": "/games/chips-challenge-100/sprites/spritesheet_window.png",
+  "sourceNote": "Community rip; CHIPS.EXE uses separate info/inventory child windows — no single combined UI bitmap in our EXE extraction pipeline.",
+  "frame": { "x": 0, "y": 0, "width": 511, "height": 351 },
+  "boardViewport": { "x": 32, "y": 32, "width": 288, "height": 288, "cells": 32, "cellPixels": 32 },
+  "displays": {
+    "level": { "x": 384, "y": 62, "width": 55, "height": 27, "maxDigits": 3 },
+    "time": { "x": 384, "y": 124, "width": 55, "height": 27, "maxDigits": 3 },
+    "chips": { "x": 384, "y": 214, "width": 55, "height": 27, "maxDigits": 3 }
+  },
+  "digitsUrl": "/games/chips-challenge-100/sprites/digits/digits.json",
+  "digits": {
+    "displayCellWidth": 16,
+    "offsetX": -6,
+    "offsetY": -1,
+    "digitOffsetX": [0, 1, 2]
+  },
+  "inventory": {
+    "slotWidth": 32,
+    "slotHeight": 28,
+    "origin": { "x": 345, "y": 252 },
+    "columnStep": 35,
+    "rowStep": 30,
+    "slots": [
+      { "id": "key_blue", "col": 0, "row": 0, "tileId": "key_blue" },
+      { "id": "key_red", "col": 1, "row": 0, "tileId": "key_red" },
+      { "id": "key_green", "col": 2, "row": 0, "tileId": "key_green" },
+      { "id": "key_yellow", "col": 3, "row": 0, "tileId": "key_yellow" },
+      { "id": "flippers", "col": 0, "row": 1, "tileId": "flippers" },
+      { "id": "fire_boots", "col": 1, "row": 1, "tileId": "fire_boots" },
+      { "id": "ice_skates", "col": 2, "row": 1, "tileId": "ice_skates" },
+      { "id": "suction_boots", "col": 3, "row": 1, "tileId": "suction_boots" }
+    ]
+  }
+}

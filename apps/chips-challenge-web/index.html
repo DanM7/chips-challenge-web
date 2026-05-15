@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="theme-color" content="#000080" />
+    <title>Chip's Challenge — prototype</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1 class="app-title">Chip's Challenge</h1>
+      </header>
+      <main class="game-shell">
+        <div class="zoom-controls u-hidden" aria-label="Zoom controls" hidden>
+          <button type="button" id="zoom-out" class="zoom-btn" aria-label="Zoom out">−</button>
+          <span id="zoom-label" class="zoom-label" aria-live="polite">1×</span>
+          <button type="button" id="zoom-in" class="zoom-btn" aria-label="Zoom in">+</button>
+        </div>
+        <div id="game-container" class="game-container" aria-label="Chip's Challenge play window"></div>
+        <nav class="dpad u-hidden" aria-label="Movement controls" hidden>
+          <div class="dpad-spacer"></div>
+          <button type="button" class="dpad-btn" data-dir="up" aria-label="Move up">↑</button>
+          <div class="dpad-spacer"></div>
+          <button type="button" class="dpad-btn" data-dir="left" aria-label="Move left">←</button>
+          <div class="dpad-spacer dpad-center"></div>
+          <button type="button" class="dpad-btn" data-dir="right" aria-label="Move right">→</button>
+          <div class="dpad-spacer"></div>
+          <button type="button" class="dpad-btn" data-dir="down" aria-label="Move down">↓</button>
+          <div class="dpad-spacer"></div>
+        </nav>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
