@@ -27,18 +27,18 @@ npm install
 npm run dev
 ```
 
-Uses `@danmaguire/2d-tile-engine` via `file:../2d-tile-engine`. Level JSON and sprites ship under `public/`.
+Uses the sibling **2d-tile-engine** repo via `file:../2d-tile-engine`. Level JSON and sprites ship under `public/`.
 
 To refresh assets from DAT/EXE, run commands in **cc1-asset-extraction-pipeline** and copy outputs into `apps/chips-challenge-web/public/games/chips-challenge-100/`.
 
 ## Related repos
 
-- **[2d-tile-engine](https://github.com/danmaguire/2d-tile-engine)** — grid engine dependency
-- **[cc1-asset-extraction-pipeline](https://github.com/danmaguire/cc1-asset-extraction-pipeline)** — DAT/EXE extraction
+- **[2d-tile-engine](https://github.com/danm7/2d-tile-engine)** — grid engine dependency
+- **[cc1-asset-extraction-pipeline](https://github.com/danm7/cc1-asset-extraction-pipeline)** — DAT/EXE extraction
 
 ## Remote
 
 ```bash
 git remote -v
-# origin → https://github.com/danmaguire/chips-challenge-web
+# origin → https://github.com/danm7/chips-challenge-web
 ```
