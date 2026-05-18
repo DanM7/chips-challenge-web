@@ -1,11 +1,11 @@
 import "./style.css";
-import { GameEngine } from "./engine/GameEngine";
-import { GameEventBus } from "./engine/GameEventBus";
-import { DirectionInput } from "./engine/DirectionInput";
-import { loadGameManifest } from "./engine/ConfigLoader";
+import { GameEngine } from "@engine/GameEngine";
+import { GameEventBus } from "@engine/GameEventBus";
+import { DirectionInput } from "@engine/DirectionInput";
+import { loadGameManifest } from "@engine/ConfigLoader";
 import { PlayScene } from "./scenes/PlayScene";
 import Phaser from "phaser";
-import { bumpPixelZoom, getPixelZoom } from "./engine/pixelZoom";
+import { bumpPixelZoom, getPixelZoom } from "@engine/pixelZoom";
 const MANIFEST_URL = "/games/chips-challenge-100/manifest.json";
 
 async function bootstrap(): Promise<void> {

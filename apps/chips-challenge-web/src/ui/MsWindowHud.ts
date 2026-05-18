@@ -1,9 +1,9 @@
 import Phaser from "phaser";
-import type { LevelData, RunState } from "../engine/types.js";
+import type { LevelData, RunState } from "@engine/types.js";
 import { MsSevenSegment } from "./MsSevenSegment.js";
 import type { DigitsManifest } from "./msDigits.js";
 import { ensureMsDigitTextures, loadDigitsManifest } from "./msDigits.js";
-import { MS_TILE_SIZE } from "../dat/msTileIndex.js";
+import { MS_TILE_SIZE } from "@tile-engine/msTileIndex.js";
 import {
   MS_CHROME_FRAME,
   MS_WINDOW_TEXTURE,

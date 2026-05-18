@@ -1,11 +1,11 @@
 import Phaser from "phaser";
-import type { Direction, GameManifest, LevelData } from "../engine/types";
-import type { GameEventBus } from "../engine/GameEventBus";
-import { loadAssetManifest, loadLevel, loadLevelsIndex } from "../engine/ConfigLoader";
-import { buildMsFrameIndexByTileId } from "../engine/msTileFrames";
-import { countCollectiblesOnMap } from "../engine/countCollectibles";
-import { RunSession } from "../engine/RunSession";
-import type { RunState } from "../engine/types";
+import type { Direction, GameManifest, LevelData } from "@engine/types";
+import type { GameEventBus } from "@engine/GameEventBus";
+import { loadAssetManifest, loadLevel, loadLevelsIndex } from "@engine/ConfigLoader";
+import { buildMsFrameIndexByTileId } from "@engine/msTileFrames";
+import { countCollectiblesOnMap } from "@engine/countCollectibles";
+import { RunSession } from "@engine/RunSession";
+import type { RunState } from "@engine/types";
 import {
   doorToKeyId,
   getCompositeTile,
@@ -15,10 +15,10 @@ import {
   isKeyTile,
   removeCollectibleAt,
   removeTileAt,
-} from "../engine/levelRuntime";
-import { CHIP_TILE_IDS, COLLECTIBLE_CHIP_TILE_ID } from "../dat/tiles";
-import { MS_TILE_SIZE } from "../dat/msTileIndex";
-import { applyIntegerDisplayZoom } from "../engine/pixelZoom";
+} from "@engine/levelRuntime";
+import { CHIP_TILE_IDS, COLLECTIBLE_CHIP_TILE_ID } from "@tile-engine/tiles";
+import { MS_TILE_SIZE } from "@tile-engine/msTileIndex";
+import { applyIntegerDisplayZoom } from "@engine/pixelZoom";
 import { MsWindowHud } from "../ui/MsWindowHud";
 import {
   loadMsWindowLayout,

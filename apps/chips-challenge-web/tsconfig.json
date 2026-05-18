@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@engine/*": ["../../../2d-tile-engine/engine/*"],
+      "@tile-engine/*": ["../../../2d-tile-engine/tile-engine/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "vite.config.ts"]
+}
