@@ -123,7 +123,7 @@ DOM keydown / d-pad click
 
 ### Display zoom
 
-`src/engine/pixelZoom.ts` holds user zoom level in `game.registry` and applies **integer** `scale.setZoom()` based on `#game-container` size. It must not call `scale.refresh()` from a resize handler (that caused a `resize` event loop). See [development-notes.md](./development-notes.md).
+`@engine/pixelZoom` (2d-tile-engine) holds user zoom level in `game.registry` and applies **integer** `scale.setZoom()` based on `#game-container` size. It must not call `scale.refresh()` from a resize handler (that caused a `resize` event loop). See [known-issues.md](./known-issues.md).
 
 ### Config loading
 
@@ -160,18 +160,16 @@ flowchart LR
   json --> play
 ```
 
-### Module responsibilities
+### Module responsibilities (cc1-asset-extraction-pipeline)
 
 | Module | Responsibility |
 |--------|----------------|
 | `binaryReader.ts` | Little-endian reads for DAT structures |
 | `datParser.ts` | File magic, level directory, per-level fields, RLE layer blobs |
 | `layerDecoder.ts` | Decompress CC1 layer streams → tile byte grid |
-| `tiles.ts` | Byte → string id (`wall`, `chip_n`, …), blocking sets |
-| `metadata.ts` | Title, hint, password XOR, etc. |
-| `validate.ts` | Optional consistency checks + warnings |
-| `cc1-asset-extraction-pipeline` → `chipToGameLevel.ts` | `ChipLevel` → engine `LevelData` (compact layers); writes into `public/games/chips-challenge-1/` only |
-| `cli.ts` | CLI: single level or `--extract` directory |
+| `@tile-engine/tiles` (engine) | Byte → string id (`wall`, `chip_n`, …), blocking sets |
+| `chipToGameLevel.ts` | `ChipLevel` → engine `LevelData` (compact layers) |
+| `dat-to-json` CLI | Writes into `chips-challenge-web/.../public/games/chips-challenge-1/` (see pipeline `docs/EXPORT.md`) |
 
 **Runtime consumption:** `PlayScene` only sees `LevelData`. It does not parse DAT in the browser.
 
@@ -197,12 +195,9 @@ flowchart LR
 
 | Module | Responsibility |
 |--------|----------------|
-| `scripts/extractMsTiles.ts` | Orchestrates extraction; writes `generated/tiles.png` + `tiles.json` |
-| `bmpJsToRgba.ts` | Fixes bmp-js channel order `[0,B,G,R]` → `[R,G,B,A]` |
-| `msDisplayPalette.ts` | Documents embedded VGA palette (reference; not patched at extract) |
-| `bmpRle4.ts` | Experimental RLE decoder / DIB reader (tests, not production extract) |
-| `msObjectToFrame.ts` | Object code `0x00`–`0x6F` → frame index in 13×16 grid |
-| `msTileFrames.ts` | Builds `Map<tileId, frame>` from `TILE_NAMES` |
+| Pipeline `tools/extraction/extractMsTiles.ts` | Orchestrates extraction; writes `vendor/.../generated/tiles.png` |
+| Engine `msTileFrames.ts` | Builds `Map<tileId, frame>` from tile ids at runtime |
+| Engine `tile-engine/msTileIndex.ts` | Object code → frame index in 13×16 grid |
 
 **Frame layout** matches MS `GetTileImagePos`: column = high nibble of object code, row = low nibble (32×32 pixels per cell, 13 columns × 16 rows).
 
@@ -225,13 +220,13 @@ Committed game content under `public/games/chips-challenge-1/` is served at `/ga
 
 | Script | When | Action |
 |--------|------|--------|
-| `predev.mjs` | Before `dev` / `build` | `ensureVendor` → optional `ms:extract` → optional `dat:level1` |
+| `predev.mjs` | Before `dev` / `build` | `ensureVendor` → `ms:extract` if tiles missing → `dat:levels` only if `CHIPS.DAT` is newer than level JSON (or `CC1_FORCE_DAT_EXPORT=1`) |
 | `ensureVendor.mjs` | Manual / predev | Unzip `chips_challenge.zip` if present |
-| `extractMsTiles.ts` | `ms:extract` | Regenerate tile PNG |
+| `runMsExtract.mjs` → pipeline extract | `ms:extract` | Regenerate tile PNG under `vendor/` |
 | `cc1-asset-extraction-pipeline` `dat-to-json` | `dat:levels`, `dat:levelN` | DAT → game pack JSON |
 | `buildOriginalLevelReference.mjs` | `data:original-levels` | Passwords / metadata reference JSON |
 
-`npm run dev` therefore often refreshes `level-001.json` and tiles automatically when vendor files exist.
+`npm run dev` regenerates tiles on first run when vendor exists; level re-export runs only when DAT is newer than committed levels (see `scripts/predev.mjs`).
 
 ## Configuration chain
 
@@ -258,42 +253,45 @@ To add a level: export JSON, add an entry to `levels/index.json`, set `defaultLe
 
 ## Layering and dependencies
 
+Three repositories; the web app imports simulation from **2d-tile-engine** via `@engine` / `@tile-engine` aliases.
+
 ```text
 ┌─────────────────────────────────────────────────────────┐
+│  chips-challenge-web                                    │
 │  index.html / style.css / main.ts                       │
+│  scenes/PlayScene.ts, ui/MsWindowHud.ts                 │
+│  scripts/ (predev, cc1Paths, vendor, level sync)        │
 ├─────────────────────────────────────────────────────────┤
-│  scenes/PlayScene          engine/GameEngine            │
-│                            engine/DirectionInput        │
-│                            engine/pixelZoom             │
-│                            engine/levelRuntime          │
-│                            engine/ConfigLoader          │
-│                            engine/types                 │
+│  2d-tile-engine (@engine, @tile-engine)                 │
+│  GameEngine, ConfigLoader, levelRuntime, RunSession     │
+│  msCc1/* (movement, monsters, buttons, scoring)         │
+│  types, levelLayers, pixelZoom, msTileFrames            │
 ├─────────────────────────────────────────────────────────┤
-│  dat/tiles, msObjectToFrame  (tile ids ↔ MS frames)     │
+│  cc1-asset-extraction-pipeline (offline only)           │
+│  DAT parse → chipToGameLevel → public/games/.../levels  │
+│  ms:extract → vendor/.../generated/tiles.png            │
 ├─────────────────────────────────────────────────────────┤
-│  dat/* parser & CLI        (Node + tests; also imported │
-│                             by scripts via tsx)         │
-├─────────────────────────────────────────────────────────┤
-│  scripts/*                 (extract, vendor, predev)    │
-├─────────────────────────────────────────────────────────┤
-│  Phaser 3 / Vite / sharp / bmp-js                       │
+│  Phaser 3 / Vite                                        │
 └─────────────────────────────────────────────────────────┘
 ```
 
 **Dependency rule of thumb:**
 
-- `engine/` must not import Phaser scene implementations; scenes import engine.
-- `dat/` is usable from CLI, tests, and scripts without Phaser.
-- `PlayScene` is the integration point: manifest + JSON levels + MS spritesheet + bus.
+- **2d-tile-engine** must not import Phaser scenes; it exposes types and simulation.
+- **cc1-asset-extraction-pipeline** depends on the engine for `LevelData`, tile ids, and `compactLayer`; it does not ship level JSON as its own product.
+- **PlayScene** is the integration point: manifest + JSON levels + MS spritesheet + event bus.
+
+Game pack id and paths for scripts: `GAME_PACK_ID` in `apps/chips-challenge-web/scripts/cc1Paths.mjs` (`chips-challenge-1`).
 
 ## Tests
 
-| Test | What it guards |
+| Repo | What it guards |
 |------|----------------|
-| `test/datParser.test.ts` | DAT magic, 149 levels, level 1 title/password |
-| `test/bmpRle4.test.ts` | Extracted `tiles.png` dimensions and color sanity |
+| **cc1-asset-extraction-pipeline** | DAT parse, level export, lesson smoke cases |
+| **2d-tile-engine** | MS movement, monsters, keys, compact layers, run session |
+| **chips-challenge-web** | Manual play + optional future smoke tests (see [status/cleanup.md](./status/cleanup.md)) |
 
-Vitest runs in Node; vendor files are optional (`it.skipIf` when missing).
+Vitest runs in engine and pipeline; vendor files are optional where tests read `CHIPS.DAT`.
 
 ## Extension points
 
@@ -309,5 +307,6 @@ Vitest runs in Node; vendor files are optional (`it.skipIf` when missing).
 ## Related docs
 
 - [README.md](../README.md) — quick start
-- [development-notes.md](./development-notes.md) — bugs and fixes during prototyping
+- [status/cleanup.md](./status/cleanup.md) — phased repo cleanup and mobile follow-up
+- [known-issues.md](./known-issues.md) — open gameplay / UX gaps
 - [VENDOR_SETUP.md](../VENDOR_SETUP.md) — licensed file layout

@@ -420,11 +420,17 @@ body {
 
   display: flex;
 
+  flex-direction: column;
+
   align-items: center;
 
   justify-content: center;
 
+  gap: 0.5rem;
+
   padding: 0;
+
+  padding-bottom: max(0.25rem, env(safe-area-inset-bottom));
 
   background: #000000;
 
@@ -542,9 +548,11 @@ body {
 
 .dpad {
 
+  flex: 0 0 auto;
+
   width: min(100%, 280px);
 
-  display: grid;
+  display: none;
 
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -554,6 +562,36 @@ body {
 
   user-select: none;
 
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+/* Touch-first: show D-pad; desktop with mouse keeps keyboard only */
+@media (hover: none), (pointer: coarse) {
+  .dpad {
+    display: grid;
+  }
+}
+
+@media (max-width: 720px) {
+  .dpad {
+    display: grid;
+    width: min(100%, 320px);
+    gap: 0.5rem;
+  }
+
+  .dpad-btn {
+    min-height: 3.25rem;
+    font-size: 1.5rem;
+  }
+
+  .dpad-spacer {
+    min-height: 3.25rem;
+  }
+
+  .app-title {
+    font-size: 0.8rem;
+  }
 }
 
 

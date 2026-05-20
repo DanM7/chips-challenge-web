@@ -1,0 +1,11 @@
+{
+  "name": "Chip's Challenge",
+  "short_name": "CC",
+  "description": "MS Chip's Challenge — browser port",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000080",
+  "start_url": "/",
+  "scope": "/"
+}

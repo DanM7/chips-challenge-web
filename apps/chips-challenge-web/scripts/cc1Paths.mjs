@@ -5,6 +5,9 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const appRoot = path.join(__dirname, "..");
 const repoRoot = path.join(__dirname, "..", "..", "..");
+
+/** Committed game pack under public/games/ (must match manifest.json id). */
+export const GAME_PACK_ID = "chips-challenge-1";
 const bundledVendor = path.join(appRoot, "vendor", "chips-challenge-ms");
 const generatedDir = path.join(bundledVendor, "generated");
 
@@ -40,6 +43,17 @@ export function getGeneratedDir() {
 
 export function getAppRoot() {
   return appRoot;
+}
+
+/** Absolute path: `public/games/<GAME_PACK_ID>/`. */
+export function getGamePackDir(...segments) {
+  return path.join(appRoot, "public", "games", GAME_PACK_ID, ...segments);
+}
+
+/** URL path: `/games/<GAME_PACK_ID>/...`. */
+export function getGamePackUrl(...segments) {
+  const tail = segments.length ? `/${segments.join("/")}` : "";
+  return `/games/${GAME_PACK_ID}${tail}`;
 }
 
 export function getRepoRoot() {

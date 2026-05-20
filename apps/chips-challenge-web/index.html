@@ -7,7 +7,10 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
     />
     <meta name="theme-color" content="#000080" />
-    <title>Chip's Challenge — prototype</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Chip's Challenge</title>
   </head>
   <body>
     <div id="app">
@@ -68,7 +71,7 @@
           <button type="button" id="zoom-in" class="zoom-btn" aria-label="Zoom in">+</button>
         </div>
         <div id="game-container" class="game-container" aria-label="Chip's Challenge play window"></div>
-        <nav class="dpad u-hidden" aria-label="Movement controls" hidden>
+        <nav class="dpad" aria-label="Movement controls">
           <div class="dpad-spacer"></div>
           <button type="button" class="dpad-btn" data-dir="up" aria-label="Move up">↑</button>
           <div class="dpad-spacer"></div>

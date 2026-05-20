@@ -31,10 +31,10 @@ export class MsOopsDialog {
     this.root.append(panel);
     document.body.append(this.root);
 
-    ok.addEventListener("click", () => this.resolvePending());
+    ok.addEventListener("click", () => this.resolvePending?.());
     this.root.addEventListener("click", (event) => {
       if (event.target === this.root) {
-        this.resolvePending();
+        this.resolvePending?.();
       }
     });
   }

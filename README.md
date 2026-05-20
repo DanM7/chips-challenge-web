@@ -48,6 +48,20 @@ Alternatively set env `CC1_MS_INSTALL=C:\games\Chips_Challenge_1`.
 
 Without an install path, you can still use `chips_challenge.zip` at the repo root (`npm run vendor:ensure`) or copy files into `apps/chips-challenge-web/vendor/chips-challenge-ms/`.
 
+## Mobile / static deploy
+
+The built app is self-contained (no DAT on the server):
+
+```bash
+npm run ms:extract   # once locally
+npm run build        # copies tiles into dist/ via deploy:assets
+npm run preview:lan  # open http://<your-pc-ip>:4173 on your phone
+```
+
+Deploy the contents of `apps/chips-challenge-web/dist/` to any static host. See [docs/status/mobile-readiness.md](docs/status/mobile-readiness.md).
+
+On phones: D-pad + swipe on the playfield. Desktop: keyboard (WASD / arrows).
+
 ## Related repos
 
 - **[2d-tile-engine](https://github.com/danm7/2d-tile-engine)** — grid engine dependency

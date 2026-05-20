@@ -2,7 +2,7 @@ import { spawnSync } from "child_process";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { getAppRoot, resolveInstallFile } from "./cc1Paths.mjs";
+import { getAppRoot, getGamePackDir, resolveInstallFile } from "./cc1Paths.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const appRoot = getAppRoot();
@@ -25,7 +25,7 @@ if (!fs.existsSync(path.join(pipelineRoot, "package.json"))) {
   process.exit(1);
 }
 
-const levelsDir = path.join(appRoot, "public", "games", "chips-challenge-1", "levels");
+const levelsDir = getGamePackDir("levels");
 
 for (const levelNum of levels) {
   const output = path.join(levelsDir, `level-${String(levelNum).padStart(3, "0")}.json`);

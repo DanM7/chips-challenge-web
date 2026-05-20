@@ -14,5 +14,6 @@
       "@tile-engine/*": ["../../../2d-tile-engine/tile-engine/*"]
     }
   },
-  "include": ["src/**/*.ts", "vite.config.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["vite.config.ts"]
 }

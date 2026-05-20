@@ -12,5 +12,13 @@ _zip_preview/
 # Generated from proprietary assets (reproducible via npm run ms:extract)
 output/
 
+# Copied into dist via `npm run deploy:assets` before build (from vendor/generated)
+apps/chips-challenge-web/public/ms-assets/
+apps/chips-challenge-web/public/ms-audio/
+
 # Renamed to chips-challenge-1; delete local leftover if this path reappears
 apps/chips-challenge-web/public/games/chips-challenge-100/
+
+# Digit/font extraction debug (not used at runtime)
+apps/chips-challenge-web/public/games/*/sprites/_debug*
+apps/chips-challenge-web/public/games/*/sprites/_font*.png

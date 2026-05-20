@@ -1,29 +1,15 @@
-import Phaser from "phaser";
-
+﻿import Phaser from "phaser";
 import type { Direction, GameManifest, LevelData, LevelsIndex } from "@engine/types";
-
 import type { GameEventBus } from "@engine/GameEventBus";
-
 import {
   loadAssetManifest,
   loadLevel,
   loadLevelsIndex,
 } from "@engine/ConfigLoader";
 import { buildMsFrameIndexByTileId } from "@engine/msTileFrames";
-
 import { chipsLeftAtLevelStart } from "@engine/countCollectibles";
-
 import { RunSession } from "@engine/RunSession";
-
 import type { RunState } from "@engine/types";
-
-import {
-  cellTile,
-  getCompositeTile,
-  getLowerTileUnderMonster,
-  isCloneMachineAt,
-} from "@engine/levelRuntime";
-
 import {
   applyButtonPressAt,
   collectRedButtonCells,
@@ -43,26 +29,9 @@ import {
   type MsCc1MoveStep,
 } from "@engine/msCc1/msCc1Movement";
 import type { MsCc1MoveResult } from "@engine/msCc1/types";
-import { getTerrainTileUnderChip } from "@engine/msCc1/msCc1Sliding";
-import {
-  compositeMsMaskedChipOnlyFromSheet,
-  compositeMsMaskedFromSheet,
-  MS_CHIP_WALK_OBJECT_CODE,
-  msCreatureUsesMaskedSprite,
-  msMaskedChipFrameTriple,
-} from "@engine/msMaskedComposite";
-
-import {
-  CHIP_TILE_IDS,
-  FLIPPERS_TILE_ID,
-  isMonsterTile,
-  objectCodeFromTileId,
-} from "@tile-engine/tiles";
-
-import { MS_TILE_SIZE } from "@tile-engine/msTileIndex";
-
 import { applyIntegerDisplayZoom } from "@engine/pixelZoom";
-
+import { resolveRulesetContext, type RulesetContext } from "@engine/ruleset/index";
+import { MS_TILE_SIZE } from "@tile-engine/msTileIndex";
 import { MsWindowHud } from "../ui/MsWindowHud";
 import { MsLevelIntroBanner } from "../ui/MsLevelIntroBanner";
 import { MsOopsDialog } from "../ui/MsOopsDialog";
@@ -73,46 +42,15 @@ import {
   REGISTRY_PENDING_LEVEL_NUMBER,
   resolveDefaultLaunchLevelNumber,
 } from "@engine/levelPassword";
-
 import {
-
   loadMsWindowLayout,
-
   MS_WINDOW_TEXTURE,
-
   type MsWindowLayout,
-
 } from "../ui/msWindowLayout";
-
-
-
-const MS_TILES_KEY = "ms_tiles";
-
-
-
-const CHIP_WALK_FRAME: Record<Direction, string> = {
-
-  up: "chip_n",
-
-  down: "chip_s",
-
-  left: "chip_w",
-
-  right: "chip_e",
-
-};
-
-const CHIP_SWIM_FRAME: Record<Direction, string> = {
-
-  up: "chip_swim_n",
-
-  down: "chip_swim_s",
-
-  left: "chip_swim_w",
-
-  right: "chip_swim_e",
-
-};
+import { GAME_PACK_BASE } from "../config/gamePack";
+import { MS_TILES_KEY } from "./play/constants";
+import { createPlayBoardView } from "./play/boardState";
+import { PlayBoardPresenter } from "./play/PlayBoardPresenter";
 
 
 
@@ -138,10 +76,6 @@ export class PlayScene extends Phaser.Scene {
 
   private playerGy = 0;
 
-  private boardOriginX = 0;
-
-  private boardOriginY = 0;
-
   private frameByTileId = new Map<string, number>();
 
 
@@ -152,19 +86,9 @@ export class PlayScene extends Phaser.Scene {
 
   private boardCam: Phaser.Cameras.Scene2D.Camera | null = null;
 
-  private chip?: Phaser.GameObjects.Sprite;
-
-  private tileLayer?: Phaser.GameObjects.Container;
-
-  private readonly cellSprites = new Map<string, Phaser.GameObjects.Sprite>();
-  /** Clone machine stack: gray floor → launcher → preview creature. */
-  private readonly cloneMachineFloorSprites = new Map<string, Phaser.GameObjects.Sprite>();
-  private readonly cloneMachineMidSprites = new Map<string, Phaser.GameObjects.Sprite>();
-  private readonly clonerOverlaySprites = new Map<string, Phaser.GameObjects.Sprite>();
-  /** Masked creature figure over floor tiles (toggle walls, fire, buttons). */
-  private readonly monsterOverlaySprites = new Map<string, Phaser.GameObjects.Sprite>();
-
-  private readonly chipCompositeTextureKeys = new Set<string>();
+  private readonly boardView = createPlayBoardView();
+  private board!: PlayBoardPresenter;
+  private rulesetCtx: RulesetContext | null = null;
 
   private errorText?: Phaser.GameObjects.Text;
 
@@ -196,9 +120,8 @@ export class PlayScene extends Phaser.Scene {
 
 
   constructor() {
-
     super({ key: "Play" });
-
+    this.board = new PlayBoardPresenter(this, this.boardView);
   }
 
 
@@ -265,7 +188,7 @@ export class PlayScene extends Phaser.Scene {
 
         this.manifest.hudLayoutUrl ??
 
-        "/games/chips-challenge-1/ui/ms-window-layout.json";
+        `${GAME_PACK_BASE}/ui/ms-window-layout.json`;
 
       this.windowLayout = await loadMsWindowLayout(layoutUrl);
 
@@ -286,6 +209,7 @@ export class PlayScene extends Phaser.Scene {
       );
 
       this.frameByTileId = buildMsFrameIndexByTileId();
+      this.boardView.frameByTileId = this.frameByTileId;
 
 
 
@@ -297,7 +221,7 @@ export class PlayScene extends Phaser.Scene {
 
         assets.images?.[MS_WINDOW_TEXTURE] ??
 
-        "/games/chips-challenge-1/sprites/spritesheet_window.png";
+        `${GAME_PACK_BASE}/sprites/spritesheet_window.png`;
 
 
 
@@ -422,13 +346,37 @@ export class PlayScene extends Phaser.Scene {
     this.currentLevelIndex = index;
 
     this.level = await loadLevel(entry.url);
+    await this.bindRulesetForLevel();
+  }
 
+  private async bindRulesetForLevel(): Promise<void> {
+    if (!this.level) {
+      this.rulesetCtx = null;
+      this.boardView.level = null;
+      return;
+    }
+    this.boardView.level = this.level;
+    try {
+      this.rulesetCtx = await resolveRulesetContext(this.level, GAME_PACK_BASE);
+      if (
+        this.rulesetCtx &&
+        this.level.contentPack &&
+        this.rulesetCtx.contentPack.id !== this.level.contentPack
+      ) {
+        console.warn(
+          `Level contentPack "${this.level.contentPack}" does not match loaded "${this.rulesetCtx.contentPack.id}"`,
+        );
+      }
+    } catch (error) {
+      console.warn("Ruleset/content pack load failed:", error);
+      this.rulesetCtx = null;
+    }
   }
 
   private levelUrlForNumber(levelNum: number): string {
     const sample =
       this.levelsIndex?.levels[0]?.url ??
-      "/games/chips-challenge-1/levels/level-001.json";
+      `${GAME_PACK_BASE}/levels/level-001.json`;
     const dir = sample.replace(/\/[^/]+$/, "");
     return `${dir}/level-${String(levelNum).padStart(3, "0")}.json`;
   }
@@ -445,6 +393,7 @@ export class PlayScene extends Phaser.Scene {
     } else {
       try {
         this.level = await loadLevel(this.levelUrlForNumber(levelNum));
+        await this.bindRulesetForLevel();
       } catch {
         this.showTransientMessage(
           `Level ${levelNum} is not available. Export it with npm run dat:levels.`,
@@ -542,15 +491,15 @@ export class PlayScene extends Phaser.Scene {
   private centerBoardCameraOn(gx: number, gy: number): void {
     if (!this.boardCam) return;
     this.boardCam.centerOn(
-      this.boardOriginX + (gx + 0.5) * MS_TILE_SIZE,
-      this.boardOriginY + (gy + 0.5) * MS_TILE_SIZE,
+      this.boardView.boardOriginX + (gx + 0.5) * MS_TILE_SIZE,
+      this.boardView.boardOriginY + (gy + 0.5) * MS_TILE_SIZE,
     );
   }
 
   /** Pan the board camera with Chip (ice / force slides and walk). */
   private followBoardCameraToChip(): void {
-    if (!this.boardCam || !this.chip) return;
-    this.boardCam.centerOn(this.chip.x, this.chip.y);
+    if (!this.boardCam || !this.boardView.chip) return;
+    this.boardCam.centerOn(this.boardView.chip.x, this.boardView.chip.y);
   }
 
 
@@ -570,6 +519,8 @@ export class PlayScene extends Phaser.Scene {
     const level = this.level;
 
     if (!level) return;
+
+    this.boardView.level = level;
 
     this.inputLocked = false;
     this.deathSequenceActive = false;
@@ -606,14 +557,11 @@ export class PlayScene extends Phaser.Scene {
     gy = Phaser.Math.Clamp(gy, 0, ch - 1);
 
     this.playerGx = gx;
-
     this.playerGy = gy;
-
-
-
-    this.boardOriginX = vp.x;
-
-    this.boardOriginY = vp.y;
+    this.boardView.playerGx = gx;
+    this.boardView.playerGy = gy;
+    this.boardView.boardOriginX = vp.x;
+    this.boardView.boardOriginY = vp.y;
 
 
 
@@ -658,6 +606,7 @@ export class PlayScene extends Phaser.Scene {
     this.runSession.start(this);
 
     this.monsters = createMsCc1Monsters(level);
+    this.boardView.monsters = this.monsters;
     this.buttonPressCtx = {
       redButtonArmed: collectRedButtonCells(level),
       openTraps: new Set(),
@@ -673,73 +622,17 @@ export class PlayScene extends Phaser.Scene {
 
 
 
-    this.tileLayer?.destroy(true);
+    this.board.clearSpriteLayers();
+    this.board.createTileLayer();
 
-    this.chip?.destroy();
-
-    this.cellSprites.clear();
-    this.cloneMachineFloorSprites.clear();
-    this.cloneMachineMidSprites.clear();
-    this.clonerOverlaySprites.clear();
-    this.monsterOverlaySprites.clear();
-    this.destroyChipCompositeTextures();
-
-    this.tileLayer = this.add.container(0, 0).setDepth(10);
-
-
-
-    const hasLayers = level.layers.upper.length > 0;
-
-
-
-    for (let y = 0; y < ch; y++) {
-
-      for (let x = 0; x < cw; x++) {
-
-        if (hasLayers && isCloneMachineAt(level, x, y)) {
-          this.placeCloneMachineCell(x, y);
-          continue;
-        }
-
-        const tileId = hasLayers ? getCompositeTile(level, x, y) : "empty";
-
-        if (CHIP_TILE_IDS.has(tileId)) continue;
-
-        this.refreshCellAt(x, y);
-
-      }
-
-    }
-
-    this.syncMonsterOverlays();
+    this.board.paintStaticCells();
 
     const chipFrame = this.frameByTileId.get("chip_s") ?? 0;
+    const chip = this.board.createChipSprite(gx, gy, chipFrame);
+    this.tweens.killTweensOf(chip);
+    this.board.setChipFrameForDirection("down", msCc1StateFromRun([], 0));
 
-    this.chip = this.add
-
-      .sprite(
-
-        this.boardOriginX + (gx + 0.5) * tile,
-
-        this.boardOriginY + (gy + 0.5) * tile,
-
-        MS_TILES_KEY,
-
-        chipFrame,
-
-      )
-
-      .setOrigin(0.5)
-
-      .setDepth(20);
-
-    this.chip.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-    this.chip.setBlendMode(Phaser.BlendModes.NORMAL);
-
-    this.tweens.killTweensOf(this.chip);
-    this.setChipFrameForDirection("down", msCc1StateFromRun([], 0));
-
-    this.cameras.main.ignore([this.tileLayer, this.chip]);
+    this.cameras.main.ignore([this.boardView.tileLayer!, chip]);
 
     this.msHud.ignoreInBoardCamera(boardCam);
 
@@ -749,8 +642,8 @@ export class PlayScene extends Phaser.Scene {
 
     this.levelIntroDismissed = false;
     this.levelIntro ??= new MsLevelIntroBanner();
-    const chipCenterX = this.boardOriginX + (gx + 0.5) * tile;
-    const chipCenterY = this.boardOriginY + (gy + 0.5) * tile;
+    const chipCenterX = this.boardView.boardOriginX + (gx + 0.5) * tile;
+    const chipCenterY = this.boardView.boardOriginY + (gy + 0.5) * tile;
     const levelTitle = level.hud?.levelTitle ?? level.name ?? level.id;
     const password = level.metadata?.passwordPlain ?? "";
     this.levelIntro.show(this, layout, chipCenterX, chipCenterY, levelTitle, password);
@@ -801,7 +694,7 @@ export class PlayScene extends Phaser.Scene {
   };
 
   private async performChipMove(direction: Direction): Promise<void> {
-    if (!this.chip || !this.level || !this.runSession || this.inputLocked) {
+    if (!this.boardView.chip || !this.level || !this.runSession || this.inputLocked) {
       return;
     }
 
@@ -819,11 +712,11 @@ export class PlayScene extends Phaser.Scene {
       { x: this.playerGx, y: this.playerGy },
       direction,
       playerState,
-      this.buttonPressCtx,
+      { openTraps: this.buttonPressCtx.openTraps },
     );
 
     if (!result.moved) {
-      this.setChipFrameForDirection(direction, result.state);
+      this.board.setChipFrameForDirection(direction, result.state);
       return;
     }
 
@@ -866,35 +759,40 @@ export class PlayScene extends Phaser.Scene {
 
     this.playerGx = result.position.x;
     this.playerGy = result.position.y;
+    this.boardView.playerGx = this.playerGx;
+    this.boardView.playerGy = this.playerGy;
     this.chipSliding = false;
     this.applyPostMoveEffects(result);
-    this.setChipFrameForDirection(result.direction, result.state);
-    this.refreshCellUnderChip(result.state.tools);
+    this.board.setChipFrameForDirection(result.direction, result.state);
+    this.board.refreshCellUnderChip(result.state.tools);
     this.followBoardCameraToChip();
   }
 
   private applyChipMoveResult(result: MsCc1MoveResult, direction: Direction): void {
-    if (!this.chip) {
+    if (!this.boardView.chip) {
       return;
     }
 
     this.playerGx = result.position.x;
     this.playerGy = result.position.y;
-    this.chip.setPosition(
-      this.boardOriginX + (this.playerGx + 0.5) * MS_TILE_SIZE,
-      this.boardOriginY + (this.playerGy + 0.5) * MS_TILE_SIZE,
+    this.boardView.playerGx = this.playerGx;
+    this.boardView.playerGy = this.playerGy;
+    this.boardView.chip.setPosition(
+      this.boardView.boardOriginX + (this.playerGx + 0.5) * MS_TILE_SIZE,
+      this.boardView.boardOriginY + (this.playerGy + 0.5) * MS_TILE_SIZE,
     );
     this.runSession?.applyMsCc1State(result.state);
 
     for (const step of result.steps) {
       if (step.moved) {
-        this.refreshCellAt(step.from.x, step.from.y);
+        this.board.refreshCellAt(step.from.x, step.from.y);
+        this.board.refreshCellAt(step.to.x, step.to.y);
       }
     }
     this.applyPostMoveEffects(result);
 
-    this.setChipFrameForDirection(direction, result.state);
-    this.refreshCellUnderChip(result.state.tools);
+    this.board.setChipFrameForDirection(direction, result.state);
+    this.board.refreshCellUnderChip(result.state.tools);
     this.centerBoardCameraOn(this.playerGx, this.playerGy);
 
     if (result.playerDied) {
@@ -907,23 +805,23 @@ export class PlayScene extends Phaser.Scene {
   }
 
   private animateChipStep(step: MsCc1MoveStep): Promise<void> {
-    if (!this.chip) {
+    if (!this.boardView.chip) {
       return Promise.resolve();
     }
 
     const tile = MS_TILE_SIZE;
-    const targetX = this.boardOriginX + (step.to.x + 0.5) * tile;
-    const targetY = this.boardOriginY + (step.to.y + 0.5) * tile;
+    const targetX = this.boardView.boardOriginX + (step.to.x + 0.5) * tile;
+    const targetY = this.boardView.boardOriginY + (step.to.y + 0.5) * tile;
 
     if (
-      Math.abs(this.chip.x - targetX) < 0.5 &&
-      Math.abs(this.chip.y - targetY) < 0.5
+      Math.abs(this.boardView.chip.x - targetX) < 0.5 &&
+      Math.abs(this.boardView.chip.y - targetY) < 0.5
     ) {
       this.syncChipAfterStep(step);
       return Promise.resolve();
     }
 
-    this.tweens.killTweensOf(this.chip);
+    this.tweens.killTweensOf(this.boardView.chip);
 
     const teleported =
       Math.abs(step.to.x - step.from.x) + Math.abs(step.to.y - step.from.y) > 1;
@@ -933,7 +831,7 @@ export class PlayScene extends Phaser.Scene {
 
     return new Promise((resolve) => {
       this.tweens.add({
-        targets: this.chip,
+        targets: this.boardView.chip,
         x: targetX,
         y: targetY,
         duration: teleported ? MS_CHIP_WALK_STEP_MS * 0.5 : MS_CHIP_WALK_STEP_MS,
@@ -941,9 +839,9 @@ export class PlayScene extends Phaser.Scene {
         onUpdate: () => {
           this.followBoardCameraToChip();
           const tile = MS_TILE_SIZE;
-          const gx = Math.floor((this.chip!.x - this.boardOriginX) / tile);
-          const gy = Math.floor((this.chip!.y - this.boardOriginY) / tile);
-          this.refreshCellUnderChip(step.state.tools, gx, gy);
+          const gx = Math.floor((this.boardView.chip!.x - this.boardView.boardOriginX) / tile);
+          const gy = Math.floor((this.boardView.chip!.y - this.boardView.boardOriginY) / tile);
+          this.board.refreshCellUnderChip(step.state.tools, gx, gy);
         },
         onComplete: () => {
           this.syncChipAfterStep(step);
@@ -954,24 +852,26 @@ export class PlayScene extends Phaser.Scene {
   }
 
   private syncChipAfterStep(step: MsCc1MoveStep): void {
-    if (!this.chip) return;
+    if (!this.boardView.chip) return;
 
     const tile = MS_TILE_SIZE;
     this.playerGx = step.to.x;
     this.playerGy = step.to.y;
-    this.chip.setPosition(
-      this.boardOriginX + (this.playerGx + 0.5) * tile,
-      this.boardOriginY + (this.playerGy + 0.5) * tile,
+    this.boardView.playerGx = this.playerGx;
+    this.boardView.playerGy = this.playerGy;
+    this.boardView.chip.setPosition(
+      this.boardView.boardOriginX + (this.playerGx + 0.5) * tile,
+      this.boardView.boardOriginY + (this.playerGy + 0.5) * tile,
     );
 
     if (step.moved) {
-      this.refreshCellAt(step.from.x, step.from.y);
+      this.board.refreshCellAt(step.from.x, step.from.y);
     }
     for (const change of step.cellChanges) {
-      this.refreshCellAt(change.x, change.y);
+      this.board.refreshCellAt(change.x, change.y);
     }
-    this.setChipFrameForDirection(step.direction, step.state);
-    this.refreshCellUnderChip(step.state.tools, step.to.x, step.to.y);
+    this.board.setChipFrameForDirection(step.direction, step.state);
+    this.board.refreshCellUnderChip(step.state.tools, step.to.x, step.to.y);
     this.followBoardCameraToChip();
   }
 
@@ -997,7 +897,7 @@ export class PlayScene extends Phaser.Scene {
     await this.advanceToNextLevel();
   }
 
-  /** MS move clock: monsters step 5× per game second even when Chip is idle. */
+  /** MS move clock: monsters step 5Ã— per game second even when Chip is idle. */
   private startMonsterMoveClock(): void {
     this.stopMonsterMoveClock();
     this.monsterMoveTimer = this.time.addEvent({
@@ -1032,13 +932,13 @@ export class PlayScene extends Phaser.Scene {
       }
     }
     for (const change of result.cellChanges) {
-      this.refreshCellAt(change.x, change.y);
+      this.board.refreshCellAt(change.x, change.y);
     }
     this.tickMonstersAfterChip(true);
   }
 
   private tickMonstersAfterChip(advanceTeethBoundary = false): void {
-    if (!this.level || !this.chip || !this.runSession || this.inputLocked) {
+    if (!this.level || !this.boardView.chip || !this.runSession || this.inputLocked) {
       return;
     }
 
@@ -1066,9 +966,9 @@ export class PlayScene extends Phaser.Scene {
     this.buttonPressCtx.chipIgnoresTeeth = false;
 
     for (const change of monsterTick.cellChanges) {
-      this.refreshCellAt(change.x, change.y);
+      this.board.refreshCellAt(change.x, change.y);
     }
-    this.syncMonsterOverlays();
+    this.board.syncMonsterOverlays();
 
     if (monsterTick.chipDied) {
       void this.handlePlayerDeath(MS_DEATH_CREATURES);
@@ -1083,7 +983,7 @@ export class PlayScene extends Phaser.Scene {
     if (this.deathSequenceActive) return;
     this.deathSequenceActive = true;
     this.inputLocked = true;
-    this.chip?.setVisible(false);
+    this.boardView.chip?.setVisible(false);
 
     await this.playMsSound("bummer", this.audioUrls.bummer);
     await this.oopsDialog?.show(message);
@@ -1109,465 +1009,6 @@ export class PlayScene extends Phaser.Scene {
       resolve();
     });
   }
-
-
-
-  private hasFlippers(tools: string[] | undefined): boolean {
-    return tools?.includes(FLIPPERS_TILE_ID) ?? false;
-  }
-
-  private isSwimmingAt(x: number, y: number, tools: string[] | undefined): boolean {
-    if (!this.level || !this.hasFlippers(tools)) return false;
-    return getCompositeTile(this.level, x, y) === "water";
-  }
-
-  private destroyChipCompositeTextures(): void {
-    for (const key of this.chipCompositeTextureKeys) {
-      this.textures.remove(key);
-    }
-    this.chipCompositeTextureKeys.clear();
-  }
-
-  private uploadChipCanvasTexture(
-    key: string,
-    pixels: Uint8ClampedArray,
-  ): string {
-    if (this.textures.exists(key)) {
-      return key;
-    }
-    const tex = this.textures.createCanvas(key, MS_TILE_SIZE, MS_TILE_SIZE);
-    if (!tex) {
-      return MS_TILES_KEY;
-    }
-    const ctx = tex.getContext();
-    ctx.clearRect(0, 0, MS_TILE_SIZE, MS_TILE_SIZE);
-    const imageData = ctx.createImageData(MS_TILE_SIZE, MS_TILE_SIZE);
-    imageData.data.set(pixels);
-    ctx.putImageData(imageData, 0, 0);
-    tex.refresh();
-    this.chipCompositeTextureKeys.add(key);
-    return key;
-  }
-
-  /** MS masked walk (cols 7–12): Chip figure only, transparent outside the mask. */
-  private ensureChipMaskedWalkTexture(walkObjectCode: number): string {
-    const key = `chip_mask_${walkObjectCode}`;
-    if (this.textures.exists(key)) {
-      return key;
-    }
-    const source = this.textures
-      .get(MS_TILES_KEY)
-      .getSourceImage() as CanvasImageSource;
-    const pixels = compositeMsMaskedChipOnlyFromSheet(source, walkObjectCode);
-    return this.uploadChipCanvasTexture(key, pixels);
-  }
-
-  /** MS creature preview on clone machines: figure only (cols 4–6), not the gray floor tile. */
-  private ensureCreatureMaskedPreviewTexture(objectCode: number): string {
-    const key = `creature_mask_${objectCode.toString(16)}`;
-    if (this.textures.exists(key)) {
-      return key;
-    }
-    const source = this.textures
-      .get(MS_TILES_KEY)
-      .getSourceImage() as CanvasImageSource;
-    const pixels = compositeMsMaskedChipOnlyFromSheet(source, objectCode);
-    return this.uploadChipCanvasTexture(key, pixels);
-  }
-
-  /** MS creature over a real floor tile (button, fire, toggle, etc.). */
-  private ensureCreatureMaskedFloorTexture(
-    floorTileId: string,
-    creatureObjectCode: number,
-  ): string {
-    const key = `creature_${floorTileId}_${creatureObjectCode.toString(16)}`;
-    if (this.textures.exists(key)) {
-      return key;
-    }
-    const source = this.textures
-      .get(MS_TILES_KEY)
-      .getSourceImage() as CanvasImageSource;
-    const floorFrame = this.frameByTileId.get(floorTileId) ?? 0;
-    const pixels = compositeMsMaskedFromSheet(
-      source,
-      floorFrame,
-      creatureObjectCode,
-    );
-    return this.uploadChipCanvasTexture(key, pixels);
-  }
-
-  /**
-   * MS glider (col 5): draw overlay-column sprite on the floor tile.
-   * Baked canvas composites for col 5 can fail in-browser; cols 4–6 ball/fire use composite.
-   */
-  private placeGhostFigureOnFloor(
-    x: number,
-    y: number,
-    floorTileId: string,
-    creatureTileId: string,
-  ): void {
-    if (!this.tileLayer) return;
-
-    this.placeBoardSprite(x, y, floorTileId);
-    const objectCode = objectCodeFromTileId(creatureTileId);
-    if (objectCode == null) {
-      return;
-    }
-    const overlayFrame = msMaskedChipFrameTriple(objectCode).overlay;
-    this.placeCreatureSheetFrameOverlay(x, y, overlayFrame);
-  }
-
-  private placeCreatureSheetFrameOverlay(
-    x: number,
-    y: number,
-    frame: number,
-  ): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-
-    let sprite = this.monsterOverlaySprites.get(key);
-    if (!sprite) {
-      sprite = this.add
-        .sprite(px + tile / 2, py + tile / 2, MS_TILES_KEY, frame)
-        .setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      this.monsterOverlaySprites.set(key, sprite);
-    } else {
-      sprite.setTexture(MS_TILES_KEY);
-      sprite.setFrame(frame);
-      sprite.setVisible(true);
-    }
-    this.tileLayer.bringToTop(sprite);
-  }
-
-  private placeCreatureCompositeOverlay(
-    x: number,
-    y: number,
-    textureKey: string,
-  ): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-
-    let sprite = this.monsterOverlaySprites.get(key);
-    if (!sprite) {
-      sprite = this.add.sprite(px + tile / 2, py + tile / 2, textureKey).setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      this.monsterOverlaySprites.set(key, sprite);
-    } else {
-      sprite.setTexture(textureKey);
-      sprite.setVisible(true);
-    }
-    this.tileLayer.bringToTop(sprite);
-    this.cellSprites.get(key)?.setVisible(false);
-  }
-
-  /**
-   * MS walk sprites include a gray floor (cols 4–6); on ice/fire/water/force the board
-   * draws the terrain cell and Chip uses a masked walk sprite on top (no moving ice tile).
-   * Swim sprites (col 3) are separate full tiles.
-   */
-  private setChipFrameForDirection(
-    direction: Direction,
-    state: { tools: string[] },
-    atGx = this.playerGx,
-    atGy = this.playerGy,
-  ): void {
-    if (!this.chip || !this.level) return;
-
-    if (this.isSwimmingAt(atGx, atGy, state.tools)) {
-      if (this.chip.texture.key !== MS_TILES_KEY) {
-        this.chip.setTexture(MS_TILES_KEY);
-      }
-      const swimTile = CHIP_SWIM_FRAME[direction];
-      const frame =
-        this.frameByTileId.get(swimTile) ??
-        this.frameByTileId.get("chip_swim_s") ??
-        0;
-      this.chip.setFrame(frame);
-      return;
-    }
-
-    const terrainId = getTerrainTileUnderChip(this.level, atGx, atGy);
-    if (terrainId) {
-      const walkCode = MS_CHIP_WALK_OBJECT_CODE[direction];
-      const texKey = this.ensureChipMaskedWalkTexture(walkCode);
-      if (this.chip.texture.key !== texKey) {
-        this.chip.setTexture(texKey);
-      }
-      return;
-    }
-
-    if (this.chip.texture.key !== MS_TILES_KEY) {
-      this.chip.setTexture(MS_TILES_KEY);
-    }
-    const walkTile = CHIP_WALK_FRAME[direction];
-    const frame =
-      this.frameByTileId.get(walkTile) ??
-      this.frameByTileId.get("chip_s") ??
-      0;
-    this.chip.setFrame(frame);
-  }
-
-  /** Keep ice, force floors, water, fire, etc. visible under Chip. */
-  private refreshCellUnderChip(
-    tools?: string[],
-    atGx = this.playerGx,
-    atGy = this.playerGy,
-  ): void {
-    if (!this.level) return;
-    const key = `${atGx},${atGy}`;
-    if (this.isSwimmingAt(atGx, atGy, tools)) {
-      this.cellSprites.get(key)?.setVisible(false);
-      return;
-    }
-    const tileId = getTerrainTileUnderChip(this.level, atGx, atGy);
-    if (!tileId) return;
-    // Terrain stays on the board; masked Chip sprite draws on top.
-    this.refreshCellAt(atGx, atGy, tileId);
-  }
-
-  private placeBoardSprite(x: number, y: number, tileId: string): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-    const frame = this.frameByTileId.get(tileId) ?? this.frameByTileId.get("empty") ?? 0;
-
-    let sprite = this.cellSprites.get(key);
-    if (!sprite) {
-      sprite = this.add
-        .sprite(px + tile / 2, py + tile / 2, MS_TILES_KEY, frame)
-        .setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      this.cellSprites.set(key, sprite);
-    } else {
-      sprite.setVisible(true);
-      sprite.setFrame(frame);
-    }
-  }
-
-  private placeCloneMachineLayerSprite(
-    x: number,
-    y: number,
-    tileId: string,
-    store: Map<string, Phaser.GameObjects.Sprite>,
-  ): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-    const frame = this.frameByTileId.get(tileId) ?? this.frameByTileId.get("empty") ?? 0;
-
-    let sprite = store.get(key);
-    if (!sprite) {
-      sprite = this.add
-        .sprite(px + tile / 2, py + tile / 2, MS_TILES_KEY, frame)
-        .setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      store.set(key, sprite);
-    } else {
-      sprite.setVisible(true);
-      sprite.setFrame(frame);
-    }
-  }
-
-  private hideCloneMachineSprites(x: number, y: number): void {
-    const key = `${x},${y}`;
-    this.cloneMachineFloorSprites.get(key)?.setVisible(false);
-    this.cloneMachineMidSprites.get(key)?.setVisible(false);
-    this.clonerOverlaySprites.get(key)?.setVisible(false);
-  }
-
-  /** Full-tile creature (cols 0–3, 7–12) over floor at a runtime monster cell. */
-  private placeRuntimeMonsterOverlay(x: number, y: number, tileId: string): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-    const frame = this.frameByTileId.get(tileId) ?? 0;
-
-    let sprite = this.monsterOverlaySprites.get(key);
-    if (!sprite) {
-      sprite = this.add
-        .sprite(px + tile / 2, py + tile / 2, MS_TILES_KEY, frame)
-        .setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      this.monsterOverlaySprites.set(key, sprite);
-    } else {
-      sprite.setTexture(MS_TILES_KEY);
-      sprite.setFrame(frame);
-      sprite.setVisible(true);
-    }
-  }
-
-  private placeMaskedCreatureOverlay(
-    x: number,
-    y: number,
-    objectCode: number,
-    store: Map<string, Phaser.GameObjects.Sprite>,
-  ): void {
-    if (!this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.boardOriginX + x * tile;
-    const py = this.boardOriginY + y * tile;
-    const texKey = this.ensureCreatureMaskedPreviewTexture(objectCode);
-
-    let sprite = store.get(key);
-    if (!sprite) {
-      sprite = this.add.sprite(px + tile / 2, py + tile / 2, texKey).setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.tileLayer.add(sprite);
-      store.set(key, sprite);
-    } else {
-      sprite.setTexture(texKey);
-      sprite.setVisible(true);
-    }
-  }
-
-  private hideMaskedCreatureOverlay(
-    x: number,
-    y: number,
-    store: Map<string, Phaser.GameObjects.Sprite>,
-  ): void {
-    store.get(`${x},${y}`)?.setVisible(false);
-  }
-
-  /** MS: gray floor, then launcher box, then preview creature icon. */
-  private placeCloneMachineCell(x: number, y: number): void {
-    if (!this.level || !this.tileLayer) return;
-
-    const key = `${x},${y}`;
-    this.cellSprites.get(key)?.setVisible(false);
-
-    this.placeCloneMachineLayerSprite(x, y, "empty", this.cloneMachineFloorSprites);
-    this.placeCloneMachineLayerSprite(x, y, "cloner", this.cloneMachineMidSprites);
-
-    const preview = cellTile(this.level, "upper", x, y);
-    if (isMonsterTile(preview)) {
-      const objectCode = objectCodeFromTileId(preview);
-      if (objectCode != null) {
-        this.placeMaskedCreatureOverlay(x, y, objectCode, this.clonerOverlaySprites);
-      } else {
-        this.clonerOverlaySprites.get(key)?.setVisible(false);
-      }
-    } else {
-      this.clonerOverlaySprites.get(key)?.setVisible(false);
-    }
-  }
-
-  private refreshCloneMachineCell(x: number, y: number): void {
-    this.placeCloneMachineCell(x, y);
-  }
-
-  private findMonsterAt(x: number, y: number): MsCc1MonsterState | undefined {
-    return this.monsters.find((m) => m.alive && m.x === x && m.y === y);
-  }
-
-  /** Redraw live creatures on the board tile layer (masked MS cols 4–6). */
-  private syncMonsterOverlays(): void {
-    if (!this.level || !this.tileLayer) return;
-
-    const occupied = new Set<string>();
-    for (const monster of this.monsters) {
-      if (!monster.alive) continue;
-      occupied.add(`${monster.x},${monster.y}`);
-      this.refreshCellAt(monster.x, monster.y);
-    }
-
-    for (const [key, sprite] of this.monsterOverlaySprites) {
-      if (!occupied.has(key)) {
-        sprite.setVisible(false);
-      }
-    }
-  }
-
-  /** Redraw a board cell from the current level layers. */
-  private refreshCellAt(
-    x: number,
-    y: number,
-    tileIdOverride?: string,
-  ): void {
-    if (!this.level || !this.tileLayer) return;
-
-    if (isCloneMachineAt(this.level, x, y)) {
-      this.refreshCloneMachineCell(x, y);
-      return;
-    }
-
-    this.hideCloneMachineSprites(x, y);
-
-    const occupant = this.findMonsterAt(x, y);
-    if (occupant) {
-      const lower = cellTile(this.level, "lower", x, y);
-      const floorId = lower !== "empty" ? lower : "empty";
-      this.hideMaskedCreatureOverlay(x, y, this.monsterOverlaySprites);
-      if (occupant.kind === "ghost") {
-        this.placeGhostFigureOnFloor(x, y, floorId, occupant.tileId);
-        return;
-      }
-      const objectCode = objectCodeFromTileId(occupant.tileId);
-      if (objectCode != null && msCreatureUsesMaskedSprite(objectCode)) {
-        const texKey = this.ensureCreatureMaskedFloorTexture(floorId, objectCode);
-        this.placeCreatureCompositeOverlay(x, y, texKey);
-      } else {
-        this.placeBoardSprite(x, y, floorId);
-        this.placeRuntimeMonsterOverlay(x, y, occupant.tileId);
-      }
-      return;
-    }
-
-    const tileId = tileIdOverride ?? getCompositeTile(this.level, x, y);
-    const key = `${x},${y}`;
-
-    if (CHIP_TILE_IDS.has(tileId)) {
-      this.cellSprites.get(key)?.setVisible(false);
-      this.hideMaskedCreatureOverlay(x, y, this.monsterOverlaySprites);
-      return;
-    }
-
-    const floorUnderMonster = getLowerTileUnderMonster(this.level, x, y);
-    if (isMonsterTile(tileId) && floorUnderMonster) {
-      if (tileId.startsWith("ghost_")) {
-        this.placeGhostFigureOnFloor(x, y, floorUnderMonster, tileId);
-        return;
-      }
-      const objectCode = objectCodeFromTileId(tileId);
-      if (objectCode != null && msCreatureUsesMaskedSprite(objectCode)) {
-        const texKey = this.ensureCreatureMaskedFloorTexture(
-          floorUnderMonster,
-          objectCode,
-        );
-        this.placeCreatureCompositeOverlay(x, y, texKey);
-        return;
-      }
-    }
-
-    this.hideMaskedCreatureOverlay(x, y, this.monsterOverlaySprites);
-    this.placeBoardSprite(x, y, tileId);
-  }
-
-
 
   private showError(message: string): void {
 
@@ -1671,12 +1112,11 @@ export class PlayScene extends Phaser.Scene {
 
     this.levelCompleteDialog = null;
 
-    this.cellSprites.clear();
-    this.cloneMachineFloorSprites.clear();
-    this.cloneMachineMidSprites.clear();
-    this.clonerOverlaySprites.clear();
-    this.monsterOverlaySprites.clear();
-
+    this.boardView.cellSprites.clear();
+    this.boardView.cloneMachineFloorSprites.clear();
+    this.boardView.cloneMachineMidSprites.clear();
+    this.boardView.clonerOverlaySprites.clear();
+    this.boardView.monsterOverlaySprites.clear();
   }
 
 }

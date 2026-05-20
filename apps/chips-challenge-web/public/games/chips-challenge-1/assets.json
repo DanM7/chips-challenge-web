@@ -20,6 +20,6 @@
     "bummer": "/ms-audio/BUMMER.WAV"
   },
   "meta": {
-    "description": "Graphics and audio served from vendor/chips-challenge-ms (gitignored)."
+    "description": "Dev: /ms-assets from vendor. Production build: public/ms-assets → dist (npm run deploy:assets)."
   }
 }

@@ -72,7 +72,7 @@ Inventory icons use `ms_tiles` frames when count &gt; 0.
 | `src/ui/MsSevenSegment.ts` | 3-digit readout |
 | `src/ui/MsWindowHud.ts` | Frame, counters, inventory icons |
 | `src/scenes/PlayScene.ts` | Loads assets, builds board + HUD |
-| `src/engine/pixelZoom.ts` | `MS_WINDOW_WIDTH` / `HEIGHT` = 533×360 |
+| `@engine/pixelZoom` | `MS_WINDOW_WIDTH` / `HEIGHT` = 533×360 |
 | `manifest.json` | `windowLayoutUrl`, Phaser scale size |
 
 ## Checklist before Phase 1 (simulation)
