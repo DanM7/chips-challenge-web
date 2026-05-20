@@ -2,12 +2,29 @@ import Phaser from "phaser";
 import type { LevelData, RunState } from "@engine/types.js";
 import { MsSevenSegment } from "./MsSevenSegment.js";
 import type { DigitsManifest } from "./msDigits.js";
-import { ensureMsDigitTextures, loadDigitsManifest } from "./msDigits.js";
+import { ensureMsDigitPalettes, loadDigitsManifest } from "./msDigits.js";
 import { MS_TILE_SIZE } from "@tile-engine/msTileIndex.js";
+
+/** MS inventory top row: fixed slots left → right. */
+const KEY_SLOT_ORDER = [
+  "key_red",
+  "key_blue",
+  "key_yellow",
+  "key_green",
+] as const;
+
+/** MS inventory bottom row: skates, suction, fire, flippers. */
+const TOOL_SLOT_ORDER = [
+  "ice_skates",
+  "suction_boots",
+  "fire_boots",
+  "flippers",
+] as const;
 import {
   MS_CHROME_FRAME,
   MS_WINDOW_TEXTURE,
   registerMsChromeFrame,
+  registerMsLevelIntroPanelFrame,
   type MsWindowLayout,
 } from "./msWindowLayout.js";
 
@@ -26,10 +43,10 @@ export class MsWindowHud {
   private levelDisplay?: MsSevenSegment;
   private timeDisplay?: MsSevenSegment;
   private chipsDisplay?: MsSevenSegment;
-  /** Top row: keys fill left → right in the first empty slot. */
+  /** Top row: red, blue, yellow, green (fixed slots). */
   private readonly topRowIcons: Phaser.GameObjects.Sprite[] = [];
-  /** Bottom row: boots/tools (fixed slots). */
-  private readonly toolIcons = new Map<string, Phaser.GameObjects.Sprite>();
+  /** Bottom row: skates, suction, fire, flippers (fixed slots). */
+  private readonly toolRowIcons: Phaser.GameObjects.Sprite[] = [];
   private staticLevelNumber: number | null = null;
 
   constructor(
@@ -47,7 +64,7 @@ export class MsWindowHud {
       this.layout.digitsUrl ??
       "/games/chips-challenge-100/sprites/digits/digits.json";
     this.digitsManifest = await loadDigitsManifest(url);
-    await ensureMsDigitTextures(this.scene, this.digitsManifest);
+    await ensureMsDigitPalettes(this.scene, this.digitsManifest);
   }
 
   build(): void {
@@ -57,6 +74,7 @@ export class MsWindowHud {
 
     this.destroy();
     registerMsChromeFrame(this.scene.textures, this.layout);
+    registerMsLevelIntroPanelFrame(this.scene.textures, this.layout);
 
     this.root = this.scene.add.container(0, 0).setDepth(5);
 
@@ -69,7 +87,7 @@ export class MsWindowHud {
     const digits = this.digitsManifest;
     this.levelDisplay = new MsSevenSegment(this.scene, this.layout, digits, "level");
     this.timeDisplay = new MsSevenSegment(this.scene, this.layout, digits, "time");
-    this.chipsDisplay = new MsSevenSegment(this.scene, this.layout, digits, "chips");
+    this.chipsDisplay = new MsSevenSegment(this.scene, this.layout, digits, "chips", "green");
     this.scene.add.existing(this.levelDisplay);
     this.scene.add.existing(this.timeDisplay);
     this.scene.add.existing(this.chipsDisplay);
@@ -83,28 +101,40 @@ export class MsWindowHud {
       .filter((slot) => slot.row === 0)
       .sort((a, b) => a.col - b.col);
 
+    const keyRowY =
+      inv.origin.y + inv.slotHeight / 2 + (inv.keyRowOffsetY ?? 0);
+
     for (const slot of topRow) {
-      const x =
-        inv.origin.x + slot.col * inv.columnStep + inv.slotWidth / 2;
-      const y =
-        inv.origin.y + slot.row * inv.rowStep + inv.slotHeight / 2;
-
-      this.topRowIcons.push(this.createInventoryIcon(x, y));
+      const x = this.slotCenterX(inv, slot);
+      this.topRowIcons.push(this.createInventoryIcon(x, keyRowY));
     }
 
-    for (const slot of inv.slots) {
-      if (slot.row !== 1) continue;
+    const bottomRow = inv.slots
+      .filter((slot) => slot.row === 1)
+      .sort((a, b) => a.col - b.col);
 
-      const x =
-        inv.origin.x + slot.col * inv.columnStep + inv.slotWidth / 2;
-      const y =
-        inv.origin.y + slot.row * inv.rowStep + inv.slotHeight / 2;
+    const toolRowY =
+      inv.origin.y +
+      inv.rowStep +
+      inv.slotHeight / 2 +
+      (inv.toolRowOffsetY ?? 0);
 
-      this.toolIcons.set(
-        slot.id,
-        this.createInventoryIcon(x, y, this.frameByTileId.get(slot.tileId) ?? 0),
-      );
+    for (const slot of bottomRow) {
+      const x = this.slotCenterX(inv, slot);
+      this.toolRowIcons.push(this.createInventoryIcon(x, toolRowY));
     }
+  }
+
+  private slotCenterX(
+    inv: MsWindowLayout["inventory"],
+    slot: { col: number; offsetX?: number },
+  ): number {
+    return (
+      inv.origin.x +
+      slot.col * inv.columnStep +
+      inv.slotWidth / 2 +
+      (slot.offsetX ?? 0)
+    );
   }
 
   /** Native tile pixels (32×32); scaling down blurs MS art. */
@@ -137,14 +167,30 @@ export class MsWindowHud {
     } else {
       this.timeDisplay?.setValue(state.playClockSeconds);
     }
-    this.chipsDisplay?.setValue(state.collectiblesLeftCount);
+    const chipsLeft = state.collectiblesLeftCount;
+    this.chipsDisplay?.setPalette(chipsLeft === 0 ? "yellow" : "green");
+    this.chipsDisplay?.setValue(chipsLeft);
 
-    const keys = state.inventory?.keys ?? [];
-    for (let i = 0; i < this.topRowIcons.length; i++) {
-      const icon = this.topRowIcons[i]!;
-      const keyId = keys[i];
-      if (keyId) {
+    const keys = new Set(state.inventory?.keys ?? []);
+    for (let i = 0; i < KEY_SLOT_ORDER.length; i++) {
+      const keyId = KEY_SLOT_ORDER[i]!;
+      const icon = this.topRowIcons[i];
+      if (!icon) continue;
+      if (keys.has(keyId)) {
         icon.setFrame(this.frameByTileId.get(keyId) ?? 0);
+        icon.setVisible(true);
+      } else {
+        icon.setVisible(false);
+      }
+    }
+
+    const tools = new Set(state.inventory?.tools ?? []);
+    for (let i = 0; i < TOOL_SLOT_ORDER.length; i++) {
+      const toolId = TOOL_SLOT_ORDER[i]!;
+      const icon = this.toolRowIcons[i];
+      if (!icon) continue;
+      if (tools.has(toolId)) {
+        icon.setFrame(this.frameByTileId.get(toolId) ?? 0);
         icon.setVisible(true);
       } else {
         icon.setVisible(false);
@@ -156,7 +202,7 @@ export class MsWindowHud {
     for (const icon of this.topRowIcons) {
       icon.setVisible(false);
     }
-    for (const icon of this.toolIcons.values()) {
+    for (const icon of this.toolRowIcons) {
       icon.setVisible(false);
     }
   }
@@ -173,7 +219,7 @@ export class MsWindowHud {
     for (const icon of this.topRowIcons) {
       cam.ignore(icon);
     }
-    for (const icon of this.toolIcons.values()) {
+    for (const icon of this.toolRowIcons) {
       cam.ignore(icon);
     }
   }
@@ -186,7 +232,7 @@ export class MsWindowHud {
     for (const icon of this.topRowIcons) {
       icon.destroy(true);
     }
-    for (const icon of this.toolIcons.values()) {
+    for (const icon of this.toolRowIcons) {
       icon.destroy(true);
     }
     this.root = undefined;
@@ -195,7 +241,7 @@ export class MsWindowHud {
     this.timeDisplay = undefined;
     this.chipsDisplay = undefined;
     this.topRowIcons.length = 0;
-    this.toolIcons.clear();
+    this.toolRowIcons.length = 0;
   }
 }
 

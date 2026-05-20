@@ -1,21 +1,32 @@
 import Phaser from "phaser";
 
+export type DigitPalette = "green" | "yellow";
+
 export interface DigitGlyph {
   file: string;
+  x: number;
+  y: number;
   width: number;
   height: number;
+  slotWidth?: number;
+}
+
+export interface DigitPaletteSpec {
+  strip: { left: number; top: number; width: number; height: number };
+  glyphs: Record<string, DigitGlyph>;
 }
 
 export interface DigitsManifest {
   cellWidth: number;
   chars: string;
-  glyphs: Record<string, DigitGlyph>;
+  palettes: Record<DigitPalette, DigitPaletteSpec>;
 }
 
 const DIGITS_BASE = "/games/chips-challenge-100/sprites/digits";
 
-export function getDigitTextureKey(ch: string): string {
-  return ch === "-" ? "ms_digit_dash" : `ms_digit_${ch}`;
+export function getDigitTextureKey(ch: string, palette: DigitPalette): string {
+  const glyph = ch === "-" ? "dash" : ch;
+  return `ms_digit_${palette}_${glyph}`;
 }
 
 export async function loadDigitsManifest(url: string): Promise<DigitsManifest> {
@@ -23,26 +34,42 @@ export async function loadDigitsManifest(url: string): Promise<DigitsManifest> {
   if (!res.ok) {
     throw new Error(`Failed to load digits manifest: ${url}`);
   }
-  return (await res.json()) as DigitsManifest;
+  const raw = (await res.json()) as DigitsManifest & {
+    glyphs?: Record<string, DigitGlyph>;
+  };
+  if (raw.palettes) {
+    return raw as DigitsManifest;
+  }
+  // Legacy single-row manifest (green row only).
+  return {
+    cellWidth: raw.cellWidth,
+    chars: raw.chars,
+    palettes: {
+      green: { strip: { left: 12, top: 375, width: 195, height: 22 }, glyphs: raw.glyphs ?? {} },
+      yellow: { strip: { left: 12, top: 397, width: 195, height: 22 }, glyphs: raw.glyphs ?? {} },
+    },
+  };
 }
 
-/** Load each digit as its own texture (tight crops — no spritesheet bleed). */
 export function preloadMsDigitTextures(
   scene: Phaser.Scene,
   manifest: DigitsManifest,
 ): void {
-  for (const ch of manifest.chars) {
-    const glyph = manifest.glyphs[ch];
-    if (!glyph) continue;
+  for (const palette of ["green", "yellow"] as const) {
+    const glyphs = manifest.palettes[palette].glyphs;
+    for (const ch of manifest.chars) {
+      const glyph = glyphs[ch];
+      if (!glyph) continue;
 
-    const key = getDigitTextureKey(ch);
-    if (scene.textures.exists(key)) continue;
+      const key = getDigitTextureKey(ch, palette);
+      if (scene.textures.exists(key)) continue;
 
-    scene.load.image(key, `${DIGITS_BASE}/${glyph.file}`);
+      scene.load.image(key, `${DIGITS_BASE}/${palette}/${glyph.file}`);
+    }
   }
 }
 
-export async function ensureMsDigitTextures(
+export async function ensureMsDigitPalettes(
   scene: Phaser.Scene,
   manifest: DigitsManifest,
 ): Promise<void> {

@@ -13,7 +13,54 @@
     <div id="app">
       <header class="app-header">
         <h1 class="app-title">Chip's Challenge</h1>
+        <div class="app-header-actions">
+          <div class="app-menu">
+            <button
+              type="button"
+              class="app-menu-trigger"
+              id="app-menu-trigger"
+              aria-label="Settings"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-controls="app-menu-dropdown"
+            >
+              <svg class="app-menu-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"
+                />
+              </svg>
+            </button>
+            <div class="app-menu-dropdown" id="app-menu-dropdown" role="menu" hidden>
+              <section class="app-menu-section" aria-label="Game">
+                <p class="app-menu-section-title">Game</p>
+                <button type="button" class="app-menu-item" id="level-select-open" role="menuitem">
+                  Level Select
+                </button>
+              </section>
+            </div>
+          </div>
+        </div>
       </header>
+      <div class="level-select-overlay" id="level-select-modal" hidden role="dialog" aria-modal="true" aria-labelledby="level-select-title">
+        <div class="level-select-dialog">
+          <h2 class="level-select-dialog__title" id="level-select-title">Level Select</h2>
+          <label class="level-select-label" for="level-select-input">Level (1–150)</label>
+          <input
+            class="level-select-input"
+            id="level-select-input"
+            type="number"
+            min="1"
+            max="150"
+            value="1"
+            inputmode="numeric"
+          />
+          <div class="level-select-actions">
+            <button type="button" class="level-select-btn" id="level-select-cancel">Cancel</button>
+            <button type="button" class="level-select-btn level-select-btn--primary" id="level-select-go">Go</button>
+          </div>
+        </div>
+      </div>
       <main class="game-shell">
         <div class="zoom-controls u-hidden" aria-label="Zoom controls" hidden>
           <button type="button" id="zoom-out" class="zoom-btn" aria-label="Zoom out">−</button>

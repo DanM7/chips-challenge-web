@@ -2,7 +2,7 @@
 
 This document defines how MS Chip's Challenge data becomes **JSON-driven** simulation and UI, without hardcoded classes like `BlueKey` or `BallMonster` in the engine.
 
-See also: [ui-and-hud.md](./ui-and-hud.md) for how level and run state feed the status panel.
+See also: [ui-and-hud.md](./ui-and-hud.md) for how level and run state feed the status panel, and [ms-cc1-rules.md](./ms-cc1-rules.md) for the MS behavior checklist and regression matrix.
 
 ## Design goal
 
@@ -110,6 +110,7 @@ Compiled output for simulation + HUD seed:
     "levelTitle": "LESSON 1",
     "timer": { "mode": "countDown", "initialSeconds": 100 },
     "chipCounter": { "mode": "remaining", "initial": 11 },
+    "collectiblesOnMap": 11,
     "inventorySlots": ["key_blue", "key_red", "key_green", "key_yellow", "flippers", "fire_boots", "ice_skates", "suction_boots"]
   },
   "entities": [],

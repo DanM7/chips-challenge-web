@@ -1,0 +1,13 @@
+{
+  "id": "grid-arcade-v1",
+  "systems": ["grid_movement", "inventory", "gates", "objectives", "timer"],
+  "archetypes": {
+    "collectible": { "onEnter": ["pickup"] },
+    "gate": { "blocksActor": true, "onBlockedByActor": ["tryPassGate"] },
+    "goal": { "onEnter": ["completeLevelIfObjectivesMet"] }
+  },
+  "objectiveTypes": {
+    "collectCount": { "tag": "objectiveChip" },
+    "reachExit": {}
+  }
+}

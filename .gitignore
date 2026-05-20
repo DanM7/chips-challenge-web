@@ -6,6 +6,7 @@ dist
 # Proprietary Chip's Challenge (MS) — place zip/DAT/EXE here; never commit
 vendor/
 chips_challenge.zip
+cc1-install.local.json
 _zip_preview/
 
 # Generated from proprietary assets (reproducible via npm run ms:extract)

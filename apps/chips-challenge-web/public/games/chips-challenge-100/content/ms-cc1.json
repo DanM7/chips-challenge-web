@@ -1,0 +1,21 @@
+{
+  "id": "ms-cc1",
+  "ruleset": "grid-arcade-v1",
+  "description": "MS Chip's Challenge object → behavior mapping (phase 1: movement gates and pickups).",
+  "tiles": {
+    "chip": { "archetype": "collectible", "tags": ["objectiveChip"] },
+    "key_blue": { "archetype": "collectible", "tags": ["key"], "params": { "keyVariant": "blue" } },
+    "key_red": { "archetype": "collectible", "tags": ["key"], "params": { "keyVariant": "red" } },
+    "key_green": { "archetype": "collectible", "tags": ["key"], "params": { "keyVariant": "green", "reusable": true } },
+    "key_yellow": { "archetype": "collectible", "tags": ["key"], "params": { "keyVariant": "yellow" } },
+    "door_blue": { "archetype": "gate", "params": { "keyVariant": "blue", "consumesKey": true } },
+    "door_red": { "archetype": "gate", "params": { "keyVariant": "red", "consumesKey": true } },
+    "door_green": { "archetype": "gate", "params": { "keyVariant": "green", "consumesKey": false } },
+    "door_yellow": { "archetype": "gate", "params": { "keyVariant": "yellow", "consumesKey": true } },
+    "socket": { "archetype": "gate", "params": { "requiresChipsRemaining": 0 } },
+    "exit": { "archetype": "goal", "params": { "requiresChipsRemaining": 0 } },
+    "block_movable": { "archetype": "obstacle", "params": { "pushable": true } },
+    "water": { "archetype": "hazard", "params": { "blockBecomesDirt": true } },
+    "dirt": { "archetype": "floor" }
+  }
+}

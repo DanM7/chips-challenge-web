@@ -17,21 +17,35 @@
     "offsetY": -1,
     "digitOffsetX": [0, 1, 2]
   },
+  "levelIntroPanel": {
+    "x": 177,
+    "y": 425,
+    "width": 192,
+    "height": 56,
+    "offsetBelowChipY": 98,
+    "fontSize": 24,
+    "titleOffsetX": 0,
+    "passwordOffsetX": 28,
+    "titleOffsetY": -12,
+    "passwordOffsetY": 12
+  },
   "inventory": {
     "slotWidth": 32,
     "slotHeight": 28,
     "origin": { "x": 345, "y": 252 },
     "columnStep": 35,
     "rowStep": 30,
+    "keyRowOffsetY": -3,
+    "toolRowOffsetY": -1,
     "slots": [
-      { "id": "key_blue", "col": 0, "row": 0, "tileId": "key_blue" },
-      { "id": "key_red", "col": 1, "row": 0, "tileId": "key_red" },
-      { "id": "key_green", "col": 2, "row": 0, "tileId": "key_green" },
-      { "id": "key_yellow", "col": 3, "row": 0, "tileId": "key_yellow" },
-      { "id": "flippers", "col": 0, "row": 1, "tileId": "flippers" },
-      { "id": "fire_boots", "col": 1, "row": 1, "tileId": "fire_boots" },
-      { "id": "ice_skates", "col": 2, "row": 1, "tileId": "ice_skates" },
-      { "id": "suction_boots", "col": 3, "row": 1, "tileId": "suction_boots" }
+      { "id": "key_red", "col": 0, "row": 0, "tileId": "key_red", "offsetX": 7 },
+      { "id": "key_blue", "col": 1, "row": 0, "tileId": "key_blue", "offsetX": 4 },
+      { "id": "key_yellow", "col": 2, "row": 0, "tileId": "key_yellow", "offsetX": 1 },
+      { "id": "key_green", "col": 3, "row": 0, "tileId": "key_green", "offsetX": -2 },
+      { "id": "ice_skates", "col": 0, "row": 1, "tileId": "ice_skates", "offsetX": 7 },
+      { "id": "suction_boots", "col": 1, "row": 1, "tileId": "suction_boots", "offsetX": 4 },
+      { "id": "fire_boots", "col": 2, "row": 1, "tileId": "fire_boots", "offsetX": 1 },
+      { "id": "flippers", "col": 3, "row": 1, "tileId": "flippers", "offsetX": -2 }
     ]
   }
 }

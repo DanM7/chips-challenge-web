@@ -254,7 +254,7 @@ level-001.json (LevelData)
   └── monsters (optional)
 ```
 
-To add a level: export JSON, add an entry to `levels/index.json`, set `defaultLevelId` if needed.
+To add a level: export JSON, add an entry to `levels/index.json`, set `defaultLevelId` if needed. That field is the **launch default** for the web app (`resolveDefaultLaunchLevelNumber` in `2d-tile-engine`); `?password=` only overrides for dev/deep links.
 
 ## Layering and dependencies
 

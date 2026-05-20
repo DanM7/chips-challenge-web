@@ -7,10 +7,17 @@
     "dev": "node apps/chips-challenge-web/scripts/predev.mjs && vite --config apps/chips-challenge-web/vite.config.ts",
     "build": "tsc --noEmit -p apps/chips-challenge-web/tsconfig.json && vite build --config apps/chips-challenge-web/vite.config.ts",
     "preview": "vite preview --config apps/chips-challenge-web/vite.config.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "vendor:ensure": "node apps/chips-challenge-web/scripts/ensureVendor.mjs",
+    "ms:extract": "node apps/chips-challenge-web/scripts/runMsExtract.mjs",
+    "ms:digits": "node apps/chips-challenge-web/scripts/runMsDigits.mjs",
+    "dat:level1": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1",
+    "dat:level2": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 2",
+    "dat:levels": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1 2 3 4 5 6 7 8 9 10",
+    "dat:levels:index": "node apps/chips-challenge-web/scripts/syncLevelsIndex.mjs"
   },
   "dependencies": {
-    "@danmaguire/2d-tile-engine": "file:../2d-tile-engine",
+    "@danm7/2d-tile-engine": "file:../2d-tile-engine",
     "phaser": "^3.80.1"
   },
   "devDependencies": {

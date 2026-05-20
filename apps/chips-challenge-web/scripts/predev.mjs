@@ -2,27 +2,29 @@ import { spawnSync } from "child_process";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { getGeneratedDir, getRepoRoot, resolveInstallFile } from "./cc1Paths.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(__dirname, "..");
+const repoRoot = getRepoRoot();
 
 await import("./ensureVendor.mjs");
 
-const vendor = path.join(root, "vendor", "chips-challenge-ms");
-const dat = path.join(vendor, "CHIPS.DAT");
-const tiles = path.join(vendor, "generated", "tiles.png");
+const tiles = path.join(getGeneratedDir(), "tiles.png");
 
-if (fs.existsSync(path.join(vendor, "CHIPS.EXE")) && !fs.existsSync(tiles)) {
-  const r = spawnSync("npm", ["run", "ms:extract"], { cwd: root, stdio: "inherit", shell: true });
+function runRepoScript(script) {
+  const r = spawnSync("npm", ["run", script], { cwd: repoRoot, stdio: "inherit", shell: true });
   if (r.status !== 0) process.exit(r.status ?? 1);
 }
 
-if (fs.existsSync(dat)) {
-  const levelJson = path.join(root, "public", "games", "chips-challenge-100", "levels", "level-001.json");
-  const r = spawnSync(
-    "npm",
-    ["run", "dat:level1"],
-    { cwd: root, stdio: "inherit", shell: true },
-  );
-  if (r.status !== 0) process.exit(r.status ?? 1);
+if (resolveInstallFile("CHIPS.EXE") && !fs.existsSync(tiles)) {
+  console.log("Generating tiles.png (first run)…");
+  runRepoScript("ms:extract");
+}
+
+if (resolveInstallFile("CHIPS.DAT")) {
+  runRepoScript("dat:levels");
+}
+
+if (!fs.existsSync(tiles)) {
+  console.warn("tiles.png not found — dev server will start, but the game needs: npm run ms:extract");
 }

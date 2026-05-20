@@ -2,9 +2,54 @@
   "levels": [
     {
       "id": "level-001",
-      "name": "Prototype",
+      "name": "LESSON 1",
       "url": "/games/chips-challenge-100/levels/level-001.json"
+    },
+    {
+      "id": "level-002",
+      "name": "LESSON 2",
+      "url": "/games/chips-challenge-100/levels/level-002.json"
+    },
+    {
+      "id": "level-003",
+      "name": "LESSON 3",
+      "url": "/games/chips-challenge-100/levels/level-003.json"
+    },
+    {
+      "id": "level-004",
+      "name": "LESSON 4",
+      "url": "/games/chips-challenge-100/levels/level-004.json"
+    },
+    {
+      "id": "level-005",
+      "name": "LESSON 5",
+      "url": "/games/chips-challenge-100/levels/level-005.json"
+    },
+    {
+      "id": "level-006",
+      "name": "LESSON 6",
+      "url": "/games/chips-challenge-100/levels/level-006.json"
+    },
+    {
+      "id": "level-007",
+      "name": "LESSON 7",
+      "url": "/games/chips-challenge-100/levels/level-007.json"
+    },
+    {
+      "id": "level-008",
+      "name": "LESSON 8",
+      "url": "/games/chips-challenge-100/levels/level-008.json"
+    },
+    {
+      "id": "level-009",
+      "name": "NUTS AND BOLTS",
+      "url": "/games/chips-challenge-100/levels/level-009.json"
+    },
+    {
+      "id": "level-010",
+      "name": "BRUSHFIRE",
+      "url": "/games/chips-challenge-100/levels/level-010.json"
     }
   ],
-  "defaultLevelId": "level-001"
+  "defaultLevelId": "level-008"
 }

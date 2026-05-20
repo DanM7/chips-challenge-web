@@ -47,7 +47,7 @@ Simulation emits generic state; `PlayScene` forwards `run-state` to `MsWindowHud
 ```json
 {
   "timer": { "secondsRemaining": 87 },
-  "chipCounter": { "remaining": 4, "required": 11 },
+  "collectiblesLeftCount": 4
   "inventory": { "key_blue": 1, "flippers": 1 }
 }
 ```

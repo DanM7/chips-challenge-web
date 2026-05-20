@@ -16,7 +16,8 @@
     "bump": "/ms-audio/OOF3.WAV",
     "pop": "/ms-audio/POP2.WAV",
     "water": "/ms-audio/WATER2.WAV",
-    "teleport": "/ms-audio/TELEPORT.WAV"
+    "teleport": "/ms-audio/TELEPORT.WAV",
+    "bummer": "/ms-audio/BUMMER.WAV"
   },
   "meta": {
     "description": "Graphics and audio served from vendor/chips-challenge-ms (gitignored)."
