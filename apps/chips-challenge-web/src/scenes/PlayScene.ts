@@ -265,7 +265,7 @@ export class PlayScene extends Phaser.Scene {
 
         this.manifest.hudLayoutUrl ??
 
-        "/games/chips-challenge-100/ui/ms-window-layout.json";
+        "/games/chips-challenge-1/ui/ms-window-layout.json";
 
       this.windowLayout = await loadMsWindowLayout(layoutUrl);
 
@@ -297,7 +297,7 @@ export class PlayScene extends Phaser.Scene {
 
         assets.images?.[MS_WINDOW_TEXTURE] ??
 
-        "/games/chips-challenge-100/sprites/spritesheet_window.png";
+        "/games/chips-challenge-1/sprites/spritesheet_window.png";
 
 
 
@@ -428,7 +428,7 @@ export class PlayScene extends Phaser.Scene {
   private levelUrlForNumber(levelNum: number): string {
     const sample =
       this.levelsIndex?.levels[0]?.url ??
-      "/games/chips-challenge-100/levels/level-001.json";
+      "/games/chips-challenge-1/levels/level-001.json";
     const dir = sample.replace(/\/[^/]+$/, "");
     return `${dir}/level-${String(levelNum).padStart(3, "0")}.json`;
   }

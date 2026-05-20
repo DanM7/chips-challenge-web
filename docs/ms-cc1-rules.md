@@ -119,7 +119,7 @@ Long term, rows below should compile from **ruleset + content pack** instead of 
 
 ## Content pack ↔ implementation
 
-`apps/chips-challenge-web/public/games/chips-challenge-100/content/ms-cc1.json` (phase 1 subset):
+`apps/chips-challenge-web/public/games/chips-challenge-1/content/ms-cc1.json` (phase 1 subset):
 
 | Tile id | Archetype | Params | Engine status |
 |---------|-----------|--------|----------------|

@@ -22,7 +22,7 @@ export interface DigitsManifest {
   palettes: Record<DigitPalette, DigitPaletteSpec>;
 }
 
-const DIGITS_BASE = "/games/chips-challenge-100/sprites/digits";
+const DIGITS_BASE = "/games/chips-challenge-1/sprites/digits";
 
 export function getDigitTextureKey(ch: string, palette: DigitPalette): string {
   const glyph = ch === "-" ? "dash" : ch;

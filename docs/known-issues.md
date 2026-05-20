@@ -50,7 +50,7 @@ Tests added in `2d-tile-engine`:
 
 ### Level data notes
 
-Exported `public/games/chips-challenge-100/levels/level-005.json` (as of investigation):
+Exported `public/games/chips-challenge-1/levels/level-005.json` (as of investigation):
 
 - `monsters`: pink ball (17, 15), fireball (18, 18), glider list entry (18, 11).
 - **(16, 7)** in JSON: `button_brown` on **upper** layer (MS normally uses lower for buttons); runtime `syncMonsterTilesOnLevel` moves button to lower when a creature occupies the cell.
@@ -112,9 +112,9 @@ Related wiring (kept): `buttonPressCtx.openTraps`, `createMsCc1Monsters` before 
 | Area | Path |
 |------|------|
 | Play scene / rendering | `apps/chips-challenge-web/src/scenes/PlayScene.ts` |
-| Level 5 data | `apps/chips-challenge-web/public/games/chips-challenge-100/levels/level-005.json` |
+| Level 5 data | `apps/chips-challenge-web/public/games/chips-challenge-1/levels/level-005.json` |
 | Tile sheet (generated) | `apps/chips-challenge-web/vendor/chips-challenge-ms/generated/tiles.png` |
-| Asset manifest | `apps/chips-challenge-web/public/games/chips-challenge-100/assets.json` |
+| Asset manifest | `apps/chips-challenge-web/public/games/chips-challenge-1/assets.json` |
 | Traps / parking | `2d-tile-engine/engine/msCc1/msCc1Traps.ts` |
 | Monsters | `2d-tile-engine/engine/msCc1/msCc1Monsters.ts` |
 | Masked compositing | `2d-tile-engine/engine/msMaskedComposite.ts` |

@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import { getAppRoot } from "./cc1Paths.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const levelsDir = path.join(getAppRoot(), "public", "games", "chips-challenge-100", "levels");
+const levelsDir = path.join(getAppRoot(), "public", "games", "chips-challenge-1", "levels");
 const indexPath = path.join(levelsDir, "index.json");
 
 const files = fs
@@ -20,7 +20,7 @@ const levels = files.map((filename) => {
   return {
     id,
     name,
-    url: `/games/chips-challenge-100/levels/${filename}`,
+    url: `/games/chips-challenge-1/levels/${filename}`,
   };
 });
 

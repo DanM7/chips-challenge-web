@@ -62,7 +62,7 @@ export class MsWindowHud {
   async prepareDigits(): Promise<void> {
     const url =
       this.layout.digitsUrl ??
-      "/games/chips-challenge-100/sprites/digits/digits.json";
+      "/games/chips-challenge-1/sprites/digits/digits.json";
     this.digitsManifest = await loadDigitsManifest(url);
     await ensureMsDigitPalettes(this.scene, this.digitsManifest);
   }

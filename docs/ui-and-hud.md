@@ -36,7 +36,7 @@ flowchart LR
 | `hud.timer.initialSeconds` | Time word | **TIME** |
 | `hud.chipCounter.initial` | Chips required | **CHIPS LEFT** (remaining-style) |
 
-Layout metrics (frame crop, viewport, display rects, digit atlas, inventory grid) live in `public/games/chips-challenge-100/ui/ms-window-layout.json`.
+Layout metrics (frame crop, viewport, display rects, digit atlas, inventory grid) live in `public/games/chips-challenge-1/ui/ms-window-layout.json`.
 
 The board draws at **9px per cell** inside a **288×288** viewport (32×32 grid), matching the ripped window art. Tile art still comes from the 32×32 MS sheet, scaled down per cell.
 

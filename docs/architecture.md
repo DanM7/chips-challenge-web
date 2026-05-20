@@ -45,7 +45,7 @@ flowchart TB
   ensure --> EXE
   EXE --> extract
   extract --> GEN
-  DAT --> CLI["dat/cli.ts"]
+  DAT --> CLI["cc1-asset-extraction-pipeline"]
   CLI --> levels
 
   manifest --> main
@@ -79,14 +79,14 @@ flowchart TB
 
 ```
 main.ts
-  ├── loadGameManifest("/games/chips-challenge-100/manifest.json")
+  ├── loadGameManifest("/games/chips-challenge-1/manifest.json")
   ├── GameEventBus          (direction events)
   ├── DirectionInput        (keyboard + d-pad → bus)
   ├── GameEngine.start(manifest, bus, { sceneMap: { Play: PlayScene } })
   └── bindZoomControls(game) → pixelZoom registry + "pixel-zoom-changed"
 ```
 
-`GameEngine` (`src/engine/GameEngine.ts`):
+`GameEngine` (`@engine/GameEngine.ts` via 2d-tile-engine):
 
 - Merges base Phaser config (1024×1080, `FIT`, pixelArt, roundPixels) with `manifest.phaser`
 - Instantiates `Phaser.Game` with parent `#game-container`
@@ -131,12 +131,12 @@ DOM keydown / d-pad click
 
 | Type | Typical URL |
 |------|-------------|
-| `GameManifest` | `/games/chips-challenge-100/manifest.json` |
-| `AssetManifest` | `/games/chips-challenge-100/assets.json` |
-| `LevelsIndex` | `/games/chips-challenge-100/levels/index.json` |
+| `GameManifest` | `/games/chips-challenge-1/manifest.json` |
+| `AssetManifest` | `/games/chips-challenge-1/assets.json` |
+| `LevelsIndex` | `/games/chips-challenge-1/levels/index.json` |
 | `LevelData` | per-level JSON under `levels/` |
 
-Shared TypeScript shapes live in `src/engine/types.ts`.
+Shared TypeScript shapes live in **2d-tile-engine** (`engine/types.ts`).
 
 ## DAT pipeline (levels)
 
@@ -170,7 +170,7 @@ flowchart LR
 | `tiles.ts` | Byte → string id (`wall`, `chip_n`, …), blocking sets |
 | `metadata.ts` | Title, hint, password XOR, etc. |
 | `validate.ts` | Optional consistency checks + warnings |
-| `chipToGameLevel.ts` | `ChipLevel` → `LevelData` (player start, layers, monsters) |
+| `cc1-asset-extraction-pipeline` → `chipToGameLevel.ts` | `ChipLevel` → engine `LevelData` (compact layers); writes into `public/games/chips-challenge-1/` only |
 | `cli.ts` | CLI: single level or `--extract` directory |
 
 **Runtime consumption:** `PlayScene` only sees `LevelData`. It does not parse DAT in the browser.
@@ -219,7 +219,7 @@ At runtime, `PlayScene` loads the sheet as Phaser key `ms_tiles` with 32×32 fra
 
 On `build`, a plugin copies those into `dist/ms-assets` and `dist/ms-audio`.
 
-Committed game content under `public/games/chips-challenge-100/` is served at `/games/chips-challenge-100/...` by Vite’s static file handling.
+Committed game content under `public/games/chips-challenge-1/` is served at `/games/chips-challenge-1/...` by Vite’s static file handling.
 
 ## Build orchestration
 
@@ -228,7 +228,7 @@ Committed game content under `public/games/chips-challenge-100/` is served at `/
 | `predev.mjs` | Before `dev` / `build` | `ensureVendor` → optional `ms:extract` → optional `dat:level1` |
 | `ensureVendor.mjs` | Manual / predev | Unzip `chips_challenge.zip` if present |
 | `extractMsTiles.ts` | `ms:extract` | Regenerate tile PNG |
-| `dat/cli.ts` | `dat:level1`, `dat:all` | DAT → JSON |
+| `cc1-asset-extraction-pipeline` `dat-to-json` | `dat:levels`, `dat:levelN` | DAT → game pack JSON |
 | `buildOriginalLevelReference.mjs` | `data:original-levels` | Passwords / metadata reference JSON |
 
 `npm run dev` therefore often refreshes `level-001.json` and tiles automatically when vendor files exist.
@@ -299,7 +299,7 @@ Vitest runs in Node; vendor files are optional (`it.skipIf` when missing).
 
 | Goal | Likely touch points |
 |------|---------------------|
-| More levels | `dat/cli.ts --extract`, `levels/index.json` |
+| More levels | `npm run dat:levels` in web (pipeline CLI), `levels/index.json` |
 | MS rules (doors, monsters) | New engine module; expand `PlayScene` / replace `levelRuntime` |
 | Masked tile drawing | `PlayScene` compositing; columns 7–12 of tile sheet |
 | Background / audio | Load from `assets.json` audio map; EXE background bitmap |

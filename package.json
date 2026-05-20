@@ -14,7 +14,8 @@
     "dat:level1": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1",
     "dat:level2": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 2",
     "dat:levels": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1 2 3 4 5 6 7 8 9 10",
-    "dat:levels:index": "node apps/chips-challenge-web/scripts/syncLevelsIndex.mjs"
+    "dat:levels:index": "node apps/chips-challenge-web/scripts/syncLevelsIndex.mjs",
+    "levels:compact": "node apps/chips-challenge-web/scripts/compactLevelJson.mjs"
   },
   "dependencies": {
     "@danm7/2d-tile-engine": "file:../2d-tile-engine",

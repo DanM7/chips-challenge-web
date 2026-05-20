@@ -1,12 +1,12 @@
 {
-  "id": "chips-challenge-100",
+  "id": "chips-challenge-1",
   "title": "Chip's Challenge",
   "version": "0.2.0",
   "initialScene": "Play",
-  "assetManifestUrl": "/games/chips-challenge-100/assets.json",
-  "levelsIndexUrl": "/games/chips-challenge-100/levels/index.json",
-  "windowLayoutUrl": "/games/chips-challenge-100/ui/ms-window-layout.json",
-  "originalLevelReferenceUrl": "/games/chips-challenge-100/data/original-level-reference.json",
+  "assetManifestUrl": "/games/chips-challenge-1/assets.json",
+  "levelsIndexUrl": "/games/chips-challenge-1/levels/index.json",
+  "windowLayoutUrl": "/games/chips-challenge-1/ui/ms-window-layout.json",
+  "originalLevelReferenceUrl": "/games/chips-challenge-1/data/original-level-reference.json",
   "msAssets": {
     "tilesUrl": "/ms-assets/tiles.png",
     "tilesMetaUrl": "/ms-assets/tiles.json",

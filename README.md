@@ -6,7 +6,7 @@ Browser client for MS Chip's Challenge: Phaser 3 play window, HUD, and level pla
 
 | Path | Role |
 |------|------|
-| `apps/chips-challenge-web/` | Vite app (`src/`, `public/games/chips-challenge-100/`) |
+| `apps/chips-challenge-web/` | Vite app (`src/`, `public/games/chips-challenge-1/`) |
 | `docs/` | Architecture and HUD notes |
 
 ## Prerequisites
@@ -39,7 +39,7 @@ You do **not** need to copy `CHIPS.DAT` / `CHIPS.EXE` into the repo. Point the t
 
 Levels **1–10** are exported from your `CHIPS.DAT` via `npm run dat:levels` (also runs on `npm run dev` when DAT is configured). Stepping on the **exit** after collecting all chips advances to the next level. Use **Level Select** (gear menu) or `?password=XXXX` to jump to any exported level.
 
-The app **defaults to the level named in** `public/games/chips-challenge-100/levels/index.json` (`defaultLevelId`, currently **level 8** / `NHAG`). Override with `?password=XXXX` (passwords in `public/games/chips-challenge-100/data/original-level-reference.json`), e.g. `?password=BDHP` for level 1.
+The app **defaults to the level named in** `public/games/chips-challenge-1/levels/index.json` (`defaultLevelId`, currently **level 8** / `NHAG`). Override with `?password=XXXX` (passwords in `public/games/chips-challenge-1/data/original-level-reference.json`), e.g. `?password=BDHP` for level 1.
 
 Alternatively set env `CC1_MS_INSTALL=C:\games\Chips_Challenge_1`.
 

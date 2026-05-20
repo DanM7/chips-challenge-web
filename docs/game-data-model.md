@@ -111,7 +111,6 @@ Compiled output for simulation + HUD seed:
     "timer": { "mode": "countDown", "initialSeconds": 100 },
     "chipCounter": { "mode": "remaining", "initial": 11 },
     "collectiblesOnMap": 11,
-    "inventorySlots": ["key_blue", "key_red", "key_green", "key_yellow", "flippers", "fire_boots", "ice_skates", "suction_boots"]
   },
   "entities": [],
   "links": []
@@ -168,7 +167,18 @@ GameHud (DOM)
 
 ## Relation to current `LevelData`
 
-Today's `public/.../levels/level-001.json` still uses `layers.upper[]` with MS tile ids for rendering. Migration:
+Today's `public/.../levels/level-NNN.json` use MS tile ids in **compact** layers (leading `empty` cells omitted):
+
+```json
+"layers": {
+  "lower": { "emptyPrefix": 1024, "tiles": [] },
+  "upper": { "emptyPrefix": 160, "tiles": ["wall", "wall", "..."] }
+}
+```
+
+`loadLevel()` (in **2d-tile-engine**) expands to full `width×height` arrays before play. **cc1-asset-extraction-pipeline** imports the same schema and writes JSON into this game pack; it does not commit levels under the pipeline repo. Inventory slot order is in `ui/ms-window-layout.json` (`inventory.slots`), not per level.
+
+Migration:
 
 1. Add optional `hud` block at compile time (done in `chipToGameLevel` for static fields).
 2. Introduce `EngineLevel` alongside legacy JSON.

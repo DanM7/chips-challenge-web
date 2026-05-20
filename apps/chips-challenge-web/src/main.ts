@@ -15,7 +15,7 @@ import { PlayScene } from "./scenes/PlayScene";
 import { bindAppHeaderMenu } from "./ui/AppHeaderMenu";
 import Phaser from "phaser";
 import { bumpPixelZoom, getPixelZoom } from "@engine/pixelZoom";
-const MANIFEST_URL = "/games/chips-challenge-100/manifest.json";
+const MANIFEST_URL = "/games/chips-challenge-1/manifest.json";
 
 async function bootstrap(): Promise<void> {
   const manifest = await loadGameManifest(MANIFEST_URL);

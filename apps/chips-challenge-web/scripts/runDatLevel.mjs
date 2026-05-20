@@ -25,7 +25,7 @@ if (!fs.existsSync(path.join(pipelineRoot, "package.json"))) {
   process.exit(1);
 }
 
-const levelsDir = path.join(appRoot, "public", "games", "chips-challenge-100", "levels");
+const levelsDir = path.join(appRoot, "public", "games", "chips-challenge-1", "levels");
 
 for (const levelNum of levels) {
   const output = path.join(levelsDir, `level-${String(levelNum).padStart(3, "0")}.json`);

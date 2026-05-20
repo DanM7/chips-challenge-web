@@ -11,3 +11,6 @@ _zip_preview/
 
 # Generated from proprietary assets (reproducible via npm run ms:extract)
 output/
+
+# Renamed to chips-challenge-1; delete local leftover if this path reappears
+apps/chips-challenge-web/public/games/chips-challenge-100/
