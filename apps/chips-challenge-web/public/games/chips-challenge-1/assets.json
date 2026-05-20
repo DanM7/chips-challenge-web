@@ -4,22 +4,22 @@
   },
   "spritesheets": {
     "ms_tiles": {
-      "url": "/ms-assets/tiles.png",
+      "url": "/games/chips-challenge-1/sprites/ms-tiles.png",
       "frameWidth": 32,
       "frameHeight": 32
     }
   },
   "tilemaps": {},
   "audio": {
-    "blip": "/ms-audio/BLIP2.WAV",
-    "door": "/ms-audio/DOOR.WAV",
-    "bump": "/ms-audio/OOF3.WAV",
-    "pop": "/ms-audio/POP2.WAV",
-    "water": "/ms-audio/WATER2.WAV",
-    "teleport": "/ms-audio/TELEPORT.WAV",
-    "bummer": "/ms-audio/BUMMER.WAV"
+    "blip": "/games/chips-challenge-1/audio/BLIP2.WAV",
+    "door": "/games/chips-challenge-1/audio/DOOR.WAV",
+    "bump": "/games/chips-challenge-1/audio/OOF3.WAV",
+    "pop": "/games/chips-challenge-1/audio/POP2.WAV",
+    "water": "/games/chips-challenge-1/audio/WATER2.WAV",
+    "teleport": "/games/chips-challenge-1/audio/TELEPORT.WAV",
+    "bummer": "/games/chips-challenge-1/audio/BUMMER.WAV"
   },
   "meta": {
-    "description": "Dev: /ms-assets from vendor. Production build: public/ms-assets → dist (npm run deploy:assets)."
+    "description": "MS tile sheet and SFX live in the game pack (sync via npm run sync:ms-pack after ms:extract)."
   }
 }

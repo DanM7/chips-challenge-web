@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node apps/chips-challenge-web/scripts/predev.mjs && vite --config apps/chips-challenge-web/vite.config.ts",
-    "build": "npm run deploy:assets && tsc --noEmit -p apps/chips-challenge-web/tsconfig.json && vite build --config apps/chips-challenge-web/vite.config.ts",
-    "deploy:assets": "node apps/chips-challenge-web/scripts/copyMsDeployAssets.mjs",
+    "build": "tsc --noEmit -p apps/chips-challenge-web/tsconfig.json && vite build --config apps/chips-challenge-web/vite.config.ts",
+    "sync:ms-pack": "node apps/chips-challenge-web/scripts/syncMsPackAssets.mjs",
     "preview": "vite preview --config apps/chips-challenge-web/vite.config.ts",
     "preview:lan": "vite preview --config apps/chips-challenge-web/vite.config.ts --host",
     "dev:lan": "node apps/chips-challenge-web/scripts/predev.mjs && vite --config apps/chips-challenge-web/vite.config.ts --host",
@@ -21,7 +21,7 @@
     "levels:compact": "npx tsx apps/chips-challenge-web/scripts/compactLevelJson.ts"
   },
   "dependencies": {
-    "@danm7/2d-tile-engine": "file:../2d-tile-engine",
+    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#d59a26a",
     "phaser": "^3.80.1"
   },
   "devDependencies": {

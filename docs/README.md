@@ -18,6 +18,7 @@ Chip's Challenge web port — architecture and cleanup for portfolio readers and
 |----------|----------|
 | [status/cleanup.md](./status/cleanup.md) | Phased cleanup plan (A–D) and verification checklist |
 | [status/mobile-readiness.md](./status/mobile-readiness.md) | Deploy-on-phone gaps (after Phase A manual test) |
+| [deployment.md](./deployment.md) | Netlify, GitHub engine dep, `sync:ms-pack`, committed tiles |
 
 ## Repo root
 

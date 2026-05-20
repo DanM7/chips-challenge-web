@@ -84,7 +84,7 @@ See [architecture.md](../architecture.md) for data flow. Mobile deployment gaps 
 
 | Task | Status | Notes |
 |------|--------|-------|
-| `deploy:assets` + Vite bundle → `dist/ms-assets` | **done** | `copyMsDeployAssets.mjs`, `closeBundle` backup |
+| MS tiles in game pack + `sync:ms-pack` | **done** | `syncMsPackAssets.mjs`; no build-time copy |
 | Preview/dev LAN (`preview:lan`, `dev:lan`) | **done** | `preview.host: true` |
 | Touch D-pad + swipe | **done** | CSS + `DirectionInput.bindSwipe` |
 | `manifest.webmanifest` | **done** | Add to home screen |

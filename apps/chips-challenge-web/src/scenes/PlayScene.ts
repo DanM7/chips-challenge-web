@@ -47,7 +47,7 @@ import {
   MS_WINDOW_TEXTURE,
   type MsWindowLayout,
 } from "../ui/msWindowLayout";
-import { GAME_PACK_BASE } from "../config/gamePack";
+import { GAME_PACK_BASE, MS_TILES_PNG_URL } from "../config/gamePack";
 import { MS_TILES_KEY } from "./play/constants";
 import { createPlayBoardView } from "./play/boardState";
 import { PlayBoardPresenter } from "./play/PlayBoardPresenter";
@@ -215,7 +215,7 @@ export class PlayScene extends Phaser.Scene {
 
       const sheet = assets.spritesheets?.[MS_TILES_KEY];
 
-      const tilesUrl = sheet?.url ?? this.manifest.msAssets?.tilesUrl ?? "/ms-assets/tiles.png";
+      const tilesUrl = sheet?.url ?? this.manifest.msAssets?.tilesUrl ?? MS_TILES_PNG_URL;
 
       const windowUrl =
 

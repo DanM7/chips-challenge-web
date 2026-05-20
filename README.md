@@ -11,12 +11,12 @@ Browser client for MS Chip's Challenge: Phaser 3 play window, HUD, and level pla
 
 ## Prerequisites
 
-Clone sibling repos next to this one:
+Optional sibling clones for DAT extraction and engine hacking:
 
 ```text
 DanM7/
-  2d-tile-engine/
-  chips-challenge-web/    ← this repo
+  2d-tile-engine/              ← optional; web installs engine from GitHub by default
+  chips-challenge-web/         ← this repo
   cc1-asset-extraction-pipeline/
 ```
 
@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Uses the sibling **2d-tile-engine** repo via `file:../2d-tile-engine`. Level JSON and sprites ship under `public/`.
+Uses **[@danm7/2d-tile-engine](https://github.com/danm7/2d-tile-engine)** via a pinned GitHub dependency (`package.json`). Level JSON and sprites ship under `public/`. **Publishing:** [docs/deployment.md](docs/deployment.md).
 
 ### Licensed MS game files (your install folder)
 
@@ -54,11 +54,12 @@ The built app is self-contained (no DAT on the server):
 
 ```bash
 npm run ms:extract   # once locally
-npm run build        # copies tiles into dist/ via deploy:assets
+npm run sync:ms-pack # copy tiles into game pack; commit ms-tiles.*
+npm run build
 npm run preview:lan  # open http://<your-pc-ip>:4173 on your phone
 ```
 
-Deploy the contents of `apps/chips-challenge-web/dist/` to any static host. See [docs/status/mobile-readiness.md](docs/status/mobile-readiness.md).
+Deploy the contents of `apps/chips-challenge-web/dist/` to any static host. See [docs/deployment.md](docs/deployment.md).
 
 On phones: D-pad + swipe on the playfield. Desktop: keyboard (WASD / arrows).
 

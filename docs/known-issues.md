@@ -103,7 +103,7 @@ Related wiring (kept): `buttonPressCtx.openTraps`, `createMsCc1Monsters` before 
 - **Camera viewport** — Board camera follows Chip (~20, 19); glider at (16, 7) is off-screen until the upper room is entered. User reported checking the puzzle area; still worth confirming they were at (16, 7) and not only (18, 7).
 - **Parking not applied in browser** — e.g. stale bundle, wrong level file from `dist/` vs `public/`, or level load without `trapLinks`. Engine tests use `public/.../level-005.json` and pass.
 - **Phaser canvas texture upload** — `uploadChipCanvasTexture` falls back to `MS_TILES_KEY` if canvas creation fails; could mis-bind textures (would likely affect other composites too).
-- **Wrong tile sheet at runtime** — `assets.json` loads `/ms-assets/tiles.png` from `vendor/chips-challenge-ms/generated/` (see `scripts/cc1Paths.mjs`). If extract wasn’t run, game shows an error; ball/fire imply tiles load.
+- **Wrong tile sheet at runtime** — `assets.json` loads `/games/chips-challenge-1/sprites/ms-tiles.png` (committed via `npm run sync:ms-pack` after `ms:extract`). Dev falls back to vendor; production needs committed pack tiles.
 - **Z-order / `cellSprites` hidden** — composite path hides floor cell sprite; if overlay missing, cell looks like empty floor or button only.
 - **Level export** — `button_brown` on upper at (16, 7) in JSON; if parking failed, cell might show only a brown dot with no creature.
 
