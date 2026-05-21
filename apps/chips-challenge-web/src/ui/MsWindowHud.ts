@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import type { LevelData, RunState } from "@engine/types.js";
+import type { LevelData, RunState } from "@engine/types";
 import { MsSevenSegment } from "./MsSevenSegment.js";
 import type { DigitsManifest } from "./msDigits.js";
 import { ensureMsDigitPalettes, loadDigitsManifest } from "./msDigits.js";

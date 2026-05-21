@@ -1,4 +1,4 @@
-import type { MsLevelScoreBreakdown } from "@engine/msCc1/msCc1Scoring.js";
+import type { MsLevelScoreBreakdown } from "@engine/msCc1/msCc1Scoring";
 
 export interface MsLevelCompleteDialogOptions {
   showTimeRecordMessage?: boolean;

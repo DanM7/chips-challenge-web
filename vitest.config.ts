@@ -1,7 +1,9 @@
 import path from "path";
 import { defineConfig } from "vitest/config";
 
-const ENGINE_ROOT = path.resolve(__dirname, "../2d-tile-engine");
+import { getEngineRoot } from "./apps/chips-challenge-web/scripts/engineRoot.mjs";
+
+const ENGINE_ROOT = getEngineRoot();
 const APP_ROOT = path.resolve(__dirname, "apps/chips-challenge-web");
 
 export default defineConfig({

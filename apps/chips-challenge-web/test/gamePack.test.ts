@@ -43,6 +43,20 @@ describe("chips-challenge-1 game pack", () => {
     expect(Array.isArray(level.layers.upper.tiles)).toBe(true);
   });
 
+  it("assets.json points at game-pack MS tiles and audio", () => {
+    const assets = readJson<{
+      spritesheets: { ms_tiles: { url: string; frameWidth: number } };
+      audio: Record<string, string>;
+    }>("assets.json");
+    expect(assets.spritesheets.ms_tiles.url).toBe(
+      "/games/chips-challenge-1/sprites/ms-tiles.png",
+    );
+    expect(assets.spritesheets.ms_tiles.frameWidth).toBe(32);
+    expect(assets.audio.blip).toMatch(
+      /^\/games\/chips-challenge-1\/audio\/[A-Z0-9_]+\.WAV$/,
+    );
+  });
+
   it("ruleset and content pack documents align", () => {
     const ruleset = readJson<{ id: string }>("rulesets/grid-arcade-v1.json");
     const pack = readJson<{ ruleset: string; tiles: Record<string, unknown> }>(

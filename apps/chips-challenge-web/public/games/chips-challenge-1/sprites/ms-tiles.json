@@ -1,0 +1,9 @@
+{
+  "source": "CHIPS.EXE@0xD800",
+  "decoder": "bmp-js RLE4 + BGR→RGBA",
+  "tileSize": 32,
+  "columns": 13,
+  "rows": 16,
+  "sheetWidth": 416,
+  "sheetHeight": 512
+}

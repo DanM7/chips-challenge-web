@@ -51,10 +51,10 @@ flowchart TB
   manifest --> main
   assets --> main
   levels --> main
-  GEN --> vite["Vite /ms-assets"]
-  WAV --> vite2["Vite /ms-audio"]
-  vite --> engine
-  vite2 --> engine
+  GEN --> pack["public/games/.../sprites/ms-tiles.png"]
+  WAV --> pack2["public/games/.../audio/"]
+  pack --> engine
+  pack2 --> engine
   main --> engine
   engine --> phaser
   html --> main
@@ -103,7 +103,7 @@ main.ts
    - `loadLevelsIndex` → `levels/index.json`
    - `loadLevel` → e.g. `level-001.json`
    - `buildMsFrameIndexByTileId()` → map tile string id → spritesheet frame index
-   - Loads `ms_tiles` spritesheet from `/ms-assets/tiles.png` (via manifest / assets)
+   - Loads `ms_tiles` spritesheet from game pack `/games/chips-challenge-1/sprites/ms-tiles.png` (via manifest / assets)
 4. `buildPlayfield()`:
    - Places one sprite per cell (composite upper/lower tile, skip chip cells)
    - Chip sprite on `playerStart`
@@ -205,16 +205,11 @@ At runtime, `PlayScene` loads the sheet as Phaser key `ms_tiles` with 32×32 fra
 
 ## Vite and static assets
 
-`vite.config.ts` bridges gitignored vendor files to URLs the game can load:
+MS tiles and SFX ship inside the game pack under `public/games/chips-challenge-1/` (`sprites/ms-tiles.png`, `audio/*.WAV`). Vite serves them at `/games/chips-challenge-1/...`.
 
-| URL prefix | Filesystem | Purpose |
-|------------|------------|---------|
-| `/ms-assets/*` | `vendor/.../generated/` | `tiles.png`, `tiles.json` |
-| `/ms-audio/*` | `vendor/chips-challenge-ms/` | `*.WAV`, `*.MID` |
+`vite.config.ts` dev/preview middleware falls back to gitignored `vendor/.../generated/tiles.png` (and install WAVs) when committed pack files are missing — **production builds have no fallback**.
 
-On `build`, a plugin copies those into `dist/ms-assets` and `dist/ms-audio`.
-
-Committed game content under `public/games/chips-challenge-1/` is served at `/games/chips-challenge-1/...` by Vite’s static file handling.
+Populate the pack with `npm run sync:ms-pack` after `ms:extract`, then commit.
 
 ## Build orchestration
 
@@ -237,7 +232,7 @@ manifest.json
   ├── initialScene: "Play"
   ├── assetManifestUrl → assets.json (spritesheet keys, audio paths)
   ├── levelsIndexUrl → levels/index.json
-  ├── msAssets.tilesUrl → /ms-assets/tiles.png
+  ├── msAssets.tilesUrl → /games/chips-challenge-1/sprites/ms-tiles.png
   └── phaser.scale → merged into GameEngine
 
 levels/index.json

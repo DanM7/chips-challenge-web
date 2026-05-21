@@ -8,8 +8,8 @@
   "windowLayoutUrl": "/games/chips-challenge-1/ui/ms-window-layout.json",
   "originalLevelReferenceUrl": "/games/chips-challenge-1/data/original-level-reference.json",
   "msAssets": {
-    "tilesUrl": "/ms-assets/tiles.png",
-    "tilesMetaUrl": "/ms-assets/tiles.json",
+    "tilesUrl": "/games/chips-challenge-1/sprites/ms-tiles.png",
+    "tilesMetaUrl": "/games/chips-challenge-1/sprites/ms-tiles.json",
     "datPath": "vendor/chips-challenge-ms/CHIPS.DAT"
   },
   "phaser": {
