@@ -13,6 +13,7 @@ import {
 } from "@engine/levelPassword";
 import { PlayScene } from "./scenes/PlayScene";
 import { bindAppHeaderMenu } from "./ui/AppHeaderMenu";
+import { createTouchControls } from "./ui/touchControls";
 import Phaser from "phaser";
 import { bumpPixelZoom, getPixelZoom } from "@engine/pixelZoom";
 import { MANIFEST_URL } from "./config/gamePack";
@@ -32,11 +33,6 @@ async function bootstrap(): Promise<void> {
 
   const bus = new GameEventBus();
   const input = new DirectionInput(bus);
-
-  const dpad = document.querySelector<HTMLElement>(".dpad");
-  if (dpad) {
-    input.bindDpad(dpad);
-  }
 
   const gameContainer = document.getElementById("game-container");
   if (gameContainer) {
@@ -60,7 +56,24 @@ async function bootstrap(): Promise<void> {
     },
   );
 
-  bindAppHeaderMenu(game);
+  const playRow = document.getElementById("play-row");
+  const touchControlsEl = document.getElementById("touch-controls");
+  const dpad = document.querySelector<HTMLElement>(".dpad");
+  const joystickBase = document.getElementById("joystick-base");
+  const joystickKnob = document.getElementById("joystick-knob");
+
+  const touchControls =
+    playRow && touchControlsEl && dpad && joystickBase && joystickKnob
+      ? createTouchControls(input, bus, game, {
+          playRow,
+          touchControls: touchControlsEl,
+          dpad,
+          joystickBase,
+          joystickKnob,
+        })
+      : null;
+
+  bindAppHeaderMenu(game, { touchControls: touchControls ?? undefined });
 
   const zoomControls = document.querySelector(".zoom-controls:not(.u-hidden)");
   if (zoomControls && !zoomControls.hasAttribute("hidden")) {

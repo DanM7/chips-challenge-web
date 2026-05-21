@@ -1,11 +1,17 @@
 import type Phaser from "phaser";
+import { isTouchControlMode, type TouchControlMode } from "./controlMode";
+import type { TouchControlsHandle } from "./touchControls";
 
 const MIN_LEVEL = 1;
 const MAX_LEVEL = 150;
 const GO_TO_LEVEL_EVENT = "go-to-level";
 
+export interface AppHeaderMenuOptions {
+  touchControls?: TouchControlsHandle;
+}
+
 /** Gear menu, dropdown sections, and level-select modal in the app header. */
-export function bindAppHeaderMenu(game: Phaser.Game): void {
+export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptions = {}): void {
   const trigger = document.getElementById("app-menu-trigger");
   const dropdown = document.getElementById("app-menu-dropdown");
   const levelSelectOpen = document.getElementById("level-select-open");
@@ -76,6 +82,31 @@ export function bindAppHeaderMenu(game: Phaser.Game): void {
   levelSelectOpen.addEventListener("click", () => {
     openLevelModal();
   });
+
+  const controlRadios = Array.from(
+    dropdown.querySelectorAll<HTMLButtonElement>("[data-control-mode]"),
+  );
+
+  const syncControlRadios = (active: TouchControlMode): void => {
+    for (const btn of controlRadios) {
+      const mode = btn.getAttribute("data-control-mode");
+      const checked = mode === active;
+      btn.setAttribute("aria-checked", checked ? "true" : "false");
+    }
+  };
+
+  if (options.touchControls && controlRadios.length > 0) {
+    syncControlRadios(options.touchControls.getMode());
+    for (const btn of controlRadios) {
+      btn.addEventListener("click", () => {
+        const raw = btn.getAttribute("data-control-mode");
+        if (!raw || !isTouchControlMode(raw)) return;
+        options.touchControls!.setMode(raw);
+        syncControlRadios(raw);
+        closeDropdown();
+      });
+    }
+  }
 
   goBtn.addEventListener("click", () => {
     submitLevel();
