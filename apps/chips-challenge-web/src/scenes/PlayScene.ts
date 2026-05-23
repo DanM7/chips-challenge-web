@@ -2,10 +2,11 @@
 import type { Direction, GameManifest, LevelData, LevelsIndex } from "@engine/types";
 import type { DirectionInput } from "@engine/DirectionInput";
 import type { GameEventBus } from "@engine/GameEventBus";
+import { forceFloorDirection } from "@engine/msCc1/msCc1Sliding";
 import {
-  forceFloorDirection,
+  directionInputIsActive,
   getForceFloorTileAt,
-} from "@engine/msCc1/msCc1Sliding";
+} from "../engine/msCc1Compat";
 import {
   loadAssetManifest,
   loadLevel,
@@ -781,7 +782,7 @@ export class PlayScene extends Phaser.Scene {
     const input = this.game.registry.get("directionInput") as
       | DirectionInput
       | undefined;
-    if (input?.hasActiveDirection()) {
+    if (directionInputIsActive(input)) {
       return;
     }
     if (!this.level || this.inputLocked) {
