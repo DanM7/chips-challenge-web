@@ -21,10 +21,7 @@ import { MANIFEST_URL } from "./config/gamePack";
 async function bootstrap(): Promise<void> {
   const manifest = await loadGameManifest(MANIFEST_URL);
 
-  const titleEl = document.querySelector<HTMLElement>(".app-title");
-  if (titleEl) {
-    titleEl.textContent = manifest.title;
-  }
+  document.title = "Chip's Challenge Web - CC1";
 
   const levelsIndex = manifest.levelsIndexUrl
     ? await loadLevelsIndex(manifest.levelsIndexUrl)
@@ -55,6 +52,7 @@ async function bootstrap(): Promise<void> {
       },
     },
   );
+  game.registry.set("directionInput", input);
 
   const playRow = document.getElementById("play-row");
   const touchControlsEl = document.getElementById("touch-controls");

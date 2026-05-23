@@ -8,9 +8,34 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const appRoot = getAppRoot();
 const pipelineRoot = path.resolve(appRoot, "../../../cc1-asset-extraction-pipeline");
 
-const levels = process.argv.slice(2).map((n) => Number(n)).filter((n) => n >= 1);
+/** Parse args like `1`, `41-149`, `1-149` into sorted unique level numbers. */
+function parseLevelArgs(argv) {
+  const out = new Set();
+  for (const arg of argv) {
+    const range = /^(\d+)-(\d+)$/.exec(arg);
+    if (range) {
+      const start = Number(range[1]);
+      const end = Number(range[2]);
+      if (!Number.isFinite(start) || !Number.isFinite(end) || start < 1 || end < start) {
+        console.error(`Invalid range: ${arg}`);
+        process.exit(1);
+      }
+      for (let n = start; n <= end; n++) {
+        out.add(n);
+      }
+      continue;
+    }
+    const n = Number(arg);
+    if (Number.isFinite(n) && n >= 1) {
+      out.add(n);
+    }
+  }
+  return [...out].sort((a, b) => a - b);
+}
+
+const levels = parseLevelArgs(process.argv.slice(2));
 if (levels.length === 0) {
-  console.error("Usage: node runDatLevel.mjs <levelNumber> [levelNumber...]");
+  console.error("Usage: node runDatLevel.mjs <n> [m] [start-end] …  (e.g. 41-149 or 1-149)");
   process.exit(1);
 }
 

@@ -37,7 +37,7 @@ You do **not** need to copy `CHIPS.DAT` / `CHIPS.EXE` into the repo. Point the t
 2. Set `installPath` with **forward slashes** (e.g. `C:/games/Chips_Challenge_1`). Backslashes in JSON must be doubled (`\\`).
 3. From the repo root, run `npm run ms:extract` once (or restart `npm run dev` — it runs extract when tiles are missing). After editing `spritesheet_window.png`, run `npm run ms:digits` to refresh HUD digit PNGs, then hard-refresh the browser.
 
-Levels **1–10** are exported from your `CHIPS.DAT` via `npm run dat:levels` (also runs on `npm run dev` when DAT is configured). Stepping on the **exit** after collecting all chips advances to the next level. Use **Level Select** (gear menu) or `?password=XXXX` to jump to any exported level.
+Levels **1–149** are exported from your `CHIPS.DAT` via `npm run dat:levels` (also runs on `npm run dev` when DAT is configured). Stepping on the **exit** after collecting all chips advances to the next level. Use **Level Select** (gear menu) or `?password=XXXX` to jump to any exported level.
 
 The app **defaults to the level named in** `public/games/chips-challenge-1/levels/index.json` (`defaultLevelId`, currently **level 8** / `NHAG`). Override with `?password=XXXX` (passwords in `public/games/chips-challenge-1/data/original-level-reference.json`), e.g. `?password=BDHP` for level 1.
 

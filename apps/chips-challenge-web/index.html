@@ -14,6 +14,371 @@
   </head>
   <body>
     <div id="app">
+      <div
+        class="settings-panel"
+        id="settings-panel"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="settings-panel-title"
+      >
+        <div class="settings-panel__window">
+          <header class="settings-panel__titlebar">
+            <h2 class="settings-panel__title" id="settings-panel-title">Settings</h2>
+            <button
+              type="button"
+              class="settings-panel__close"
+              id="settings-panel-close"
+              aria-label="Close settings"
+            >
+              ×
+            </button>
+          </header>
+          <div class="settings-panel__body">
+            <nav class="settings-panel__nav" aria-label="Settings sections">
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="game"
+                aria-current="page"
+              >
+                Game
+              </button>
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="alignment"
+              >
+                Alignment
+              </button>
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="buttons"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="sound"
+              >
+                Sound
+              </button>
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="about"
+              >
+                About
+              </button>
+            </nav>
+            <div class="settings-panel__content">
+              <section
+                class="settings-panel__page"
+                id="settings-page-game"
+                data-settings-page="game"
+                aria-label="Game"
+              >
+                <h3 class="settings-panel__page-title">Game</h3>
+                <p class="settings-panel__group-label">Current Game</p>
+                <button type="button" class="settings-action" id="new-game-open" role="menuitem">
+                  New Game
+                </button>
+                <button type="button" class="settings-action" id="level-select-open" role="menuitem">
+                  Level Select
+                </button>
+                <p class="settings-panel__group-label">Game Select</p>
+                <div class="settings-group" role="group" aria-label="Game Select">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-game-select="cc1-win95"
+                    aria-checked="true"
+                  >
+                    Chip's Challenge 1 (Windows 95)
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-game-select="cc2-2015"
+                    aria-checked="false"
+                  >
+                    Chip's Challenge 2 (2015)
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-game-select="level-pack-1"
+                    aria-checked="false"
+                  >
+                    Chip's Challenge Level Pack 1
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-game-select="level-pack-2"
+                    aria-checked="false"
+                  >
+                    Chip's Challenge Level Pack 2
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-game-select="level-pack-3"
+                    aria-checked="false"
+                  >
+                    Chip's Challenge Level Pack 3
+                  </button>
+                </div>
+              </section>
+              <section
+                class="settings-panel__page"
+                id="settings-page-alignment"
+                data-settings-page="alignment"
+                aria-label="Alignment"
+                hidden
+              >
+                <h3 class="settings-panel__page-title">Alignment</h3>
+                <p class="settings-panel__hint">Direction pad position on screen</p>
+                <div class="settings-group" role="group" aria-label="Direction pad alignment">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-control-mode="arrows-right"
+                    aria-checked="true"
+                  >
+                    Direction Arrows on Right
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-control-mode="arrows-left"
+                    aria-checked="false"
+                  >
+                    Direction Arrows on Left
+                  </button>
+                </div>
+              </section>
+              <section
+                class="settings-panel__page"
+                id="settings-page-buttons"
+                data-settings-page="buttons"
+                aria-label="Buttons"
+                hidden
+              >
+                <h3 class="settings-panel__page-title">Buttons</h3>
+                <p class="settings-panel__group-label">Button Size</p>
+                <div class="settings-group" role="group" aria-label="Button Size">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-size="small"
+                    aria-checked="false"
+                  >
+                    Small
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-size="medium"
+                    aria-checked="true"
+                  >
+                    Medium
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-size="large"
+                    aria-checked="false"
+                  >
+                    Large
+                  </button>
+                </div>
+                <p class="settings-panel__group-label">Button Spacing</p>
+                <div class="settings-group" role="group" aria-label="Button Spacing">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-spacing="small"
+                    aria-checked="false"
+                  >
+                    Small
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-spacing="medium"
+                    aria-checked="true"
+                  >
+                    Medium
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-dpad-spacing="large"
+                    aria-checked="false"
+                  >
+                    Large
+                  </button>
+                </div>
+              </section>
+              <section
+                class="settings-panel__page"
+                id="settings-page-sound"
+                data-settings-page="sound"
+                aria-label="Sound"
+                hidden
+              >
+                <h3 class="settings-panel__page-title">Sound</h3>
+                <p class="settings-panel__group-label">Music</p>
+                <div class="settings-group" role="group" aria-label="Music">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-music-enabled="on"
+                    aria-checked="true"
+                  >
+                    On
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-music-enabled="off"
+                    aria-checked="false"
+                  >
+                    Off
+                  </button>
+                </div>
+                <p class="settings-panel__group-label">Sound Effects</p>
+                <div class="settings-group" role="group" aria-label="Sound Effects">
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-sound-effects-enabled="on"
+                    aria-checked="true"
+                  >
+                    On
+                  </button>
+                  <button
+                    type="button"
+                    class="settings-option settings-option--radio"
+                    role="menuitemradio"
+                    data-sound-effects-enabled="off"
+                    aria-checked="false"
+                  >
+                    Off
+                  </button>
+                </div>
+              </section>
+              <section
+                class="settings-panel__page"
+                id="settings-page-about"
+                data-settings-page="about"
+                aria-label="About"
+                hidden
+              >
+                <h3 class="settings-panel__page-title">About</h3>
+                <div class="settings-panel__block">
+                  <h4 class="settings-panel__group-label">Summary</h4>
+                  <p class="settings-panel__text">
+                    Chip’s Challenge was the first game I ever truly got addicted to, played endlessly on
+                    my dad’s old Windows 95 PC. Something about its puzzles, its rhythm, and its strange
+                    little world just clicked with 8-year-old me in a way no other game had. Rebuilding it
+                    now feels like reconnecting with the spark that first pulled me into software.
+                  </p>
+                </div>
+                <div class="settings-panel__block">
+                  <h4 class="settings-panel__group-label">External Links</h4>
+                  <a
+                    class="settings-option settings-option--link"
+                    href="https://dan-maguire.com/projects/chips-challenge-web"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    My Implementation (my portfolio website)
+                  </a>
+                  <a
+                    class="settings-option settings-option--link"
+                    href="https://github.com/DanM7/chips-challenge-web/blob/main/docs/known-issues.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Known Issues (GitHub)
+                  </a>
+                  <a
+                    class="settings-option settings-option--link"
+                    href="https://en.wikipedia.org/wiki/Chip%27s_Challenge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Chip's Challenge (Wikipedia)
+                  </a>
+                  <a
+                    class="settings-option settings-option--link"
+                    href="https://bitbusters.club/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Bit Busters Club
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="level-select-overlay"
+        id="new-game-confirm-modal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="new-game-confirm-title"
+      >
+        <div class="level-select-dialog">
+          <h2 class="level-select-dialog__title" id="new-game-confirm-title">Are You Sure?</h2>
+          <div class="level-select-actions">
+            <button type="button" class="level-select-btn" id="new-game-confirm-no">No</button>
+            <button type="button" class="level-select-btn level-select-btn--primary" id="new-game-confirm-yes">
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="level-select-overlay"
+        id="coming-soon-modal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="coming-soon-title"
+      >
+        <div class="level-select-dialog">
+          <h2 class="level-select-dialog__title" id="coming-soon-title">Coming Soon</h2>
+          <div class="level-select-actions level-select-actions--single">
+            <button type="button" class="level-select-btn level-select-btn--primary" id="coming-soon-ok">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="level-select-overlay" id="level-select-modal" hidden role="dialog" aria-modal="true" aria-labelledby="level-select-title">
         <div class="level-select-dialog">
           <h2 class="level-select-dialog__title" id="level-select-title">Level Select</h2>
@@ -49,7 +414,10 @@
           </div>
           <aside class="control-rail" id="control-rail" aria-label="Settings and movement controls">
             <header class="app-header">
-              <h1 class="app-title">Chip's Challenge</h1>
+              <h1 class="app-title">
+                <span class="app-title__mobile">CC1</span>
+                <span class="app-title__desktop">Chip's Challenge: Web Edition - Chip's Challenge 1</span>
+              </h1>
               <div class="app-header-actions">
                 <div class="app-menu">
                   <button
@@ -57,9 +425,9 @@
                     class="app-menu-trigger"
                     id="app-menu-trigger"
                     aria-label="Settings"
-                    aria-haspopup="menu"
+                    aria-haspopup="dialog"
                     aria-expanded="false"
-                    aria-controls="app-menu-dropdown"
+                    aria-controls="settings-panel"
                   >
                     <svg class="app-menu-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                       <path
@@ -68,73 +436,30 @@
                       />
                     </svg>
                   </button>
-                  <div class="app-menu-dropdown" id="app-menu-dropdown" role="menu" hidden>
-                    <section class="app-menu-section" aria-label="Game">
-                      <p class="app-menu-section-title">Game</p>
-                      <button type="button" class="app-menu-item" id="level-select-open" role="menuitem">
-                        Level Select
-                      </button>
-                    </section>
-                    <section class="app-menu-section" aria-label="Controls">
-                      <p class="app-menu-section-title">Controls</p>
-                      <p class="app-menu-subsection-title">Input</p>
-                      <button
-                        type="button"
-                        class="app-menu-item app-menu-item--radio"
-                        role="menuitemradio"
-                        data-control-mode="arrows-right"
-                        aria-checked="true"
-                      >
-                        Direction Arrows on Right
-                      </button>
-                      <button
-                        type="button"
-                        class="app-menu-item app-menu-item--radio"
-                        role="menuitemradio"
-                        data-control-mode="arrows-left"
-                        aria-checked="false"
-                      >
-                        Direction Arrows on Left
-                      </button>
-                      <button
-                        type="button"
-                        class="app-menu-item app-menu-item--radio"
-                        role="menuitemradio"
-                        data-control-mode="joystick-right"
-                        aria-checked="false"
-                      >
-                        Joystick on Right
-                      </button>
-                      <button
-                        type="button"
-                        class="app-menu-item app-menu-item--radio"
-                        role="menuitemradio"
-                        data-control-mode="joystick-left"
-                        aria-checked="false"
-                      >
-                        Joystick on Left
-                      </button>
-                    </section>
-                  </div>
                 </div>
               </div>
             </header>
             <div class="touch-controls" id="touch-controls" aria-label="Movement controls" hidden>
+            <div class="touch-input-area">
             <nav class="dpad" aria-label="Direction pad">
-              <div class="dpad-spacer"></div>
-              <button type="button" class="dpad-btn" data-dir="up" aria-label="Move up">↑</button>
-              <div class="dpad-spacer"></div>
-              <button type="button" class="dpad-btn" data-dir="left" aria-label="Move left">←</button>
-              <div class="dpad-spacer dpad-center"></div>
-              <button type="button" class="dpad-btn" data-dir="right" aria-label="Move right">→</button>
-              <div class="dpad-spacer"></div>
-              <button type="button" class="dpad-btn" data-dir="down" aria-label="Move down">↓</button>
-              <div class="dpad-spacer"></div>
+              <button type="button" class="dpad-btn" data-dir="up" aria-label="Move up">
+                <img class="dpad-btn__icon" src="/ui/dpad/up.svg" alt="" width="48" height="48" draggable="false" decoding="async" />
+              </button>
+              <button type="button" class="dpad-btn" data-dir="left" aria-label="Move left">
+                <img class="dpad-btn__icon" src="/ui/dpad/left.svg" alt="" width="48" height="48" draggable="false" decoding="async" />
+              </button>
+              <button type="button" class="dpad-btn" data-dir="right" aria-label="Move right">
+                <img class="dpad-btn__icon" src="/ui/dpad/right.svg" alt="" width="48" height="48" draggable="false" decoding="async" />
+              </button>
+              <button type="button" class="dpad-btn" data-dir="down" aria-label="Move down">
+                <img class="dpad-btn__icon" src="/ui/dpad/down.svg" alt="" width="48" height="48" draggable="false" decoding="async" />
+              </button>
             </nav>
             <div class="joystick" aria-label="Joystick" hidden>
               <div class="joystick-base" id="joystick-base">
                 <div class="joystick-knob" id="joystick-knob"></div>
               </div>
+            </div>
             </div>
             </div>
           </aside>

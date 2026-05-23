@@ -10,8 +10,14 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@engine/*": ["../../node_modules/@danm7/2d-tile-engine/engine/*"],
-      "@tile-engine/*": ["../../node_modules/@danm7/2d-tile-engine/tile-engine/*"]
+      "@engine/*": [
+        "../../../2d-tile-engine/engine/*",
+        "../../node_modules/@danm7/2d-tile-engine/engine/*"
+      ],
+      "@tile-engine/*": [
+        "../../../2d-tile-engine/tile-engine/*",
+        "../../node_modules/@danm7/2d-tile-engine/tile-engine/*"
+      ]
     }
   },
   "include": ["src/**/*.ts"],
