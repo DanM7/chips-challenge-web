@@ -10,6 +10,7 @@ Chip's Challenge web port — architecture and cleanup for portfolio readers and
 | [game-data-model.md](./game-data-model.md) | Ruleset, content pack, level JSON (target architecture) |
 | [ms-cc1-rules.md](./ms-cc1-rules.md) | MS CC1 behavior checklist, smoke tests, gap detection |
 | [ui-and-hud.md](./ui-and-hud.md) | MS window HUD layout and run state binding |
+| [mobile-landscape-touch-layout.md](./mobile-landscape-touch-layout.md) | Landscape D-pad / input pane layout postmortem (positioning bug) |
 | [known-issues.md](./known-issues.md) | Open gameplay and UX gaps |
 
 ## Status and roadmap

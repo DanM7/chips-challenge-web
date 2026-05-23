@@ -49,6 +49,701 @@
       "id": "level-010",
       "name": "BRUSHFIRE",
       "url": "/games/chips-challenge-1/levels/level-010.json"
+    },
+    {
+      "id": "level-011",
+      "name": "TRINITY",
+      "url": "/games/chips-challenge-1/levels/level-011.json"
+    },
+    {
+      "id": "level-012",
+      "name": "HUNT",
+      "url": "/games/chips-challenge-1/levels/level-012.json"
+    },
+    {
+      "id": "level-013",
+      "name": "SOUTHPOLE",
+      "url": "/games/chips-challenge-1/levels/level-013.json"
+    },
+    {
+      "id": "level-014",
+      "name": "TELEBLOCK",
+      "url": "/games/chips-challenge-1/levels/level-014.json"
+    },
+    {
+      "id": "level-015",
+      "name": "ELEMENTARY",
+      "url": "/games/chips-challenge-1/levels/level-015.json"
+    },
+    {
+      "id": "level-016",
+      "name": "CELLBLOCKED",
+      "url": "/games/chips-challenge-1/levels/level-016.json"
+    },
+    {
+      "id": "level-017",
+      "name": "NICE DAY",
+      "url": "/games/chips-challenge-1/levels/level-017.json"
+    },
+    {
+      "id": "level-018",
+      "name": "CASTLE MOAT",
+      "url": "/games/chips-challenge-1/levels/level-018.json"
+    },
+    {
+      "id": "level-019",
+      "name": "DIGGER",
+      "url": "/games/chips-challenge-1/levels/level-019.json"
+    },
+    {
+      "id": "level-020",
+      "name": "TOSSED SALAD",
+      "url": "/games/chips-challenge-1/levels/level-020.json"
+    },
+    {
+      "id": "level-021",
+      "name": "ICEBERG",
+      "url": "/games/chips-challenge-1/levels/level-021.json"
+    },
+    {
+      "id": "level-022",
+      "name": "FORCED ENTRY",
+      "url": "/games/chips-challenge-1/levels/level-022.json"
+    },
+    {
+      "id": "level-023",
+      "name": "BLOBNET",
+      "url": "/games/chips-challenge-1/levels/level-023.json"
+    },
+    {
+      "id": "level-024",
+      "name": "OORTO GELD",
+      "url": "/games/chips-challenge-1/levels/level-024.json"
+    },
+    {
+      "id": "level-025",
+      "name": "BLINK",
+      "url": "/games/chips-challenge-1/levels/level-025.json"
+    },
+    {
+      "id": "level-026",
+      "name": "CHCHCHIPS",
+      "url": "/games/chips-challenge-1/levels/level-026.json"
+    },
+    {
+      "id": "level-027",
+      "name": "GO WITH THE FLOW",
+      "url": "/games/chips-challenge-1/levels/level-027.json"
+    },
+    {
+      "id": "level-028",
+      "name": "PING PONG",
+      "url": "/games/chips-challenge-1/levels/level-028.json"
+    },
+    {
+      "id": "level-029",
+      "name": "ARCTICFLOW",
+      "url": "/games/chips-challenge-1/levels/level-029.json"
+    },
+    {
+      "id": "level-030",
+      "name": "MISHMESH",
+      "url": "/games/chips-challenge-1/levels/level-030.json"
+    },
+    {
+      "id": "level-031",
+      "name": "KNOT",
+      "url": "/games/chips-challenge-1/levels/level-031.json"
+    },
+    {
+      "id": "level-032",
+      "name": "SCAVENGER HUNT",
+      "url": "/games/chips-challenge-1/levels/level-032.json"
+    },
+    {
+      "id": "level-033",
+      "name": "ON THE ROCKS",
+      "url": "/games/chips-challenge-1/levels/level-033.json"
+    },
+    {
+      "id": "level-034",
+      "name": "CYPHER",
+      "url": "/games/chips-challenge-1/levels/level-034.json"
+    },
+    {
+      "id": "level-035",
+      "name": "LEMMINGS",
+      "url": "/games/chips-challenge-1/levels/level-035.json"
+    },
+    {
+      "id": "level-036",
+      "name": "LADDER",
+      "url": "/games/chips-challenge-1/levels/level-036.json"
+    },
+    {
+      "id": "level-037",
+      "name": "SEEING STARS",
+      "url": "/games/chips-challenge-1/levels/level-037.json"
+    },
+    {
+      "id": "level-038",
+      "name": "SAMPLER",
+      "url": "/games/chips-challenge-1/levels/level-038.json"
+    },
+    {
+      "id": "level-039",
+      "name": "GLUT",
+      "url": "/games/chips-challenge-1/levels/level-039.json"
+    },
+    {
+      "id": "level-040",
+      "name": "FLOORGASBORG",
+      "url": "/games/chips-challenge-1/levels/level-040.json"
+    },
+    {
+      "id": "level-041",
+      "name": "I.C. YOU",
+      "url": "/games/chips-challenge-1/levels/level-041.json"
+    },
+    {
+      "id": "level-042",
+      "name": "BEWARE OF BUG",
+      "url": "/games/chips-challenge-1/levels/level-042.json"
+    },
+    {
+      "id": "level-043",
+      "name": "LOCK BLOCK",
+      "url": "/games/chips-challenge-1/levels/level-043.json"
+    },
+    {
+      "id": "level-044",
+      "name": "REFRACTION",
+      "url": "/games/chips-challenge-1/levels/level-044.json"
+    },
+    {
+      "id": "level-045",
+      "name": "MONSTER LAB",
+      "url": "/games/chips-challenge-1/levels/level-045.json"
+    },
+    {
+      "id": "level-046",
+      "name": "THREE DOORS",
+      "url": "/games/chips-challenge-1/levels/level-046.json"
+    },
+    {
+      "id": "level-047",
+      "name": "PIER SEVEN",
+      "url": "/games/chips-challenge-1/levels/level-047.json"
+    },
+    {
+      "id": "level-048",
+      "name": "MUGGER SQUARE",
+      "url": "/games/chips-challenge-1/levels/level-048.json"
+    },
+    {
+      "id": "level-049",
+      "name": "PROBLEMS",
+      "url": "/games/chips-challenge-1/levels/level-049.json"
+    },
+    {
+      "id": "level-050",
+      "name": "DIGDIRT",
+      "url": "/games/chips-challenge-1/levels/level-050.json"
+    },
+    {
+      "id": "level-051",
+      "name": "I SLIDE",
+      "url": "/games/chips-challenge-1/levels/level-051.json"
+    },
+    {
+      "id": "level-052",
+      "name": "THE LAST LAUGH",
+      "url": "/games/chips-challenge-1/levels/level-052.json"
+    },
+    {
+      "id": "level-053",
+      "name": "TRAFFIC COP",
+      "url": "/games/chips-challenge-1/levels/level-053.json"
+    },
+    {
+      "id": "level-054",
+      "name": "GRAIL",
+      "url": "/games/chips-challenge-1/levels/level-054.json"
+    },
+    {
+      "id": "level-055",
+      "name": "POTPOURRI",
+      "url": "/games/chips-challenge-1/levels/level-055.json"
+    },
+    {
+      "id": "level-056",
+      "name": "DEEPFREEZE",
+      "url": "/games/chips-challenge-1/levels/level-056.json"
+    },
+    {
+      "id": "level-057",
+      "name": "STRANGE MAZE",
+      "url": "/games/chips-challenge-1/levels/level-057.json"
+    },
+    {
+      "id": "level-058",
+      "name": "LOOP AROUND",
+      "url": "/games/chips-challenge-1/levels/level-058.json"
+    },
+    {
+      "id": "level-059",
+      "name": "HIDDEN DANGER",
+      "url": "/games/chips-challenge-1/levels/level-059.json"
+    },
+    {
+      "id": "level-060",
+      "name": "SCOUNDREL",
+      "url": "/games/chips-challenge-1/levels/level-060.json"
+    },
+    {
+      "id": "level-061",
+      "name": "RINK",
+      "url": "/games/chips-challenge-1/levels/level-061.json"
+    },
+    {
+      "id": "level-062",
+      "name": "SLO MO",
+      "url": "/games/chips-challenge-1/levels/level-062.json"
+    },
+    {
+      "id": "level-063",
+      "name": "BLOCK FACTORY",
+      "url": "/games/chips-challenge-1/levels/level-063.json"
+    },
+    {
+      "id": "level-064",
+      "name": "SPOOKS",
+      "url": "/games/chips-challenge-1/levels/level-064.json"
+    },
+    {
+      "id": "level-065",
+      "name": "AMSTERDAM",
+      "url": "/games/chips-challenge-1/levels/level-065.json"
+    },
+    {
+      "id": "level-066",
+      "name": "VICTIM",
+      "url": "/games/chips-challenge-1/levels/level-066.json"
+    },
+    {
+      "id": "level-067",
+      "name": "CHIPMINE",
+      "url": "/games/chips-challenge-1/levels/level-067.json"
+    },
+    {
+      "id": "level-068",
+      "name": "EENY MINY MOE",
+      "url": "/games/chips-challenge-1/levels/level-068.json"
+    },
+    {
+      "id": "level-069",
+      "name": "BOUNCE CITY",
+      "url": "/games/chips-challenge-1/levels/level-069.json"
+    },
+    {
+      "id": "level-070",
+      "name": "NIGHTMARE",
+      "url": "/games/chips-challenge-1/levels/level-070.json"
+    },
+    {
+      "id": "level-071",
+      "name": "CORRIDOR",
+      "url": "/games/chips-challenge-1/levels/level-071.json"
+    },
+    {
+      "id": "level-072",
+      "name": "REVERSE ALLEY",
+      "url": "/games/chips-challenge-1/levels/level-072.json"
+    },
+    {
+      "id": "level-073",
+      "name": "MORTON",
+      "url": "/games/chips-challenge-1/levels/level-073.json"
+    },
+    {
+      "id": "level-074",
+      "name": "PLAYTIME",
+      "url": "/games/chips-challenge-1/levels/level-074.json"
+    },
+    {
+      "id": "level-075",
+      "name": "STEAM",
+      "url": "/games/chips-challenge-1/levels/level-075.json"
+    },
+    {
+      "id": "level-076",
+      "name": "FOUR PLEX",
+      "url": "/games/chips-challenge-1/levels/level-076.json"
+    },
+    {
+      "id": "level-077",
+      "name": "INVINCIBLE CHAMPION",
+      "url": "/games/chips-challenge-1/levels/level-077.json"
+    },
+    {
+      "id": "level-078",
+      "name": "FORCE SQUARE",
+      "url": "/games/chips-challenge-1/levels/level-078.json"
+    },
+    {
+      "id": "level-079",
+      "name": "DRAWN AND QUARTERED",
+      "url": "/games/chips-challenge-1/levels/level-079.json"
+    },
+    {
+      "id": "level-080",
+      "name": "VANISHING ACT",
+      "url": "/games/chips-challenge-1/levels/level-080.json"
+    },
+    {
+      "id": "level-081",
+      "name": "WRITERS BLOCK",
+      "url": "/games/chips-challenge-1/levels/level-081.json"
+    },
+    {
+      "id": "level-082",
+      "name": "SOCIALIST ACTION",
+      "url": "/games/chips-challenge-1/levels/level-082.json"
+    },
+    {
+      "id": "level-083",
+      "name": "UP THE BLOCK",
+      "url": "/games/chips-challenge-1/levels/level-083.json"
+    },
+    {
+      "id": "level-084",
+      "name": "WARS",
+      "url": "/games/chips-challenge-1/levels/level-084.json"
+    },
+    {
+      "id": "level-085",
+      "name": "TELENET",
+      "url": "/games/chips-challenge-1/levels/level-085.json"
+    },
+    {
+      "id": "level-086",
+      "name": "SUICIDE",
+      "url": "/games/chips-challenge-1/levels/level-086.json"
+    },
+    {
+      "id": "level-087",
+      "name": "CITYBLOCK",
+      "url": "/games/chips-challenge-1/levels/level-087.json"
+    },
+    {
+      "id": "level-088",
+      "name": "SPIRALS",
+      "url": "/games/chips-challenge-1/levels/level-088.json"
+    },
+    {
+      "id": "level-089",
+      "name": "BLOCK BUSTER",
+      "url": "/games/chips-challenge-1/levels/level-089.json"
+    },
+    {
+      "id": "level-090",
+      "name": "PLAYHOUSE",
+      "url": "/games/chips-challenge-1/levels/level-090.json"
+    },
+    {
+      "id": "level-091",
+      "name": "JUMPING SWARM",
+      "url": "/games/chips-challenge-1/levels/level-091.json"
+    },
+    {
+      "id": "level-092",
+      "name": "VORTEX",
+      "url": "/games/chips-challenge-1/levels/level-092.json"
+    },
+    {
+      "id": "level-093",
+      "name": "ROADSIGN",
+      "url": "/games/chips-challenge-1/levels/level-093.json"
+    },
+    {
+      "id": "level-094",
+      "name": "NOW YOU SEE IT",
+      "url": "/games/chips-challenge-1/levels/level-094.json"
+    },
+    {
+      "id": "level-095",
+      "name": "FOUR SQUARE",
+      "url": "/games/chips-challenge-1/levels/level-095.json"
+    },
+    {
+      "id": "level-096",
+      "name": "PARANOIA",
+      "url": "/games/chips-challenge-1/levels/level-096.json"
+    },
+    {
+      "id": "level-097",
+      "name": "METASTABLE TO CHAOS",
+      "url": "/games/chips-challenge-1/levels/level-097.json"
+    },
+    {
+      "id": "level-098",
+      "name": "SHRINKING",
+      "url": "/games/chips-challenge-1/levels/level-098.json"
+    },
+    {
+      "id": "level-099",
+      "name": "CATACOMBS",
+      "url": "/games/chips-challenge-1/levels/level-099.json"
+    },
+    {
+      "id": "level-100",
+      "name": "COLONY",
+      "url": "/games/chips-challenge-1/levels/level-100.json"
+    },
+    {
+      "id": "level-101",
+      "name": "APARTMENT",
+      "url": "/games/chips-challenge-1/levels/level-101.json"
+    },
+    {
+      "id": "level-102",
+      "name": "ICEHOUSE",
+      "url": "/games/chips-challenge-1/levels/level-102.json"
+    },
+    {
+      "id": "level-103",
+      "name": "MEMORY",
+      "url": "/games/chips-challenge-1/levels/level-103.json"
+    },
+    {
+      "id": "level-104",
+      "name": "JAILER",
+      "url": "/games/chips-challenge-1/levels/level-104.json"
+    },
+    {
+      "id": "level-105",
+      "name": "SHORT CIRCUIT",
+      "url": "/games/chips-challenge-1/levels/level-105.json"
+    },
+    {
+      "id": "level-106",
+      "name": "KABLAM",
+      "url": "/games/chips-challenge-1/levels/level-106.json"
+    },
+    {
+      "id": "level-107",
+      "name": "BALLS O FIRE",
+      "url": "/games/chips-challenge-1/levels/level-107.json"
+    },
+    {
+      "id": "level-108",
+      "name": "BLOCK OUT",
+      "url": "/games/chips-challenge-1/levels/level-108.json"
+    },
+    {
+      "id": "level-109",
+      "name": "TORTURECHAMBER",
+      "url": "/games/chips-challenge-1/levels/level-109.json"
+    },
+    {
+      "id": "level-110",
+      "name": "CHILLER",
+      "url": "/games/chips-challenge-1/levels/level-110.json"
+    },
+    {
+      "id": "level-111",
+      "name": "TIME LAPSE",
+      "url": "/games/chips-challenge-1/levels/level-111.json"
+    },
+    {
+      "id": "level-112",
+      "name": "FORTUNE FAVOURS THE",
+      "url": "/games/chips-challenge-1/levels/level-112.json"
+    },
+    {
+      "id": "level-113",
+      "name": "OPEN QUESTION",
+      "url": "/games/chips-challenge-1/levels/level-113.json"
+    },
+    {
+      "id": "level-114",
+      "name": "DECEPTION",
+      "url": "/games/chips-challenge-1/levels/level-114.json"
+    },
+    {
+      "id": "level-115",
+      "name": "OVERSEA DELIVERY",
+      "url": "/games/chips-challenge-1/levels/level-115.json"
+    },
+    {
+      "id": "level-116",
+      "name": "BLOCK BUSTER II",
+      "url": "/games/chips-challenge-1/levels/level-116.json"
+    },
+    {
+      "id": "level-117",
+      "name": "THE MARSH",
+      "url": "/games/chips-challenge-1/levels/level-117.json"
+    },
+    {
+      "id": "level-118",
+      "name": "MISS DIRECTION",
+      "url": "/games/chips-challenge-1/levels/level-118.json"
+    },
+    {
+      "id": "level-119",
+      "name": "SLIDE STEP",
+      "url": "/games/chips-challenge-1/levels/level-119.json"
+    },
+    {
+      "id": "level-120",
+      "name": "ALPHABET SOUP",
+      "url": "/games/chips-challenge-1/levels/level-120.json"
+    },
+    {
+      "id": "level-121",
+      "name": "PERFECT MATCH",
+      "url": "/games/chips-challenge-1/levels/level-121.json"
+    },
+    {
+      "id": "level-122",
+      "name": "TOTALLY FAIR",
+      "url": "/games/chips-challenge-1/levels/level-122.json"
+    },
+    {
+      "id": "level-123",
+      "name": "THE PRISONER",
+      "url": "/games/chips-challenge-1/levels/level-123.json"
+    },
+    {
+      "id": "level-124",
+      "name": "FIRETRAP",
+      "url": "/games/chips-challenge-1/levels/level-124.json"
+    },
+    {
+      "id": "level-125",
+      "name": "MIXED NUTS",
+      "url": "/games/chips-challenge-1/levels/level-125.json"
+    },
+    {
+      "id": "level-126",
+      "name": "BLOCK N ROLL",
+      "url": "/games/chips-challenge-1/levels/level-126.json"
+    },
+    {
+      "id": "level-127",
+      "name": "SKELZIE",
+      "url": "/games/chips-challenge-1/levels/level-127.json"
+    },
+    {
+      "id": "level-128",
+      "name": "ALL FULL",
+      "url": "/games/chips-challenge-1/levels/level-128.json"
+    },
+    {
+      "id": "level-129",
+      "name": "LOBSTER TRAP",
+      "url": "/games/chips-challenge-1/levels/level-129.json"
+    },
+    {
+      "id": "level-130",
+      "name": "ICE CUBE",
+      "url": "/games/chips-challenge-1/levels/level-130.json"
+    },
+    {
+      "id": "level-131",
+      "name": "TOTALLY UNFAIR",
+      "url": "/games/chips-challenge-1/levels/level-131.json"
+    },
+    {
+      "id": "level-132",
+      "name": "MIX UP",
+      "url": "/games/chips-challenge-1/levels/level-132.json"
+    },
+    {
+      "id": "level-133",
+      "name": "BLOBDANCE",
+      "url": "/games/chips-challenge-1/levels/level-133.json"
+    },
+    {
+      "id": "level-134",
+      "name": "PAIN",
+      "url": "/games/chips-challenge-1/levels/level-134.json"
+    },
+    {
+      "id": "level-135",
+      "name": "TRUST ME",
+      "url": "/games/chips-challenge-1/levels/level-135.json"
+    },
+    {
+      "id": "level-136",
+      "name": "DOUBLEMAZE",
+      "url": "/games/chips-challenge-1/levels/level-136.json"
+    },
+    {
+      "id": "level-137",
+      "name": "GOLDKEY",
+      "url": "/games/chips-challenge-1/levels/level-137.json"
+    },
+    {
+      "id": "level-138",
+      "name": "PARTIAL POST",
+      "url": "/games/chips-challenge-1/levels/level-138.json"
+    },
+    {
+      "id": "level-139",
+      "name": "YORKHOUSE",
+      "url": "/games/chips-challenge-1/levels/level-139.json"
+    },
+    {
+      "id": "level-140",
+      "name": "ICEDEATH",
+      "url": "/games/chips-challenge-1/levels/level-140.json"
+    },
+    {
+      "id": "level-141",
+      "name": "UNDERGROUND",
+      "url": "/games/chips-challenge-1/levels/level-141.json"
+    },
+    {
+      "id": "level-142",
+      "name": "PENTAGRAM",
+      "url": "/games/chips-challenge-1/levels/level-142.json"
+    },
+    {
+      "id": "level-143",
+      "name": "STRIPES?",
+      "url": "/games/chips-challenge-1/levels/level-143.json"
+    },
+    {
+      "id": "level-144",
+      "name": "FIREFLIES",
+      "url": "/games/chips-challenge-1/levels/level-144.json"
+    },
+    {
+      "id": "level-145",
+      "name": "Thanks to...",
+      "url": "/games/chips-challenge-1/levels/level-145.json"
+    },
+    {
+      "id": "level-146",
+      "name": "CAKE WALK",
+      "url": "/games/chips-challenge-1/levels/level-146.json"
+    },
+    {
+      "id": "level-147",
+      "name": "FORCE FIELD",
+      "url": "/games/chips-challenge-1/levels/level-147.json"
+    },
+    {
+      "id": "level-148",
+      "name": "MIND BLOCK",
+      "url": "/games/chips-challenge-1/levels/level-148.json"
+    },
+    {
+      "id": "level-149",
+      "name": "SPECIAL",
+      "url": "/games/chips-challenge-1/levels/level-149.json"
     }
   ],
   "defaultLevelId": "level-001"

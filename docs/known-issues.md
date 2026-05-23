@@ -4,6 +4,90 @@ Active bugs and investigation notes for the chips-challenge-web prototype. Remov
 
 ---
 
+## Resolved
+
+### Mobile landscape: input pane split / D-pad misaligned
+
+**Status:** Resolved (May 2026)  
+**Severity:** Touch UX — landscape controls column  
+**Repos:** `chips-challenge-web` (`apps/chips-challenge-web`)
+
+#### Symptom (was)
+
+- Below the blue header, the black “input pane” looked **split down the middle** (black left, controls right).
+- D-pad arrows had uneven spacing; left arrow often far from the play window, right arrow against the screen edge.
+- Many CSS passes (flex centering, grid, `touch-input-area` `left:0; right:0` on `.touch-controls`) did not fix it.
+
+#### Root cause
+
+The header band and the input pane used **different positioning contexts**. The header is `position: absolute` on `#play-row` with `left` / `width` from `game-container` rects in `mobileHeaderBand.ts`. The input pane was anchored to `.touch-controls` (`position: relative`), so it did not share the same horizontal band as the header.
+
+A separate contributor: `.play-stage` centered the game canvas, leaving black dead space between the canvas and the control column (`justify-content: flex-end` / `flex-start` when controls are on the left).
+
+#### Fix
+
+- `updateMobileHeaderBand()` sets `--control-band-left` and `--control-band-width` on `#play-row` (same values as the header).
+- Landscape `.touch-input-area` uses those variables; landscape `.touch-controls` is **not** a positioning context.
+- D-pad: `position: absolute; inset: 0` with 10px padding and explicit grid areas per direction.
+
+#### Full write-up
+
+See [mobile-landscape-touch-layout.md](./mobile-landscape-touch-layout.md) (postmortem, wrong hypotheses, debugging checklist).
+
+| Area | Path |
+|------|------|
+| Band metrics (JS) | `apps/chips-challenge-web/src/ui/mobileHeaderBand.ts` |
+| Touch layout / observer | `apps/chips-challenge-web/src/ui/touchControls.ts` |
+| CSS | `apps/chips-challenge-web/src/style.css` |
+
+---
+
+### Layout bounds: use `#game-container`, not play-stage or control-rail
+
+**Status:** Resolved (May 2026)  
+**Severity:** Touch UX — settings panel width, header/input alignment (related)  
+**Repos:** `chips-challenge-web` (`apps/chips-challenge-web`)
+
+#### Symptom (was)
+
+- VS-style settings panel ended ~**15px from the input pane’s midpoint**, not 15px from the edge of the play window / input boundary.
+- Same class of mistake as the landscape “split pane” work: layout looked like it should use the black column or flex `play-stage`, but visually wrong by ~half a column.
+
+#### Root cause
+
+Three different horizontal boxes were treated as interchangeable:
+
+| Element | What it is | Common mistake |
+|---------|------------|----------------|
+| `#game-container` | Phaser canvas — **actual play window** | Skipped; use this for edges |
+| `.play-stage` | Flex area around the canvas | Used for “game view”; includes letterbox dead space |
+| `.control-rail` | Full settings + input **column** | Used for “input pane”; wider than the touch band |
+
+The touch input band and header band are sized from **`game-container` getBoundingClientRect()** in `mobileHeaderBand.ts`. The settings panel initially used `.play-stage` and `.control-rail.left`, which do not match that edge — so the panel stopped near the **middle** of the visible input region instead of at the canvas edge.
+
+#### Fix
+
+- `settingsPanelLayout.ts` positions the settings overlay from **`#game-container`** rects (15px inset), same horizontal line as the header band.
+- Landscape (controls on right): `right = gameRect.right - 15px`. Portrait: `bottom` capped at `control-rail.top - 15px` (input strip below the canvas).
+
+#### Rule for future work
+
+When something must align with the **play window** or sit **15px from the input pane**, measure **`#game-container`**, not `.play-stage` or `.control-rail`. Only use the rail for vertical limits when the input strip is **below** the game (portrait).
+
+#### Full write-up
+
+See [mobile-landscape-touch-layout.md](./mobile-landscape-touch-layout.md) — sections *Root cause*, *Settings panel placement*, and *Debugging checklist*.
+
+| Area | Path |
+|------|------|
+| Settings panel bounds | `apps/chips-challenge-web/src/ui/settingsPanelLayout.ts` |
+| Header / input band metrics | `apps/chips-challenge-web/src/ui/mobileHeaderBand.ts` |
+| Settings UI | `apps/chips-challenge-web/src/ui/AppHeaderMenu.ts`, `index.html` (`#settings-panel`) |
+
+---
+
+## Open
+
 ## Lesson 5 (TQKB): glider not visible on the board
 
 **Status:** Open (paused March 2026)  

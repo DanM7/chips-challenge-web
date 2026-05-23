@@ -16,12 +16,12 @@
     "ms:digits": "node apps/chips-challenge-web/scripts/runMsDigits.mjs",
     "dat:level1": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1",
     "dat:level2": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 2",
-    "dat:levels": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1 2 3 4 5 6 7 8 9 10",
+    "dat:levels": "node apps/chips-challenge-web/scripts/runDatLevel.mjs 1-149",
     "dat:levels:index": "node apps/chips-challenge-web/scripts/syncLevelsIndex.mjs",
     "levels:compact": "npx tsx apps/chips-challenge-web/scripts/compactLevelJson.ts"
   },
   "dependencies": {
-    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#d59a26a",
+    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#e3a0e61",
     "phaser": "^3.80.1"
   },
   "devDependencies": {

@@ -51,6 +51,17 @@ export function prefersTouchLayout(): boolean {
   return window.matchMedia("(hover: none), (pointer: coarse), (max-width: 720px)").matches;
 }
 
+/** Portrait: game on top, controls underneath (landscape uses side column). */
+export function isPortraitViewport(): boolean {
+  if (typeof window.matchMedia !== "function") {
+    return window.innerHeight >= window.innerWidth;
+  }
+  return (
+    window.matchMedia("(orientation: portrait)").matches ||
+    window.matchMedia("(max-aspect-ratio: 1/1)").matches
+  );
+}
+
 export function isJoystickMode(mode: TouchControlMode): boolean {
   return mode === "joystick-right" || mode === "joystick-left";
 }

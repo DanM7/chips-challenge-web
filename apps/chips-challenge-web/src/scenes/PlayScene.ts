@@ -1,6 +1,12 @@
 ﻿import Phaser from "phaser";
 import type { Direction, GameManifest, LevelData, LevelsIndex } from "@engine/types";
+import type { DirectionInput } from "@engine/DirectionInput";
 import type { GameEventBus } from "@engine/GameEventBus";
+import { forceFloorDirection } from "@engine/msCc1/msCc1Sliding";
+import {
+  directionInputIsActive,
+  getForceFloorTileAt,
+} from "../engine/msCc1Compat";
 import {
   loadAssetManifest,
   loadLevel,
@@ -48,6 +54,7 @@ import {
   type MsWindowLayout,
 } from "../ui/msWindowLayout";
 import { GAME_PACK_BASE, MS_TILES_PNG_URL } from "../config/gamePack";
+import { areSoundEffectsEnabled } from "../ui/soundPreferences";
 import { MS_TILES_KEY } from "./play/constants";
 import { createPlayBoardView } from "./play/boardState";
 import { PlayBoardPresenter } from "./play/PlayBoardPresenter";
@@ -725,6 +732,7 @@ export class PlayScene extends Phaser.Scene {
     // One tile: snap like MS voluntary step (responsive floor walking).
     if (movedSteps.length <= 1) {
       this.applyChipMoveResult(result, direction);
+      await this.continueForceFloorWithoutInput();
       return;
     }
 
@@ -766,6 +774,29 @@ export class PlayScene extends Phaser.Scene {
     this.board.setChipFrameForDirection(result.direction, result.state);
     this.board.refreshCellUnderChip(result.state.tools);
     this.followBoardCameraToChip();
+    await this.continueForceFloorWithoutInput();
+  }
+
+  /** MS: force floors keep pushing after perpendicular input is released. */
+  private async continueForceFloorWithoutInput(): Promise<void> {
+    const input = this.game.registry.get("directionInput") as
+      | DirectionInput
+      | undefined;
+    if (directionInputIsActive(input)) {
+      return;
+    }
+    if (!this.level || this.inputLocked) {
+      return;
+    }
+    const forceTile = getForceFloorTileAt(this.level, this.playerGx, this.playerGy);
+    if (!forceTile) {
+      return;
+    }
+    const autoDir = forceFloorDirection(forceTile);
+    if (!autoDir) {
+      return;
+    }
+    await this.performChipMove(autoDir);
   }
 
   private applyChipMoveResult(result: MsCc1MoveResult, direction: Direction): void {
@@ -992,7 +1023,7 @@ export class PlayScene extends Phaser.Scene {
   }
 
   private playMsSound(key: string, url?: string): Promise<void> {
-    if (!url) return Promise.resolve();
+    if (!url || !areSoundEffectsEnabled()) return Promise.resolve();
     return new Promise((resolve) => {
       if (!this.cache.audio.exists(key)) {
         this.load.audio(key, url);
