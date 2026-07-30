@@ -1,0 +1,12 @@
+{
+  "levelId": "level-084",
+  "passwordMs": "UVEO",
+  "title": "Wars",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 580,
+  "minChipMoves": 20,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/84/ms",
+  "moveSource": "CC1-ms TWS records (UVEO); pending engine verify",
+  "moveVerified": false
+}

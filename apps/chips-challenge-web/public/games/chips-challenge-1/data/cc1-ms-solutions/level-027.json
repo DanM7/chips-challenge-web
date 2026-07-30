@@ -1,0 +1,12 @@
+{
+  "levelId": "level-027",
+  "passwordMs": "IGGZ",
+  "title": "Go with the Flow",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 147,
+  "minChipMoves": 53,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/27/ms",
+  "moveSource": "CC1-ms TWS records (IGGZ); pending engine verify",
+  "moveVerified": false
+}

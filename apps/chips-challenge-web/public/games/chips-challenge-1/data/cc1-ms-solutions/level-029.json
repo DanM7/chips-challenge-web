@@ -1,0 +1,12 @@
+{
+  "levelId": "level-029",
+  "passwordMs": "QGOL",
+  "title": "Arcticflow",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 302,
+  "minChipMoves": 98,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/29/ms",
+  "moveSource": "CC1-ms TWS records (QGOL); pending engine verify",
+  "moveVerified": false
+}

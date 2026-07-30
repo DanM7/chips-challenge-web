@@ -1,0 +1,12 @@
+{
+  "levelId": "level-041",
+  "passwordMs": "GKWD",
+  "title": "I.C. You",
+  "timeLimitSeconds": 250,
+  "boldTimeRemaining": 172,
+  "minChipMoves": 78,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/41/ms",
+  "moveSource": "CC1-ms TWS records (GKWD); pending engine verify",
+  "moveVerified": false
+}

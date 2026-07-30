@@ -1,0 +1,12 @@
+{
+  "levelId": "level-088",
+  "passwordMs": "WZYV",
+  "title": "Spirals",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 317,
+  "minChipMoves": 83,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/88/ms",
+  "moveSource": "CC1-ms TWS records (WZYV); pending engine verify",
+  "moveVerified": false
+}

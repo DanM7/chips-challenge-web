@@ -1,0 +1,12 @@
+{
+  "levelId": "level-042",
+  "passwordMs": "LMFU",
+  "title": "Beware of Bug",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 187,
+  "minChipMoves": 113,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/42/ms",
+  "moveSource": "CC1-ms TWS records (LMFU); pending engine verify",
+  "moveVerified": false
+}

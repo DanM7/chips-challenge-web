@@ -1,0 +1,12 @@
+{
+  "levelId": "level-073",
+  "passwordMs": "QCCR",
+  "title": "Morton",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 485,
+  "minChipMoves": 115,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/73/ms",
+  "moveSource": "CC1-ms TWS records (QCCR); pending engine verify",
+  "moveVerified": false
+}

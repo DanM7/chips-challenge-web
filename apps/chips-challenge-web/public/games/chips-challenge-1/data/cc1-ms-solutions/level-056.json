@@ -1,0 +1,12 @@
+{
+  "levelId": "level-056",
+  "passwordMs": "FCJE",
+  "title": "Deepfreeze",
+  "timeLimitSeconds": 250,
+  "boldTimeRemaining": 162,
+  "minChipMoves": 88,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/56/ms",
+  "moveSource": "CC1-ms TWS records (FCJE); pending engine verify",
+  "moveVerified": false
+}

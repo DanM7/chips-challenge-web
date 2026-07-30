@@ -1,0 +1,12 @@
+{
+  "levelId": "level-058",
+  "passwordMs": "YBLT",
+  "title": "Loop Around",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 550,
+  "minChipMoves": 50,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/58/ms",
+  "moveSource": "CC1-ms TWS records (YBLT); pending engine verify",
+  "moveVerified": false
+}

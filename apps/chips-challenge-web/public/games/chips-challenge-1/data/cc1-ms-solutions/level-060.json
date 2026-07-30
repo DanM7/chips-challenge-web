@@ -1,0 +1,12 @@
+{
+  "levelId": "level-060",
+  "passwordMs": "ZYVI",
+  "title": "Scoundrel",
+  "timeLimitSeconds": 294,
+  "boldTimeRemaining": 288,
+  "minChipMoves": 6,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/60/ms",
+  "moveSource": "CC1-ms TWS records (ZYVI); pending engine verify",
+  "moveVerified": false
+}

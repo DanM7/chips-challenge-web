@@ -1,0 +1,12 @@
+{
+  "levelId": "level-110",
+  "passwordMs": "XBAO",
+  "title": "Chiller",
+  "timeLimitSeconds": 399,
+  "boldTimeRemaining": 276,
+  "minChipMoves": 123,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/110/ms",
+  "moveSource": "CC1-ms TWS records (XBAO); pending engine verify",
+  "moveVerified": false
+}

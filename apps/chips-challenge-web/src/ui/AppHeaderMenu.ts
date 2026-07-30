@@ -15,6 +15,7 @@ import {
   saveSelectedGameId,
   type GameSelectId,
 } from "./gameSelect";
+import { bindDebugPanel } from "./debugPanel";
 import { updateSettingsPanelLayout } from "./settingsPanelLayout";
 import type { TouchControlsHandle } from "./touchControls";
 import { playBummerSfx } from "./uiSfx";
@@ -22,8 +23,10 @@ import { playBummerSfx } from "./uiSfx";
 const MIN_LEVEL = 1;
 const MAX_LEVEL = 150;
 const GO_TO_LEVEL_EVENT = "go-to-level";
+const RESTART_LEVEL_EVENT = "restart-level";
+const AUTO_PLAY_LEVEL_EVENT = "auto-play-level";
 
-type SettingsSection = "game" | "alignment" | "buttons" | "sound" | "about";
+type SettingsSection = "game" | "alignment" | "buttons" | "sound" | "about" | "debug";
 
 export interface AppHeaderMenuOptions {
   touchControls?: TouchControlsHandle;
@@ -39,6 +42,8 @@ export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptio
   const newGameConfirmModal = document.getElementById("new-game-confirm-modal");
   const newGameConfirmYes = document.getElementById("new-game-confirm-yes");
   const newGameConfirmNo = document.getElementById("new-game-confirm-no");
+  const restartLevel = document.getElementById("restart-level");
+  const autoPlayLevel = document.getElementById("auto-play-level");
   const levelSelectOpen = document.getElementById("level-select-open");
   const modal = document.getElementById("level-select-modal");
   const input = document.getElementById("level-select-input") as HTMLInputElement | null;
@@ -55,6 +60,8 @@ export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptio
     !newGameConfirmModal ||
     !newGameConfirmYes ||
     !newGameConfirmNo ||
+    !restartLevel ||
+    !autoPlayLevel ||
     !levelSelectOpen ||
     !modal ||
     !input ||
@@ -233,6 +240,16 @@ export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptio
     openLevelModal();
   });
 
+  restartLevel.addEventListener("click", () => {
+    closeSettings();
+    game.events.emit(RESTART_LEVEL_EVENT);
+  });
+
+  autoPlayLevel.addEventListener("click", () => {
+    closeSettings();
+    game.events.emit(AUTO_PLAY_LEVEL_EVENT);
+  });
+
   for (const link of Array.from(
     settingsPanel.querySelectorAll<HTMLAnchorElement>(".settings-option--link"),
   )) {
@@ -399,6 +416,8 @@ export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptio
 
   game.events.on("pixel-zoom-changed", syncPanelLayout);
 
+  bindDebugPanel(game);
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       if (!comingSoonModal.hidden) {
@@ -415,4 +434,10 @@ export function bindAppHeaderMenu(game: Phaser.Game, options: AppHeaderMenuOptio
   });
 }
 
-export { GO_TO_LEVEL_EVENT, MAX_LEVEL, MIN_LEVEL };
+export {
+  AUTO_PLAY_LEVEL_EVENT,
+  GO_TO_LEVEL_EVENT,
+  RESTART_LEVEL_EVENT,
+  MAX_LEVEL,
+  MIN_LEVEL,
+};

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-054",
+  "passwordMs": "ZMGC",
+  "title": "Grail",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 326,
+  "minChipMoves": 24,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/54/ms",
+  "moveSource": "CC1-ms TWS records (ZMGC); pending engine verify",
+  "moveVerified": false
+}

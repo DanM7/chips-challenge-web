@@ -1,0 +1,12 @@
+{
+  "levelId": "level-025",
+  "passwordMs": "PQGV",
+  "title": "Blink",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 435,
+  "minChipMoves": 165,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/25/ms",
+  "moveSource": "CC1-ms TWS records (PQGV); pending engine verify",
+  "moveVerified": false
+}

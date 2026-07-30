@@ -1,0 +1,12 @@
+{
+  "levelId": "level-131",
+  "passwordMs": "FIRD",
+  "title": "Totally Unfair",
+  "timeLimitSeconds": 60,
+  "boldTimeRemaining": 26,
+  "minChipMoves": 34,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/131/ms",
+  "moveSource": "CC1-ms TWS records (FIRD); pending engine verify",
+  "moveVerified": false
+}

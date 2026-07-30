@@ -13,6 +13,18 @@
     <title>Chip's Challenge</title>
   </head>
   <body>
+    <div
+      id="autoplay-banner"
+      class="autoplay-banner"
+      hidden
+      role="status"
+      aria-live="polite"
+    >
+      <span class="autoplay-banner__text">Autoplay is on</span>
+      <button type="button" id="autoplay-banner-stop" class="autoplay-banner__stop">
+        Turn off
+      </button>
+    </div>
     <div id="app">
       <div
         class="settings-panel"
@@ -72,6 +84,15 @@
               >
                 About
               </button>
+              <button
+                type="button"
+                class="settings-panel__nav-item"
+                data-settings-section="debug"
+                id="settings-nav-debug"
+                hidden
+              >
+                Debug
+              </button>
             </nav>
             <div class="settings-panel__content">
               <section
@@ -80,13 +101,18 @@
                 data-settings-page="game"
                 aria-label="Game"
               >
-                <h3 class="settings-panel__page-title">Game</h3>
                 <p class="settings-panel__group-label">Current Game</p>
                 <button type="button" class="settings-action" id="new-game-open" role="menuitem">
                   New Game
                 </button>
                 <button type="button" class="settings-action" id="level-select-open" role="menuitem">
                   Level Select
+                </button>
+                <button type="button" class="settings-action" id="restart-level" role="menuitem">
+                  Restart Level
+                </button>
+                <button type="button" class="settings-action" id="auto-play-level" role="menuitem">
+                  Auto-play Level
                 </button>
                 <p class="settings-panel__group-label">Game Select</p>
                 <div class="settings-group" role="group" aria-label="Game Select">
@@ -144,7 +170,6 @@
                 aria-label="Alignment"
                 hidden
               >
-                <h3 class="settings-panel__page-title">Alignment</h3>
                 <p class="settings-panel__hint">Direction pad position on screen</p>
                 <div class="settings-group" role="group" aria-label="Direction pad alignment">
                   <button
@@ -174,7 +199,6 @@
                 aria-label="Buttons"
                 hidden
               >
-                <h3 class="settings-panel__page-title">Buttons</h3>
                 <p class="settings-panel__group-label">Button Size</p>
                 <div class="settings-group" role="group" aria-label="Button Size">
                   <button
@@ -243,7 +267,6 @@
                 aria-label="Sound"
                 hidden
               >
-                <h3 class="settings-panel__page-title">Sound</h3>
                 <p class="settings-panel__group-label">Music</p>
                 <div class="settings-group" role="group" aria-label="Music">
                   <button
@@ -294,7 +317,6 @@
                 aria-label="About"
                 hidden
               >
-                <h3 class="settings-panel__page-title">About</h3>
                 <div class="settings-panel__block">
                   <h4 class="settings-panel__group-label">Summary</h4>
                   <p class="settings-panel__text">
@@ -338,6 +360,118 @@
                   >
                     Bit Busters Club
                   </a>
+                </div>
+              </section>
+              <section
+                class="settings-panel__page"
+                id="settings-page-debug"
+                data-settings-page="debug"
+                aria-label="Debug"
+                hidden
+              >
+                <div class="debug-panel__columns">
+                  <div class="debug-panel__col">
+                    <p class="settings-panel__group-label">Keys</p>
+                    <div class="settings-group" role="group" aria-label="Keys held">
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-key="key_red"
+                        aria-checked="false"
+                      >
+                        Red key
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-key="key_blue"
+                        aria-checked="false"
+                      >
+                        Blue key
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-key="key_yellow"
+                        aria-checked="false"
+                      >
+                        Yellow key
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-key="key_green"
+                        aria-checked="false"
+                      >
+                        Green key
+                      </button>
+                    </div>
+                    <p class="settings-panel__group-label">Items</p>
+                    <div class="settings-group" role="group" aria-label="Items held">
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-tool="ice_skates"
+                        aria-checked="false"
+                      >
+                        Ice skates
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-tool="suction_boots"
+                        aria-checked="false"
+                      >
+                        Suction boots
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-tool="fire_boots"
+                        aria-checked="false"
+                      >
+                        Fire boots
+                      </button>
+                      <button
+                        type="button"
+                        class="settings-option settings-option--checkbox"
+                        role="checkbox"
+                        data-debug-tool="flippers"
+                        aria-checked="false"
+                      >
+                        Flippers
+                      </button>
+                    </div>
+                  </div>
+                  <div class="debug-panel__col debug-panel__col--chips">
+                    <p class="settings-panel__group-label">Chips Remaining</p>
+                    <div class="debug-stepper" role="group" aria-label="Chips remaining">
+                      <button
+                        type="button"
+                        class="debug-stepper__btn"
+                        id="debug-chips-dec"
+                        aria-label="Decrease chips remaining"
+                      >
+                        −
+                      </button>
+                      <output class="debug-stepper__value" id="debug-chips-value">0</output>
+                      <button
+                        type="button"
+                        class="debug-stepper__btn"
+                        id="debug-chips-inc"
+                        aria-label="Increase chips remaining"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </section>
             </div>

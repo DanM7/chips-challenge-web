@@ -1,0 +1,12 @@
+{
+  "levelId": "level-038",
+  "passwordMs": "BIFA",
+  "title": "Sampler",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 462,
+  "minChipMoves": 38,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/38/ms",
+  "moveSource": "CC1-ms TWS records (BIFA); pending engine verify",
+  "moveVerified": false
+}

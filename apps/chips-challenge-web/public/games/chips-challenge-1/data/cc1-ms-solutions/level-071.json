@@ -1,0 +1,12 @@
+{
+  "levelId": "level-071",
+  "passwordMs": "LAJM",
+  "title": "Corridor",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 355,
+  "minChipMoves": 145,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/71/ms",
+  "moveSource": "CC1-ms TWS records (LAJM); pending engine verify",
+  "moveVerified": false
+}

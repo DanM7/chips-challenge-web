@@ -13,6 +13,7 @@ import {
 } from "@engine/levelPassword";
 import { PlayScene } from "./scenes/PlayScene";
 import { bindAppHeaderMenu } from "./ui/AppHeaderMenu";
+import { initAutoplayBanner } from "./ui/autoplaySession";
 import { createTouchControls } from "./ui/touchControls";
 import Phaser from "phaser";
 import { bumpPixelZoom, getPixelZoom } from "@engine/pixelZoom";
@@ -72,6 +73,7 @@ async function bootstrap(): Promise<void> {
       : null;
 
   bindAppHeaderMenu(game, { touchControls: touchControls ?? undefined });
+  initAutoplayBanner(game);
 
   const zoomControls = document.querySelector(".zoom-controls:not(.u-hidden)");
   if (zoomControls && !zoomControls.hasAttribute("hidden")) {

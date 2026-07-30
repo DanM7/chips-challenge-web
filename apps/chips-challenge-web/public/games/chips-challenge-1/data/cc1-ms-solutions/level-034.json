@@ -1,0 +1,12 @@
+{
+  "levelId": "level-034",
+  "passwordMs": "NQFI",
+  "title": "Cypher",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 297,
+  "minChipMoves": 53,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/34/ms",
+  "moveSource": "CC1-ms TWS records (NQFI); pending engine verify",
+  "moveVerified": false
+}

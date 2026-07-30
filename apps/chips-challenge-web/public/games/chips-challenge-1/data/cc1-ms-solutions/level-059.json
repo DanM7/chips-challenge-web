@@ -1,0 +1,12 @@
+{
+  "levelId": "level-059",
+  "passwordMs": "BLDM",
+  "title": "Hidden Danger",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 368,
+  "minChipMoves": 32,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/59/ms",
+  "moveSource": "CC1-ms TWS records (BLDM); pending engine verify",
+  "moveVerified": false
+}

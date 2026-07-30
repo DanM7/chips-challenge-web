@@ -1,0 +1,12 @@
+{
+  "levelId": "level-085",
+  "passwordMs": "LEBX",
+  "title": "Telenet",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 236,
+  "minChipMoves": 64,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/85/ms",
+  "moveSource": "CC1-ms TWS records (LEBX); pending engine verify",
+  "moveVerified": false
+}

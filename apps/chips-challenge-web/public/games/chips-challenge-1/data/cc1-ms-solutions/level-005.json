@@ -1,0 +1,12 @@
+{
+  "levelId": "level-005",
+  "passwordMs": "TQKB",
+  "title": "Lesson 5",
+  "timeLimitSeconds": 100,
+  "boldTimeRemaining": 85,
+  "minChipMoves": 15,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/5/ms",
+  "moveSource": "CC1-ms TWS records (TQKB); pending engine verify",
+  "moveVerified": false
+}

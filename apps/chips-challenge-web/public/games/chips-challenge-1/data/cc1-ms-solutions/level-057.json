@@ -1,0 +1,12 @@
+{
+  "levelId": "level-057",
+  "passwordMs": "UBXU",
+  "title": "Strange Maze",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 229,
+  "minChipMoves": 171,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/57/ms",
+  "moveSource": "CC1-ms TWS records (UBXU); pending engine verify",
+  "moveVerified": false
+}

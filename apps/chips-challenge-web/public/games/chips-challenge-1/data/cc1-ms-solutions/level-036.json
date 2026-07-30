@@ -1,0 +1,12 @@
+{
+  "levelId": "level-036",
+  "passwordMs": "NXIS",
+  "title": "Ladder",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 232,
+  "minChipMoves": 118,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/36/ms",
+  "moveSource": "CC1-ms TWS records (NXIS); pending engine verify",
+  "moveVerified": false
+}

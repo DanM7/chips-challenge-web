@@ -1,0 +1,12 @@
+{
+  "levelId": "level-069",
+  "passwordMs": "NLLY",
+  "title": "Bounce City",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 229,
+  "minChipMoves": 71,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/69/ms",
+  "moveSource": "CC1-ms TWS records (NLLY); pending engine verify",
+  "moveVerified": false
+}

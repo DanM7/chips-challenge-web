@@ -1,0 +1,12 @@
+{
+  "levelId": "level-078",
+  "passwordMs": "GRMO",
+  "title": "Force Square",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 480,
+  "minChipMoves": 20,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/78/ms",
+  "moveSource": "CC1-ms TWS records (GRMO); pending engine verify",
+  "moveVerified": false
+}

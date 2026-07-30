@@ -1,0 +1,12 @@
+{
+  "levelId": "level-095",
+  "passwordMs": "BIFQ",
+  "title": "Four Square",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 335,
+  "minChipMoves": 15,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/95/ms",
+  "moveSource": "CC1-ms TWS records (BIFQ); pending engine verify",
+  "moveVerified": false
+}

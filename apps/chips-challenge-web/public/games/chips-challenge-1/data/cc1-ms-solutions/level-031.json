@@ -1,0 +1,12 @@
+{
+  "levelId": "level-031",
+  "passwordMs": "RYMS",
+  "title": "Knot",
+  "timeLimitSeconds": 29,
+  "boldTimeRemaining": 6,
+  "minChipMoves": 23,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/31/ms",
+  "moveSource": "CC1-ms TWS records (RYMS); pending engine verify",
+  "moveVerified": false
+}

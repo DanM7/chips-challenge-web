@@ -1,0 +1,12 @@
+{
+  "levelId": "level-106",
+  "passwordMs": "NXYB",
+  "title": "Kablam",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 907,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/106/ms",
+  "moveSource": "CC1-ms TWS records (NXYB); pending engine verify",
+  "moveVerified": false
+}

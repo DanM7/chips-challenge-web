@@ -1,0 +1,12 @@
+{
+  "levelId": "level-024",
+  "passwordMs": "UNIZ",
+  "title": "Oorto Geld",
+  "timeLimitSeconds": 550,
+  "boldTimeRemaining": 430,
+  "minChipMoves": 120,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/24/ms",
+  "moveSource": "CC1-ms TWS records (UNIZ); pending engine verify",
+  "moveVerified": false
+}

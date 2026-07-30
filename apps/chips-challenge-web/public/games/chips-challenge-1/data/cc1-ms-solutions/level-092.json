@@ -1,0 +1,12 @@
+{
+  "levelId": "level-092",
+  "passwordMs": "DTMI",
+  "title": "Vortex",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 444,
+  "minChipMoves": 56,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/92/ms",
+  "moveSource": "CC1-ms TWS records (DTMI); pending engine verify",
+  "moveVerified": false
+}

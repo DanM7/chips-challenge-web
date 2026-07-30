@@ -1,0 +1,12 @@
+{
+  "levelId": "level-076",
+  "passwordMs": "NMRH",
+  "title": "Four Plex",
+  "timeLimitSeconds": 550,
+  "boldTimeRemaining": 416,
+  "minChipMoves": 134,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/76/ms",
+  "moveSource": "CC1-ms TWS records (NMRH); pending engine verify",
+  "moveVerified": false
+}

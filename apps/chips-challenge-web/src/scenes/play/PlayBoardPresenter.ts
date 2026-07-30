@@ -12,7 +12,6 @@ import {
   compositeMsMaskedFromSheet,
   MS_CHIP_WALK_OBJECT_CODE,
   msCreatureUsesMaskedSprite,
-  msMaskedChipFrameTriple,
 } from "@engine/msMaskedComposite";
 import {
   CHIP_TILE_IDS,
@@ -137,42 +136,6 @@ export class PlayBoardPresenter {
     const floorFrame = this.view.frameByTileId.get(floorTileId) ?? 0;
     const pixels = compositeMsMaskedFromSheet(source, floorFrame, creatureObjectCode);
     return this.uploadChipCanvasTexture(key, pixels);
-  }
-
-  placeGhostFigureOnFloor(
-    x: number,
-    y: number,
-    floorTileId: string,
-    creatureTileId: string,
-  ): void {
-    if (!this.view.tileLayer) return;
-    this.placeBoardSprite(x, y, floorTileId);
-    const objectCode = objectCodeFromTileId(creatureTileId);
-    if (objectCode == null) return;
-    const overlayFrame = msMaskedChipFrameTriple(objectCode).overlay;
-    this.placeCreatureSheetFrameOverlay(x, y, overlayFrame);
-  }
-
-  placeCreatureSheetFrameOverlay(x: number, y: number, frame: number): void {
-    if (!this.view.tileLayer) return;
-    const key = `${x},${y}`;
-    const tile = MS_TILE_SIZE;
-    const px = this.view.boardOriginX + x * tile;
-    const py = this.view.boardOriginY + y * tile;
-    let sprite = this.view.monsterOverlaySprites.get(key);
-    if (!sprite) {
-      sprite = this.scene.add
-        .sprite(px + tile / 2, py + tile / 2, MS_TILES_KEY, frame)
-        .setOrigin(0.5);
-      sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-      this.view.tileLayer.add(sprite);
-      this.view.monsterOverlaySprites.set(key, sprite);
-    } else {
-      sprite.setTexture(MS_TILES_KEY);
-      sprite.setFrame(frame);
-      sprite.setVisible(true);
-    }
-    this.view.tileLayer.bringToTop(sprite);
   }
 
   placeCreatureCompositeOverlay(x: number, y: number, textureKey: string): void {
@@ -418,10 +381,6 @@ export class PlayBoardPresenter {
       const lower = cellTile(level, "lower", x, y);
       const floorId = lower !== "empty" ? lower : "empty";
       this.hideMaskedCreatureOverlay(x, y, this.view.monsterOverlaySprites);
-      if (occupant.kind === "ghost") {
-        this.placeGhostFigureOnFloor(x, y, floorId, occupant.tileId);
-        return;
-      }
       const objectCode = objectCodeFromTileId(occupant.tileId);
       if (objectCode != null && msCreatureUsesMaskedSprite(objectCode)) {
         const texKey = this.ensureCreatureMaskedFloorTexture(floorId, objectCode);
@@ -444,10 +403,6 @@ export class PlayBoardPresenter {
 
     const floorUnderMonster = getLowerTileUnderMonster(level, x, y);
     if (isMonsterTile(tileId) && floorUnderMonster) {
-      if (tileId.startsWith("ghost_")) {
-        this.placeGhostFigureOnFloor(x, y, floorUnderMonster, tileId);
-        return;
-      }
       const objectCode = objectCodeFromTileId(tileId);
       if (objectCode != null && msCreatureUsesMaskedSprite(objectCode)) {
         const texKey = this.ensureCreatureMaskedFloorTexture(

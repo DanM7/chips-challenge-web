@@ -1,0 +1,12 @@
+{
+  "levelId": "level-147",
+  "passwordMs": "COZA",
+  "title": "Force Field",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 970,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/147/ms",
+  "moveSource": "CC1-ms TWS records (COZA); pending engine verify",
+  "moveVerified": false
+}

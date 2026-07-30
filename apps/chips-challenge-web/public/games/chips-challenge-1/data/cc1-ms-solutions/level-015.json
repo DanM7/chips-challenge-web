@@ -1,0 +1,12 @@
+{
+  "levelId": "level-015",
+  "passwordMs": "COZQ",
+  "title": "Elementary",
+  "timeLimitSeconds": 250,
+  "boldTimeRemaining": 89,
+  "minChipMoves": 161,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/15/ms",
+  "moveSource": "CC1-ms TWS records (COZQ); pending engine verify",
+  "moveVerified": false
+}

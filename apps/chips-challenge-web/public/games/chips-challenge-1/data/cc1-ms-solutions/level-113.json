@@ -1,0 +1,12 @@
+{
+  "levelId": "level-113",
+  "passwordMs": "PTAS",
+  "title": "Open Question",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 462,
+  "minChipMoves": 38,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/113/ms",
+  "moveSource": "CC1-ms TWS records (PTAS); pending engine verify",
+  "moveVerified": false
+}

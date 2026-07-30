@@ -1,0 +1,12 @@
+{
+  "levelId": "level-035",
+  "passwordMs": "VDTM",
+  "title": "Lemmings",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 577,
+  "minChipMoves": 23,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/35/ms",
+  "moveSource": "CC1-ms TWS records (VDTM); pending engine verify",
+  "moveVerified": false
+}

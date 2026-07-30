@@ -1,0 +1,12 @@
+{
+  "levelId": "level-020",
+  "passwordMs": "KGFP",
+  "title": "Tossed Salad",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 340,
+  "minChipMoves": 60,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/20/ms",
+  "moveSource": "CC1-ms TWS records (KGFP); pending engine verify",
+  "moveVerified": false
+}

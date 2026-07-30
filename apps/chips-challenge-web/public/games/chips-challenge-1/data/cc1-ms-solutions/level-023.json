@@ -1,0 +1,12 @@
+{
+  "levelId": "level-023",
+  "passwordMs": "HUVE",
+  "title": "Blobnet",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 436,
+  "minChipMoves": 64,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/23/ms",
+  "moveSource": "CC1-ms TWS records (HUVE); pending engine verify",
+  "moveVerified": false
+}

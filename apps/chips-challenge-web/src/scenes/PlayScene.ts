@@ -2,10 +2,14 @@
 import type { Direction, GameManifest, LevelData, LevelsIndex } from "@engine/types";
 import type { DirectionInput } from "@engine/DirectionInput";
 import type { GameEventBus } from "@engine/GameEventBus";
-import { forceFloorDirection } from "@engine/msCc1/msCc1Sliding";
+import { ChipMoveQueue } from "@engine/chipMoveQueue";
+import { getForceFloorIntentAt } from "@engine/msCc1/msCc1Sliding";
+import {
+  directionFromMoveIntent,
+} from "@engine/moveIntent";
 import {
   directionInputIsActive,
-  getForceFloorTileAt,
+  getHeldDirection,
 } from "../engine/msCc1Compat";
 import {
   loadAssetManifest,
@@ -43,7 +47,20 @@ import { MsLevelIntroBanner } from "../ui/MsLevelIntroBanner";
 import { MsOopsDialog } from "../ui/MsOopsDialog";
 import { MsLevelCompleteDialog } from "../ui/MsLevelCompleteDialog";
 import { buildMsLevelScoreBreakdown } from "@engine/msCc1/msCc1Scoring";
-import { GO_TO_LEVEL_EVENT } from "../ui/AppHeaderMenu";
+import { GO_TO_LEVEL_EVENT, AUTO_PLAY_LEVEL_EVENT, RESTART_LEVEL_EVENT } from "../ui/AppHeaderMenu";
+import { loadSolutionMoves } from "../data/loadLevelSolution";
+import { showGameToast } from "../ui/gameToast";
+import {
+  AUTOPLAY_LEVEL_START_DELAY_MS,
+  isAutoplaySessionActive,
+  startAutoplaySession,
+  stopAutoplaySession,
+  STOP_AUTOPLAY_SESSION_EVENT,
+} from "../ui/autoplaySession";
+import {
+  DEBUG_INVENTORY_EVENT,
+  type DebugInventoryState,
+} from "../ui/debugPanel";
 import {
   REGISTRY_PENDING_LEVEL_NUMBER,
   resolveDefaultLaunchLevelNumber,
@@ -68,6 +85,7 @@ export class PlayScene extends Phaser.Scene {
   private bus!: GameEventBus;
 
   private unsubscribeDirection: (() => void) | null = null;
+  private unsubscribeDirectionRelease: (() => void) | null = null;
 
 
 
@@ -116,13 +134,24 @@ export class PlayScene extends Phaser.Scene {
   private buttonPressCtx: MsCc1ButtonPressContext = {
     redButtonArmed: new Set(),
     openTraps: new Set(),
+    stuckOnTraps: new Set(),
+    heldBrownButtons: new Set(),
     moveBoundary: 0,
   };
   private monsterMoveTimer: Phaser.Time.TimerEvent | null = null;
   private levelIntro: MsLevelIntroBanner | null = null;
   private levelIntroDismissed = false;
   private chipSliding = false;
+  private chipActionDepth = 0;
+  private chipMoveQueue = new ChipMoveQueue();
   private chipMoveChain: Promise<void> = Promise.resolve();
+  private autoplayActive = false;
+  private autoplayMoves: Direction[] | null = null;
+  private autoplayIndex = 0;
+  private autoplayBlockedStreak = 0;
+  private autoplayTimer: Phaser.Time.TimerEvent | null = null;
+  private autoplayPending = false;
+  private autoplayStartDelayMs = 0;
 
 
 
@@ -144,6 +173,10 @@ export class PlayScene extends Phaser.Scene {
     this.game.events.on("run-state", this.onRunState, this);
 
     this.game.events.on(GO_TO_LEVEL_EVENT, this.onGoToLevel, this);
+    this.game.events.on(RESTART_LEVEL_EVENT, this.onRestartLevel, this);
+    this.game.events.on(AUTO_PLAY_LEVEL_EVENT, this.onAutoPlayLevel, this);
+    this.game.events.on(STOP_AUTOPLAY_SESSION_EVENT, this.onStopAutoplaySession, this);
+    this.game.events.on(DEBUG_INVENTORY_EVENT, this.onDebugInventory, this);
 
 
 
@@ -414,7 +447,38 @@ export class PlayScene extends Phaser.Scene {
   }
 
   private readonly onGoToLevel = (levelNum: number): void => {
+    this.stopAutoplaySession();
     void this.goToLevelNumber(levelNum);
+  };
+
+  private readonly onRestartLevel = (): void => {
+    this.stopAutoplaySession();
+    void this.restartCurrentLevel();
+  };
+
+  private readonly onAutoPlayLevel = (): void => {
+    void this.restartAndAutoplay();
+  };
+
+  private readonly onStopAutoplaySession = (): void => {
+    this.stopAutoplaySession();
+  };
+
+  private readonly onDebugInventory = (state: DebugInventoryState): void => {
+    if (!this.runSession) {
+      return;
+    }
+    this.runSession.applyMsCc1State(state);
+    this.board.refreshCellUnderChip(state.tools, this.playerGx, this.playerGy);
+  };
+
+  private async restartCurrentLevel(): Promise<void> {
+    if (!this.assetsReady || !this.levelsIndex) {
+      return;
+    }
+    await this.loadLevelAtIndex(this.currentLevelIndex);
+    await this.prepareHud();
+    this.buildPlayfield();
   };
 
   /** `?password=XXXX` from URL (set in main before scene boot). */
@@ -437,6 +501,7 @@ export class PlayScene extends Phaser.Scene {
 
     if (nextIndex >= this.levelsIndex.levels.length) {
 
+      this.stopAutoplaySession();
       this.showTransientMessage("All levels complete!");
 
       this.inputLocked = false;
@@ -446,6 +511,8 @@ export class PlayScene extends Phaser.Scene {
     }
 
     await this.loadLevelAtIndex(nextIndex);
+
+    await this.prepareHud();
 
     this.buildPlayfield();
 
@@ -532,6 +599,10 @@ export class PlayScene extends Phaser.Scene {
     this.inputLocked = false;
     this.deathSequenceActive = false;
     this.chipMoveChain = Promise.resolve();
+    this.chipMoveQueue.flush();
+    if (!restoreFromSnapshot) {
+      this.stopLevelAutoplay(false);
+    }
 
     if (restoreFromSnapshot) {
       this.levelAttemptNumber += 1;
@@ -617,11 +688,12 @@ export class PlayScene extends Phaser.Scene {
     this.buttonPressCtx = {
       redButtonArmed: collectRedButtonCells(level),
       openTraps: new Set(),
+      stuckOnTraps: new Set(),
+      heldBrownButtons: new Set(),
       moveBoundary: 0,
       stepParity: "even",
     };
     this.chipSliding = false;
-    this.startMonsterMoveClock();
 
     const boardCam = this.ensureBoardCamera(vp);
 
@@ -660,8 +732,12 @@ export class PlayScene extends Phaser.Scene {
     }
 
     this.unsubscribeDirection?.();
+    this.unsubscribeDirectionRelease?.();
 
     this.unsubscribeDirection = this.bus.onDirection((direction) => this.onDirection(direction));
+    this.unsubscribeDirectionRelease = this.bus.onDirectionRelease(() =>
+      this.onDirectionRelease(),
+    );
 
 
 
@@ -673,6 +749,134 @@ export class PlayScene extends Phaser.Scene {
 
     this.time.delayedCall(0, () => this.onDisplayResize());
 
+    if (this.autoplayPending) {
+      const delayMs = this.autoplayStartDelayMs;
+      this.autoplayPending = false;
+      this.autoplayStartDelayMs = 0;
+      this.time.delayedCall(delayMs, () => {
+        if (isAutoplaySessionActive()) {
+          void this.beginAutoplayForCurrentLevel();
+        }
+      });
+    } else if (!isAutoplaySessionActive()) {
+      this.startMonsterMoveClock();
+    }
+  }
+
+  private async restartAndAutoplay(): Promise<void> {
+    startAutoplaySession();
+    if (!this.assetsReady || !this.levelsIndex) {
+      stopAutoplaySession();
+      return;
+    }
+    this.autoplayPending = true;
+    this.autoplayStartDelayMs = 0;
+    await this.restartCurrentLevel();
+  }
+
+  private async beginAutoplayForCurrentLevel(): Promise<void> {
+    if (!this.level || !isAutoplaySessionActive()) {
+      return;
+    }
+    const levelNum = this.level.hud?.levelNumber ?? this.currentLevelIndex + 1;
+    const moves = await loadSolutionMoves(levelNum);
+    if (!moves) {
+      if (isAutoplaySessionActive()) {
+        this.showTransientMessage(
+          `Level ${levelNum}: no verified auto-play route — play manually to continue.`,
+        );
+        this.dismissLevelIntroAndStartClock();
+        return;
+      }
+      this.stopAutoplaySession();
+      this.showTransientMessage(
+        `No auto-play solution for level ${levelNum}. Autoplay stopped.`,
+      );
+      return;
+    }
+    this.showTransientMessage(`Auto-playing level ${levelNum}…`);
+    this.stopMonsterMoveClock();
+    this.autoplayActive = true;
+    this.autoplayMoves = moves;
+    this.autoplayIndex = 0;
+    this.autoplayBlockedStreak = 0;
+    this.dismissLevelIntroAndStartClock();
+    this.scheduleNextAutoplayStep();
+  }
+
+  private scheduleNextAutoplayStep(): void {
+    if (!this.autoplayActive || !this.autoplayMoves || !isAutoplaySessionActive()) {
+      return;
+    }
+    if (this.autoplayIndex >= this.autoplayMoves.length) {
+      this.stopLevelAutoplay();
+      if (isAutoplaySessionActive()) {
+        this.stopAutoplaySession();
+        this.showTransientMessage(
+          "Auto-play stopped — route ended without completing the level.",
+        );
+      }
+      return;
+    }
+    const direction = this.autoplayMoves[this.autoplayIndex]!;
+    this.autoplayIndex += 1;
+    void (this.chipMoveChain = this.chipMoveChain.then(async () => {
+      if (!this.autoplayActive) {
+        return;
+      }
+      const beforeGx = this.playerGx;
+      const beforeGy = this.playerGy;
+      await this.performChipMove(direction);
+      if (
+        !this.autoplayActive ||
+        this.inputLocked ||
+        this.deathSequenceActive ||
+        !this.autoplayMoves
+      ) {
+        return;
+      }
+      const moved = this.playerGx !== beforeGx || this.playerGy !== beforeGy;
+      if (moved) {
+        this.autoplayBlockedStreak = 0;
+      } else {
+        this.autoplayBlockedStreak += 1;
+        if (this.autoplayBlockedStreak >= 5) {
+          this.stopAutoplaySession();
+          this.showTransientMessage(
+            "Auto-play stopped — route does not progress (engine parity gap or unverified TWS).",
+          );
+          return;
+        }
+      }
+      this.autoplayTimer?.destroy();
+      this.autoplayTimer = this.time.delayedCall(
+        MS_CHIP_WALK_STEP_MS,
+        () => this.scheduleNextAutoplayStep(),
+      );
+    }));
+  }
+
+  private stopLevelAutoplay(clearPending = true): void {
+    this.autoplayActive = false;
+    if (clearPending) {
+      this.autoplayPending = false;
+      this.autoplayStartDelayMs = 0;
+      if (!isAutoplaySessionActive()) {
+        this.startMonsterMoveClock();
+      }
+    }
+    this.autoplayMoves = null;
+    this.autoplayIndex = 0;
+    this.autoplayBlockedStreak = 0;
+    if (this.autoplayTimer) {
+      this.autoplayTimer.destroy();
+      this.autoplayTimer = null;
+    }
+  }
+
+  private stopAutoplaySession(): void {
+    this.stopLevelAutoplay();
+    stopAutoplaySession();
   }
 
 
@@ -695,10 +899,17 @@ export class PlayScene extends Phaser.Scene {
 
 
   private readonly onDirection = (direction: Direction): void => {
-    void (this.chipMoveChain = this.chipMoveChain.then(() =>
-      this.performChipMove(direction),
-    ));
+    this.stopAutoplaySession();
+    this.chipMoveQueue.enqueue(direction, (dir) => this.performChipMove(dir));
   };
+
+  private readonly onDirectionRelease = (): void => {
+    this.chipMoveQueue.flush();
+  };
+
+  private isChipActionInProgress(): boolean {
+    return this.chipActionDepth > 0;
+  }
 
   private async performChipMove(direction: Direction): Promise<void> {
     if (!this.boardView.chip || !this.level || !this.runSession || this.inputLocked) {
@@ -706,62 +917,83 @@ export class PlayScene extends Phaser.Scene {
     }
 
     this.dismissLevelIntroAndStartClock();
+    this.chipActionDepth += 1;
 
-    const run = this.runSession.getState();
-    const playerState = msCc1StateFromRun(
-      run.inventory?.keys ?? [],
-      run.collectiblesLeftCount,
-      run.inventory?.tools ?? [],
-    );
+    try {
+      const run = this.runSession.getState();
+      const playerState = msCc1StateFromRun(
+        run.inventory?.keys ?? [],
+        run.collectiblesLeftCount,
+        run.inventory?.tools ?? [],
+      );
 
-    const result = tryMsCc1Move(
-      this.level,
-      { x: this.playerGx, y: this.playerGy },
-      direction,
-      playerState,
-      { openTraps: this.buttonPressCtx.openTraps },
-    );
+      const result = tryMsCc1Move(
+        this.level,
+        { x: this.playerGx, y: this.playerGy },
+        direction,
+        playerState,
+        this.buttonPressCtx,
+        this.monsters,
+      );
 
-    if (!result.moved) {
-      this.board.setChipFrameForDirection(direction, result.state);
-      return;
+      if (!result.moved) {
+        this.board.setChipFrameForDirection(direction, result.state);
+        // MS: blocked input still advances the move clock (monsters tick).
+        this.tickMonstersAfterChip(true);
+        return;
+      }
+
+      const keepPlaying = await this.applyEngineMoveResult(result, direction);
+      if (!keepPlaying) {
+        return;
+      }
+      if (this.isChipOnForceFloor()) {
+        await this.continueForceFloorSlide();
+      }
+    } finally {
+      this.chipActionDepth -= 1;
     }
+  }
 
+  /** Apply a completed engine move (single snap or animated ice/force chain). */
+  private async applyEngineMoveResult(
+    result: MsCc1MoveResult,
+    direction: Direction,
+  ): Promise<boolean> {
     const movedSteps = result.steps.filter((step) => step.moved);
 
     // One tile: snap like MS voluntary step (responsive floor walking).
     if (movedSteps.length <= 1) {
       this.applyChipMoveResult(result, direction);
-      await this.continueForceFloorWithoutInput();
-      return;
+      return !(result.playerDied || result.completedLevel);
     }
 
     // Voluntary step snaps; involuntary ice / force chain animates.
     const [firstStep, ...slideSteps] = movedSteps;
     this.chipSliding = true;
     this.syncChipAfterStep(firstStep);
-    this.runSession.applyMsCc1State(firstStep.state);
+    this.runSession?.applyMsCc1State(firstStep.state);
 
     if (firstStep.playerDied) {
       void this.handlePlayerDeath(firstStep.deathMessage ?? "Ooops!");
-      return;
+      return false;
     }
     if (firstStep.completedLevel) {
       void this.handleLevelComplete();
-      return;
+      return false;
     }
 
     for (const step of slideSteps) {
       await this.animateChipStep(step);
-      this.runSession.applyMsCc1State(step.state);
+      this.runSession?.applyMsCc1State(step.state);
 
       if (step.playerDied) {
         void this.handlePlayerDeath(step.deathMessage ?? "Ooops!");
-        return;
+        return false;
       }
       if (step.completedLevel) {
         void this.handleLevelComplete();
-        return;
+        return false;
       }
     }
 
@@ -774,29 +1006,114 @@ export class PlayScene extends Phaser.Scene {
     this.board.setChipFrameForDirection(result.direction, result.state);
     this.board.refreshCellUnderChip(result.state.tools);
     this.followBoardCameraToChip();
-    await this.continueForceFloorWithoutInput();
+
+    if (result.playerDied) {
+      void this.handlePlayerDeath(result.deathMessage ?? "Ooops!");
+      return false;
+    }
+    if (result.completedLevel) {
+      void this.handleLevelComplete();
+      return false;
+    }
+    return true;
   }
 
-  /** MS: force floors keep pushing after perpendicular input is released. */
-  private async continueForceFloorWithoutInput(): Promise<void> {
-    const input = this.game.registry.get("directionInput") as
-      | DirectionInput
-      | undefined;
-    if (directionInputIsActive(input)) {
+  /** MS: keep sliding on force floors until off the pad or blocked. */
+  private async continueForceFloorSlide(): Promise<void> {
+    if (!this.level || !this.runSession || this.inputLocked) {
       return;
     }
-    if (!this.level || this.inputLocked) {
+    for (let guard = 0; guard < 64; guard += 1) {
+      if (!this.isChipOnForceFloor()) {
+        return;
+      }
+      const beforeX = this.playerGx;
+      const beforeY = this.playerGy;
+      const keepPlaying = await this.performInvoluntaryForceSlide();
+      if (!keepPlaying) {
+        return;
+      }
+      if (this.playerGx === beforeX && this.playerGy === beforeY) {
+        return;
+      }
+    }
+  }
+
+  /**
+   * One force-floor push (respects held input via resolveForceSlideIntent).
+   * Does not re-enter continueForceFloorSlide — callers loop if still on a pad.
+   */
+  private async performInvoluntaryForceSlide(): Promise<boolean> {
+    if (!this.level || !this.runSession || this.inputLocked || !this.boardView.chip) {
+      return true;
+    }
+
+    const run = this.runSession.getState();
+    const playerState = msCc1StateFromRun(
+      run.inventory?.keys ?? [],
+      run.collectiblesLeftCount,
+      run.inventory?.tools ?? [],
+    );
+    const forceIntent = getForceFloorIntentAt(
+      this.level,
+      this.playerGx,
+      this.playerGy,
+      playerState,
+    );
+    if (!forceIntent) {
+      return true;
+    }
+
+    const held = getHeldDirection(
+      this.game.registry.get("directionInput") as DirectionInput | undefined,
+    );
+    const direction = held ?? directionFromMoveIntent(forceIntent);
+
+    const result = tryMsCc1Move(
+      this.level,
+      { x: this.playerGx, y: this.playerGy },
+      direction,
+      playerState,
+      this.buttonPressCtx,
+      this.monsters,
+    );
+
+    if (!result.moved) {
+      this.tickMonstersAfterChip(true);
+      return true;
+    }
+
+    return this.applyEngineMoveResult(result, direction);
+  }
+
+  private isChipOnForceFloor(): boolean {
+    if (!this.level || !this.runSession) {
+      return false;
+    }
+    const run = this.runSession.getState();
+    const playerState = msCc1StateFromRun(
+      run.inventory?.keys ?? [],
+      run.collectiblesLeftCount,
+      run.inventory?.tools ?? [],
+    );
+    return getForceFloorIntentAt(this.level, this.playerGx, this.playerGy, playerState) !== null;
+  }
+
+  /** MS: standing on a force pad — push along force each idle tick. */
+  private async applyIdleForceFloorPush(): Promise<void> {
+    if (!this.isChipOnForceFloor() || this.inputLocked) {
       return;
     }
-    const forceTile = getForceFloorTileAt(this.level, this.playerGx, this.playerGy);
-    if (!forceTile) {
-      return;
+    this.chipActionDepth += 1;
+    try {
+      const keepPlaying = await this.performInvoluntaryForceSlide();
+      if (!keepPlaying || !this.isChipOnForceFloor()) {
+        return;
+      }
+      await this.continueForceFloorSlide();
+    } finally {
+      this.chipActionDepth -= 1;
     }
-    const autoDir = forceFloorDirection(forceTile);
-    if (!autoDir) {
-      return;
-    }
-    await this.performChipMove(autoDir);
   }
 
   private applyChipMoveResult(result: MsCc1MoveResult, direction: Direction): void {
@@ -910,6 +1227,8 @@ export class PlayScene extends Phaser.Scene {
     if (!this.level || !this.runSession || this.inputLocked) {
       return;
     }
+    const sessionContinues = isAutoplaySessionActive();
+    this.stopLevelAutoplay(false);
     this.inputLocked = true;
     this.stopMonsterMoveClock();
     this.runSession.stop();
@@ -924,11 +1243,20 @@ export class PlayScene extends Phaser.Scene {
     });
     this.totalGameScore = breakdown.totalScore;
 
-    await this.levelCompleteDialog?.show(breakdown, { showTimeRecordMessage: true });
+    await this.levelCompleteDialog?.show(breakdown, {
+      showTimeRecordMessage: true,
+      autoDismissAfterMs: sessionContinues ? AUTOPLAY_LEVEL_START_DELAY_MS : undefined,
+    });
+
+    if (sessionContinues && isAutoplaySessionActive()) {
+      this.autoplayPending = true;
+      this.autoplayStartDelayMs = AUTOPLAY_LEVEL_START_DELAY_MS;
+    }
+
     await this.advanceToNextLevel();
   }
 
-  /** MS move clock: monsters step 5Ã— per game second even when Chip is idle. */
+  /** MS move clock: monsters step 5× per game second while Chip is idle. */
   private startMonsterMoveClock(): void {
     this.stopMonsterMoveClock();
     this.monsterMoveTimer = this.time.addEvent({
@@ -1006,12 +1334,40 @@ export class PlayScene extends Phaser.Scene {
     }
   }
 
+  private isDirectionHeld(): boolean {
+    const input = this.game.registry.get("directionInput") as DirectionInput | undefined;
+    return directionInputIsActive(input);
+  }
+
   private onMonsterMoveClockTick(): void {
+    // Auto-play replays stored routes with monster steps on chip moves only.
+    if (this.autoplayActive || isAutoplaySessionActive()) {
+      return;
+    }
+    // MS: one monster-list pass per 200 ms tick — not stacked on chip-move ticks.
+    if (
+      this.inputLocked ||
+      this.deathSequenceActive ||
+      this.chipSliding ||
+      this.isChipActionInProgress()
+    ) {
+      return;
+    }
+    if (this.isChipOnForceFloor()) {
+      if (!this.isDirectionHeld()) {
+        this.chipMoveChain = this.chipMoveChain.then(() => this.applyIdleForceFloorPush());
+      }
+      return;
+    }
+    if (this.isDirectionHeld()) {
+      return;
+    }
     this.tickMonstersAfterChip(false);
   }
 
   private async handlePlayerDeath(message: string): Promise<void> {
     if (this.deathSequenceActive) return;
+    this.stopAutoplaySession();
     this.deathSequenceActive = true;
     this.inputLocked = true;
     this.boardView.chip?.setVisible(false);
@@ -1074,29 +1430,7 @@ export class PlayScene extends Phaser.Scene {
 
 
   private showTransientMessage(message: string): void {
-
-    const { width, height } = this.scale;
-
-    const text = this.add
-
-      .text(width / 2, height / 2, message, {
-
-        fontFamily: "monospace",
-
-        fontSize: "14px",
-
-        color: "#9fe29f",
-
-        align: "center",
-
-      })
-
-      .setOrigin(0.5)
-
-      .setDepth(100);
-
-    this.time.delayedCall(2000, () => text.destroy());
-
+    showGameToast(message);
   }
 
 
@@ -1112,10 +1446,17 @@ export class PlayScene extends Phaser.Scene {
     this.game.events.off("run-state", this.onRunState, this);
 
     this.game.events.off(GO_TO_LEVEL_EVENT, this.onGoToLevel, this);
+    this.game.events.off(RESTART_LEVEL_EVENT, this.onRestartLevel, this);
+    this.game.events.off(AUTO_PLAY_LEVEL_EVENT, this.onAutoPlayLevel, this);
+    this.game.events.off(STOP_AUTOPLAY_SESSION_EVENT, this.onStopAutoplaySession, this);
+    this.stopAutoplaySession();
+    this.game.events.off(DEBUG_INVENTORY_EVENT, this.onDebugInventory, this);
 
     this.unsubscribeDirection?.();
+    this.unsubscribeDirectionRelease?.();
 
     this.unsubscribeDirection = null;
+    this.unsubscribeDirectionRelease = null;
 
     if (this.boardCam) {
 

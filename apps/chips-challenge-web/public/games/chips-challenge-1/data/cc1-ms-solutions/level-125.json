@@ -1,0 +1,12 @@
+{
+  "levelId": "level-125",
+  "passwordMs": "MYRT",
+  "title": "Mixed Nuts",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 830,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/125/ms",
+  "moveSource": "CC1-ms TWS records (MYRT); pending engine verify",
+  "moveVerified": false
+}

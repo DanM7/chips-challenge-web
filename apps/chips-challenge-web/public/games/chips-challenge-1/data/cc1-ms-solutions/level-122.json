@@ -1,0 +1,12 @@
+{
+  "levelId": "level-122",
+  "passwordMs": "SJUM",
+  "title": "Totally Fair",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 272,
+  "minChipMoves": 28,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/122/ms",
+  "moveSource": "CC1-ms TWS records (SJUM); pending engine verify",
+  "moveVerified": false
+}

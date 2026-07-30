@@ -1,0 +1,12 @@
+{
+  "levelId": "level-046",
+  "passwordMs": "HDQJ",
+  "title": "Three Doors",
+  "timeLimitSeconds": 250,
+  "boldTimeRemaining": 222,
+  "minChipMoves": 28,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/46/ms",
+  "moveSource": "CC1-ms TWS records (HDQJ); pending engine verify",
+  "moveVerified": false
+}

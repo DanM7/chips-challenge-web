@@ -1,0 +1,12 @@
+{
+  "levelId": "level-098",
+  "passwordMs": "TKWD",
+  "title": "Shrinking",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 338,
+  "minChipMoves": 12,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/98/ms",
+  "moveSource": "CC1-ms TWS records (TKWD); pending engine verify",
+  "moveVerified": false
+}

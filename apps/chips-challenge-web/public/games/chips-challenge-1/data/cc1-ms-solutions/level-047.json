@@ -1,0 +1,12 @@
+{
+  "levelId": "level-047",
+  "passwordMs": "LXPP",
+  "title": "Pier Seven",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 231,
+  "minChipMoves": 69,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/47/ms",
+  "moveSource": "CC1-ms TWS records (LXPP); pending engine verify",
+  "moveVerified": false
+}

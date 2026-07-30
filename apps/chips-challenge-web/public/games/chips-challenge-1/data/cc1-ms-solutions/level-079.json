@@ -1,0 +1,12 @@
+{
+  "levelId": "level-079",
+  "passwordMs": "JINU",
+  "title": "Drawn and Quartered",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 220,
+  "minChipMoves": 80,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/79/ms",
+  "moveSource": "CC1-ms TWS records (JINU); pending engine verify",
+  "moveVerified": false
+}

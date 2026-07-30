@@ -93,7 +93,7 @@ Long term, rows below should compile from **ruleset + content pack** instead of 
 | Rule | MS behavior | Status | Test / notes |
 |------|-------------|--------|----------------|
 | Monsters block Chip | Step or post-move collision → death | **done** (bugs) | `MS_DEATH_CREATURES`; monster tick after Chip move |
-| Monster tick / movement | DAT list order; **5 moves per game second** (200 ms) | **partial** | Bugs, tanks, glider, fireball, ball, **teeth (frog)** |
+| Monster tick / movement | DAT list order; **5 moves per game second** (200 ms) | **partial** | Bugs, tanks, glider, fireball, ball, **walker**, **teeth (frog)** |
 | Teeth (`frog_*`) | Chase Chip; odd/even step on **Chip-move** ticks only; dirt + gravel block; ignore Chip on ice/force slide | **done** | `advanceTeethBoundary` in `tickMsCc1Monsters`; idle clock moves fire/other monsters |
 | Monster vs block | Blocks stop monsters; MS kill rules | **partial** | Dirt + gravel block monsters; water kills bug |
 | Clone / trap / brown-red buttons | DAT fields 4–5 links | **todo** | Parser can expose links later |

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-130",
+  "passwordMs": "XHIZ",
+  "title": "Ice Cube",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 933,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/130/ms",
+  "moveSource": "CC1-ms TWS records (XHIZ); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-021",
+  "passwordMs": "UGRW",
+  "title": "Iceberg",
+  "timeLimitSeconds": 150,
+  "boldTimeRemaining": 119,
+  "minChipMoves": 31,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/21/ms",
+  "moveSource": "CC1-ms TWS records (UGRW); pending engine verify",
+  "moveVerified": false
+}

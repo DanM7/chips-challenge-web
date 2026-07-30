@@ -1,0 +1,12 @@
+{
+  "levelId": "level-068",
+  "passwordMs": "RTDI",
+  "title": "Eeny Miny Moe",
+  "timeLimitSeconds": 650,
+  "boldTimeRemaining": 489,
+  "minChipMoves": 161,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/68/ms",
+  "moveSource": "CC1-ms TWS records (RTDI); pending engine verify",
+  "moveVerified": false
+}

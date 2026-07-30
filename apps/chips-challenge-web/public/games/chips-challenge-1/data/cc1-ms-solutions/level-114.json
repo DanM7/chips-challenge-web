@@ -1,0 +1,12 @@
+{
+  "levelId": "level-114",
+  "passwordMs": "JWNL",
+  "title": "Deception",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 172,
+  "minChipMoves": 28,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/114/ms",
+  "moveSource": "CC1-ms TWS records (JWNL); pending engine verify",
+  "moveVerified": false
+}

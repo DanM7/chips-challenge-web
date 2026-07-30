@@ -1,0 +1,12 @@
+{
+  "levelId": "level-051",
+  "passwordMs": "IGGJ",
+  "title": "I Slide",
+  "timeLimitSeconds": 750,
+  "boldTimeRemaining": 655,
+  "minChipMoves": 95,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/51/ms",
+  "moveSource": "CC1-ms TWS records (IGGJ); pending engine verify",
+  "moveVerified": false
+}

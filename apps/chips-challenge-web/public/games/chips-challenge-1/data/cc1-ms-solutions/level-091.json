@@ -1,0 +1,12 @@
+{
+  "levelId": "level-091",
+  "passwordMs": "JPQG",
+  "title": "Jumping Swarm",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 367,
+  "minChipMoves": 33,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/91/ms",
+  "moveSource": "CC1-ms TWS records (JPQG); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-043",
+  "passwordMs": "UJDP",
+  "title": "Lock Block",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 126,
+  "minChipMoves": 74,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/43/ms",
+  "moveSource": "CC1-ms TWS records (UJDP); pending engine verify",
+  "moveVerified": false
+}

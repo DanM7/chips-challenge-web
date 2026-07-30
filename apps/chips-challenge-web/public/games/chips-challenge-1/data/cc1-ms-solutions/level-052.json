@@ -1,0 +1,12 @@
+{
+  "levelId": "level-052",
+  "passwordMs": "PPHT",
+  "title": "The Last Laugh",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 382,
+  "minChipMoves": 18,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/52/ms",
+  "moveSource": "CC1-ms TWS records (PPHT); pending engine verify",
+  "moveVerified": false
+}

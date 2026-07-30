@@ -1,0 +1,12 @@
+{
+  "levelId": "level-119",
+  "passwordMs": "PHTY",
+  "title": "Slide Step",
+  "timeLimitSeconds": 250,
+  "boldTimeRemaining": 210,
+  "minChipMoves": 40,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/119/ms",
+  "moveSource": "CC1-ms TWS records (PHTY); pending engine verify",
+  "moveVerified": false
+}

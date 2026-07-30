@@ -1,0 +1,12 @@
+{
+  "levelId": "level-089",
+  "passwordMs": "VCZO",
+  "title": "Block Buster",
+  "timeLimitSeconds": 450,
+  "boldTimeRemaining": 402,
+  "minChipMoves": 48,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/89/ms",
+  "moveSource": "CC1-ms TWS records (VCZO); pending engine verify",
+  "moveVerified": false
+}

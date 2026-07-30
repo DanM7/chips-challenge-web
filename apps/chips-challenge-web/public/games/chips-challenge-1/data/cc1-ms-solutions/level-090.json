@@ -1,0 +1,12 @@
+{
+  "levelId": "level-090",
+  "passwordMs": "OLLM",
+  "title": "Playhouse",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 318,
+  "minChipMoves": 82,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/90/ms",
+  "moveSource": "CC1-ms TWS records (OLLM); pending engine verify",
+  "moveVerified": false
+}

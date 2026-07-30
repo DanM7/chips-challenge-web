@@ -1,0 +1,12 @@
+{
+  "levelId": "level-045",
+  "passwordMs": "OVPZ",
+  "title": "Monster Lab",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 292,
+  "minChipMoves": 8,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/45/ms",
+  "moveSource": "CC1-ms TWS records (OVPZ); pending engine verify",
+  "moveVerified": false
+}

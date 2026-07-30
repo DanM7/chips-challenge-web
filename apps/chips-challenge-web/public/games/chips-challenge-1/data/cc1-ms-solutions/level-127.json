@@ -1,0 +1,12 @@
+{
+  "levelId": "level-127",
+  "passwordMs": "JMWZ",
+  "title": "Skelzie",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 454,
+  "minChipMoves": 46,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/127/ms",
+  "moveSource": "CC1-ms TWS records (JMWZ); pending engine verify",
+  "moveVerified": false
+}

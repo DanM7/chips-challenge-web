@@ -1,0 +1,12 @@
+{
+  "levelId": "level-033",
+  "passwordMs": "BQSN",
+  "title": "On the Rocks",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 684,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/33/ms",
+  "moveSource": "CC1-ms TWS records (BQSN); pending engine verify",
+  "moveVerified": false
+}

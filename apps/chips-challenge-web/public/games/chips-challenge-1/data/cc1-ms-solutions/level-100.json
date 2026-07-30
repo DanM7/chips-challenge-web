@@ -1,0 +1,12 @@
+{
+  "levelId": "level-100",
+  "passwordMs": "QJXR",
+  "title": "Colony",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 911,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/100/ms",
+  "moveSource": "CC1-ms TWS records (QJXR); pending engine verify",
+  "moveVerified": false
+}

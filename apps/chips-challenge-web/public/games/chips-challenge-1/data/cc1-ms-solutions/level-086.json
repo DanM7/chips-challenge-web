@@ -1,0 +1,12 @@
+{
+  "levelId": "level-086",
+  "passwordMs": "FLHH",
+  "title": "Suicide",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 381,
+  "minChipMoves": 19,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/86/ms",
+  "moveSource": "CC1-ms TWS records (FLHH); pending engine verify",
+  "moveVerified": false
+}

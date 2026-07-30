@@ -1,0 +1,12 @@
+{
+  "levelId": "level-032",
+  "passwordMs": "PEFS",
+  "title": "Scavenger Hunt",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 379,
+  "minChipMoves": 221,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/32/ms",
+  "moveSource": "CC1-ms TWS records (PEFS); pending engine verify",
+  "moveVerified": false
+}

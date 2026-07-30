@@ -1,0 +1,12 @@
+{
+  "levelId": "level-082",
+  "passwordMs": "LLIO",
+  "title": "Socialist Action",
+  "timeLimitSeconds": 999,
+  "boldTimeRemaining": 969,
+  "minChipMoves": 30,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/82/ms",
+  "moveSource": "CC1-ms TWS records (LLIO); pending engine verify",
+  "moveVerified": false
+}

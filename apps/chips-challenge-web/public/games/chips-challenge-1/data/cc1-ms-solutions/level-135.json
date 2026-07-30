@@ -1,0 +1,12 @@
+{
+  "levelId": "level-135",
+  "passwordMs": "LYWO",
+  "title": "Trust Me",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 293,
+  "minChipMoves": 7,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/135/ms",
+  "moveSource": "CC1-ms TWS records (LYWO); pending engine verify",
+  "moveVerified": false
+}

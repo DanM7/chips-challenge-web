@@ -1,0 +1,12 @@
+{
+  "levelId": "level-097",
+  "passwordMs": "IOCS",
+  "title": "Metastable to Chaos",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 290,
+  "minChipMoves": 10,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/97/ms",
+  "moveSource": "CC1-ms TWS records (IOCS); pending engine verify",
+  "moveVerified": false
+}

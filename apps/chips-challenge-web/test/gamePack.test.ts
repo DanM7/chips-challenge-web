@@ -28,7 +28,8 @@ describe("chips-challenge-1 game pack", () => {
     }
 
     const defaultLevel = resolveDefaultLaunchLevelNumber(index);
-    expect(defaultLevel).toBeGreaterThanOrEqual(1);
+    expect(defaultLevel).toBe(5);
+    expect(index.defaultLevelId).toBe("level-005");
   });
 
   it("level-001 uses compact layers and ruleset ids", () => {

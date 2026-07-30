@@ -1,0 +1,12 @@
+{
+  "levelId": "level-074",
+  "passwordMs": "MKNH",
+  "title": "Playtime",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 359,
+  "minChipMoves": 41,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/74/ms",
+  "moveSource": "CC1-ms TWS records (MKNH); pending engine verify",
+  "moveVerified": false
+}

@@ -2,6 +2,8 @@ import type { MsLevelScoreBreakdown } from "@engine/msCc1/msCc1Scoring";
 
 export interface MsLevelCompleteDialogOptions {
   showTimeRecordMessage?: boolean;
+  /** Auto-click Onward after this many ms (auto-play chain). */
+  autoDismissAfterMs?: number;
 }
 
 const TIME_RECORD_MESSAGE =
@@ -21,6 +23,7 @@ export class MsLevelCompleteDialog {
   private readonly closeBtn: HTMLButtonElement;
 
   private resolvePending: (() => void) | null = null;
+  private autoDismissTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
     this.root = document.createElement("div");
@@ -102,10 +105,20 @@ export class MsLevelCompleteDialog {
     this.root.hidden = false;
     return new Promise((resolve) => {
       this.resolvePending = () => {
+        if (this.autoDismissTimer != null) {
+          clearTimeout(this.autoDismissTimer);
+          this.autoDismissTimer = null;
+        }
         this.root.hidden = true;
         this.resolvePending = null;
         resolve();
       };
+      if (options.autoDismissAfterMs != null && options.autoDismissAfterMs > 0) {
+        this.autoDismissTimer = setTimeout(
+          () => this.dismiss(),
+          options.autoDismissAfterMs,
+        );
+      }
     });
   }
 

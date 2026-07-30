@@ -1,0 +1,12 @@
+{
+  "levelId": "level-009",
+  "passwordMs": "KCRE",
+  "title": "Nuts and Bolts",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 306,
+  "minChipMoves": 94,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/9/ms",
+  "moveSource": "CC1-ms TWS records (KCRE); pending engine verify",
+  "moveVerified": false
+}

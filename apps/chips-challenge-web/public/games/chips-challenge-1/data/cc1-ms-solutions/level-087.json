@@ -1,0 +1,12 @@
+{
+  "levelId": "level-087",
+  "passwordMs": "YJYS",
+  "title": "Cityblock",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 550,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/87/ms",
+  "moveSource": "CC1-ms TWS records (YJYS); pending engine verify",
+  "moveVerified": false
+}

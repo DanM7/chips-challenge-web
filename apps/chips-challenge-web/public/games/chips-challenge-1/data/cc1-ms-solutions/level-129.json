@@ -1,0 +1,12 @@
+{
+  "levelId": "level-129",
+  "passwordMs": "HEAN",
+  "title": "Lobster Trap",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 286,
+  "minChipMoves": 14,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/129/ms",
+  "moveSource": "CC1-ms TWS records (HEAN); pending engine verify",
+  "moveVerified": false
+}

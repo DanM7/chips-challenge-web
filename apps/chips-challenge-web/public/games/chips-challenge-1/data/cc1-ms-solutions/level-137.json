@@ -1,0 +1,12 @@
+{
+  "levelId": "level-137",
+  "passwordMs": "HPPX",
+  "title": "Goldkey",
+  "timeLimitSeconds": 450,
+  "boldTimeRemaining": 392,
+  "minChipMoves": 58,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/137/ms",
+  "moveSource": "CC1-ms TWS records (HPPX); pending engine verify",
+  "moveVerified": false
+}

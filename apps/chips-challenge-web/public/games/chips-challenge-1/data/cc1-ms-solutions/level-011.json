@@ -1,0 +1,12 @@
+{
+  "levelId": "level-011",
+  "passwordMs": "CNPE",
+  "title": "Trinity",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 211,
+  "minChipMoves": 89,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/11/ms",
+  "moveSource": "CC1-ms TWS records (CNPE); pending engine verify",
+  "moveVerified": false
+}

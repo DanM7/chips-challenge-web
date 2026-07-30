@@ -1,0 +1,12 @@
+{
+  "levelId": "level-026",
+  "passwordMs": "YVYJ",
+  "title": "Chchchips",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 254,
+  "minChipMoves": 46,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/26/ms",
+  "moveSource": "CC1-ms TWS records (YVYJ); pending engine verify",
+  "moveVerified": false
+}

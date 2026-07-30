@@ -1,0 +1,12 @@
+{
+  "levelId": "level-093",
+  "passwordMs": "REKF",
+  "title": "Roadsign",
+  "timeLimitSeconds": 800,
+  "boldTimeRemaining": 651,
+  "minChipMoves": 149,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/93/ms",
+  "moveSource": "CC1-ms TWS records (REKF); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-050",
+  "passwordMs": "QBDH",
+  "title": "Digdirt",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 318,
+  "minChipMoves": 32,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/50/ms",
+  "moveSource": "CC1-ms TWS records (QBDH); pending engine verify",
+  "moveVerified": false
+}

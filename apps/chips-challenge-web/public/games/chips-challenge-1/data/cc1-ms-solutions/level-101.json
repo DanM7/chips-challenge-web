@@ -1,0 +1,12 @@
+{
+  "levelId": "level-101",
+  "passwordMs": "RPIR",
+  "title": "Apartment",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 240,
+  "minChipMoves": 60,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/101/ms",
+  "moveSource": "CC1-ms TWS records (RPIR); pending engine verify",
+  "moveVerified": false
+}

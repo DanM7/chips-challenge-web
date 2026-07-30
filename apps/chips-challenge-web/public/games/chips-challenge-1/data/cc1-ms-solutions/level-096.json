@@ -1,0 +1,12 @@
+{
+  "levelId": "level-096",
+  "passwordMs": "BIFQ",
+  "title": "Paranoia",
+  "timeLimitSeconds": 399,
+  "boldTimeRemaining": 320,
+  "minChipMoves": 79,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/96/ms",
+  "moveSource": "CC1-ms TWS records (BIFQ); pending engine verify",
+  "moveVerified": false
+}

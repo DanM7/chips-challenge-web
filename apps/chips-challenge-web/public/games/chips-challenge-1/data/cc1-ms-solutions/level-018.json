@@ -1,0 +1,12 @@
+{
+  "levelId": "level-018",
+  "passwordMs": "HMJL",
+  "title": "Castle Moat",
+  "timeLimitSeconds": 600,
+  "boldTimeRemaining": 553,
+  "minChipMoves": 47,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/18/ms",
+  "moveSource": "CC1-ms TWS records (HMJL); pending engine verify",
+  "moveVerified": false
+}

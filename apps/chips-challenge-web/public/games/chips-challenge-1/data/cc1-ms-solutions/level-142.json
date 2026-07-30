@@ -1,0 +1,12 @@
+{
+  "levelId": "level-142",
+  "passwordMs": "UCRY",
+  "title": "Pentagram",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 968,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/142/ms",
+  "moveSource": "CC1-ms TWS records (UCRY); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-083",
+  "passwordMs": "OVPJ",
+  "title": "Up the Block",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 298,
+  "minChipMoves": 102,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/83/ms",
+  "moveSource": "CC1-ms TWS records (OVPJ); pending engine verify",
+  "moveVerified": false
+}

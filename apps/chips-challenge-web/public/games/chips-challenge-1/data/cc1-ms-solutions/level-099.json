@@ -1,0 +1,12 @@
+{
+  "levelId": "level-099",
+  "passwordMs": "XUVU",
+  "title": "Catacombs",
+  "timeLimitSeconds": 399,
+  "boldTimeRemaining": 380,
+  "minChipMoves": 19,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/99/ms",
+  "moveSource": "CC1-ms TWS records (XUVU); pending engine verify",
+  "moveVerified": false
+}

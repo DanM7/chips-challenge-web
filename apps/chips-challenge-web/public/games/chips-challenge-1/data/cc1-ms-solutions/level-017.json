@@ -1,0 +1,12 @@
+{
+  "levelId": "level-017",
+  "passwordMs": "AJMG",
+  "title": "Nice Day",
+  "timeLimitSeconds": 100,
+  "boldTimeRemaining": 83,
+  "minChipMoves": 17,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/17/ms",
+  "moveSource": "CC1-ms TWS records (AJMG); pending engine verify",
+  "moveVerified": false
+}

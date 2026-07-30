@@ -606,6 +606,128 @@ body {
 
 
 
+.settings-option--checkbox {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.4rem;
+
+  white-space: normal;
+
+  line-height: 1.25;
+
+}
+
+
+
+.settings-option--checkbox::before {
+
+  content: "";
+
+  flex: 0 0 0.85rem;
+
+  width: 0.85rem;
+
+  text-align: center;
+
+  font-weight: 700;
+
+}
+
+
+
+.settings-option--checkbox[aria-checked="true"]::before {
+
+  content: "✓";
+
+}
+
+
+
+.debug-panel__columns {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 0 1.25rem;
+
+  align-items: start;
+
+}
+
+
+
+.debug-panel__col {
+
+  min-width: 0;
+
+}
+
+
+
+.debug-panel__col > .settings-panel__group-label:first-child {
+
+  margin-top: 0;
+
+}
+
+
+
+.debug-panel__col--chips {
+
+  padding-top: 0;
+
+}
+
+
+
+.debug-stepper {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-top: 0.25rem;
+
+}
+
+
+
+.debug-stepper__btn {
+
+  min-width: 2rem;
+
+  padding: 0.35rem 0.5rem;
+
+  font-size: 1.1rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+}
+
+
+
+.debug-stepper__value {
+
+  min-width: 2.5rem;
+
+  text-align: center;
+
+  font-variant-numeric: tabular-nums;
+
+  font-weight: 600;
+
+}
+
+
+
 .level-select-overlay {
 
   position: fixed;
@@ -1706,6 +1828,73 @@ body {
 
   padding-left: 2px;
 
+}
+
+.autoplay-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.55rem 1rem;
+  padding-top: max(0.55rem, env(safe-area-inset-top));
+  background: linear-gradient(180deg, #1a3a6a 0%, #0f2848 100%);
+  border-bottom: 2px solid #6a9ad4;
+  color: #e8f4ff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.autoplay-banner[hidden] {
+  display: none;
+}
+
+.autoplay-banner__text {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.autoplay-banner__stop {
+  flex-shrink: 0;
+  padding: 0.35rem 0.85rem;
+  border: 2px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  background: #c0c0c0;
+  color: #000;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.autoplay-banner__stop:active {
+  border-color: #404040 #dfdfdf #dfdfdf #404040;
+  padding-top: 0.4rem;
+  padding-left: 0.9rem;
+}
+
+.game-toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 10004;
+  max-width: min(92vw, 28rem);
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 32, 0.92);
+  border: 1px solid #4a6a9a;
+  color: #c8f0c8;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 
 .ms-oops-overlay {

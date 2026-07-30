@@ -1,0 +1,12 @@
+{
+  "levelId": "level-107",
+  "passwordMs": "ECRE",
+  "title": "Balls O Fire",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 260,
+  "minChipMoves": 40,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/107/ms",
+  "moveSource": "CC1-ms TWS records (ECRE); pending engine verify",
+  "moveVerified": false
+}

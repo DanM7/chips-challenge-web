@@ -1,0 +1,12 @@
+{
+  "levelId": "level-118",
+  "passwordMs": "OSCW",
+  "title": "Miss Direction",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 260,
+  "minChipMoves": 40,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/118/ms",
+  "moveSource": "CC1-ms TWS records (OSCW); pending engine verify",
+  "moveVerified": false
+}

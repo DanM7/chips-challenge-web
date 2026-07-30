@@ -1,0 +1,12 @@
+{
+  "levelId": "level-012",
+  "passwordMs": "WVHI",
+  "title": "Hunt",
+  "timeLimitSeconds": 400,
+  "boldTimeRemaining": 270,
+  "minChipMoves": 130,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/12/ms",
+  "moveSource": "CC1-ms TWS records (WVHI); pending engine verify",
+  "moveVerified": false
+}

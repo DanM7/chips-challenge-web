@@ -1,0 +1,12 @@
+{
+  "levelId": "level-070",
+  "passwordMs": "GCCG",
+  "title": "Nightmare",
+  "timeLimitSeconds": 199,
+  "boldTimeRemaining": 136,
+  "minChipMoves": 63,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/70/ms",
+  "moveSource": "CC1-ms TWS records (GCCG); pending engine verify",
+  "moveVerified": false
+}

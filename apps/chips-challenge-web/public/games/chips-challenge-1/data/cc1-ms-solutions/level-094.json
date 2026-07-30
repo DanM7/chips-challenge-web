@@ -1,0 +1,12 @@
+{
+  "levelId": "level-094",
+  "passwordMs": "EWCS",
+  "title": "Now You See It",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 906,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/94/ms",
+  "moveSource": "CC1-ms TWS records (EWCS); pending engine verify",
+  "moveVerified": false
+}

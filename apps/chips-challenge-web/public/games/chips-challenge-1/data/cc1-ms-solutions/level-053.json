@@ -1,0 +1,12 @@
+{
+  "levelId": "level-053",
+  "passwordMs": "CGNX",
+  "title": "Traffic Cop",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 478,
+  "minChipMoves": 22,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/53/ms",
+  "moveSource": "CC1-ms TWS records (CGNX); pending engine verify",
+  "moveVerified": false
+}

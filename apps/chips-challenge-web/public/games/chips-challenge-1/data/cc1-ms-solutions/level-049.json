@@ -1,0 +1,12 @@
+{
+  "levelId": "level-049",
+  "passwordMs": "PPXI",
+  "title": "Problems",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 162,
+  "minChipMoves": 38,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/49/ms",
+  "moveSource": "CC1-ms TWS records (PPXI); pending engine verify",
+  "moveVerified": false
+}

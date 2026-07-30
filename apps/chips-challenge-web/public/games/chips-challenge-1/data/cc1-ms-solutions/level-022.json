@@ -1,0 +1,12 @@
+{
+  "levelId": "level-022",
+  "passwordMs": "WZIN",
+  "title": "Forced Entry",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 293,
+  "minChipMoves": 7,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/22/ms",
+  "moveSource": "CC1-ms TWS records (WZIN); pending engine verify",
+  "moveVerified": false
+}

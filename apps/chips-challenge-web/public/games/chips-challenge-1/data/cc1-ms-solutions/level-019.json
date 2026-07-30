@@ -1,0 +1,12 @@
+{
+  "levelId": "level-019",
+  "passwordMs": "MRHR",
+  "title": "Digger",
+  "timeLimitSeconds": 210,
+  "boldTimeRemaining": 171,
+  "minChipMoves": 39,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/19/ms",
+  "moveSource": "CC1-ms TWS records (MRHR); pending engine verify",
+  "moveVerified": false
+}

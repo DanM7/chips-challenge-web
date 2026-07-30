@@ -1,0 +1,12 @@
+{
+  "levelId": "level-072",
+  "passwordMs": "EKFT",
+  "title": "Reverse Alley",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 961,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/72/ms",
+  "moveSource": "CC1-ms TWS records (EKFT); pending engine verify",
+  "moveVerified": false
+}

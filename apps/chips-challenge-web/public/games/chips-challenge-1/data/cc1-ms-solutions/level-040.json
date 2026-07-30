@@ -1,0 +1,12 @@
+{
+  "levelId": "level-040",
+  "passwordMs": "YWFH",
+  "title": "Floorgasborg",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 195,
+  "minChipMoves": 5,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/40/ms",
+  "moveSource": "CC1-ms TWS records (YWFH); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-044",
+  "passwordMs": "TXHL",
+  "title": "Refraction",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 146,
+  "minChipMoves": 154,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/44/ms",
+  "moveSource": "CC1-ms TWS records (TXHL); pending engine verify",
+  "moveVerified": false
+}

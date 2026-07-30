@@ -1,0 +1,12 @@
+{
+  "levelId": "level-066",
+  "passwordMs": "ZIKZ",
+  "title": "Victim",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 292,
+  "minChipMoves": 8,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/66/ms",
+  "moveSource": "CC1-ms TWS records (ZIKZ); pending engine verify",
+  "moveVerified": false
+}

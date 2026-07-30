@@ -1,0 +1,12 @@
+{
+  "levelId": "level-116",
+  "passwordMs": "HXMF",
+  "title": "Block Buster II",
+  "timeLimitSeconds": 750,
+  "boldTimeRemaining": 717,
+  "minChipMoves": 33,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/116/ms",
+  "moveSource": "CC1-ms TWS records (HXMF); pending engine verify",
+  "moveVerified": false
+}

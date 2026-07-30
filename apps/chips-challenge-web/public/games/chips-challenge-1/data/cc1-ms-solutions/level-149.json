@@ -1,0 +1,12 @@
+{
+  "levelId": "level-149",
+  "passwordMs": "DIGW",
+  "title": "Special",
+  "timeLimitSeconds": 999,
+  "boldTimeRemaining": 955,
+  "minChipMoves": 44,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/149/ms",
+  "moveSource": "CC1-ms TWS records (DIGW); pending engine verify",
+  "moveVerified": false
+}

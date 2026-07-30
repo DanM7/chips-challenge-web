@@ -1,0 +1,12 @@
+{
+  "levelId": "level-028",
+  "passwordMs": "UJDO",
+  "title": "Ping Pong",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 239,
+  "minChipMoves": 61,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/28/ms",
+  "moveSource": "CC1-ms TWS records (UJDO); pending engine verify",
+  "moveVerified": false
+}

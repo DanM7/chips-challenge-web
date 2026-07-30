@@ -1,0 +1,12 @@
+{
+  "levelId": "level-111",
+  "passwordMs": "KRQJ",
+  "title": "Time Lapse",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 963,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/111/ms",
+  "moveSource": "CC1-ms TWS records (KRQJ); pending engine verify",
+  "moveVerified": false
+}

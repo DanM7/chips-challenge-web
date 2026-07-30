@@ -1,0 +1,12 @@
+{
+  "levelId": "level-077",
+  "passwordMs": "FHIC",
+  "title": "Invincible Champion",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 481,
+  "minChipMoves": 19,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/77/ms",
+  "moveSource": "CC1-ms TWS records (FHIC); pending engine verify",
+  "moveVerified": false
+}

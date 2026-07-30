@@ -1,0 +1,12 @@
+{
+  "levelId": "level-062",
+  "passwordMs": "TIGW",
+  "title": "Slo Mo",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 282,
+  "minChipMoves": 18,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/62/ms",
+  "moveSource": "CC1-ms TWS records (TIGW); pending engine verify",
+  "moveVerified": false
+}

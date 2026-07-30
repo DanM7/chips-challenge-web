@@ -1,0 +1,12 @@
+{
+  "levelId": "level-102",
+  "passwordMs": "VDDU",
+  "title": "Icehouse",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 177,
+  "minChipMoves": 23,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/102/ms",
+  "moveSource": "CC1-ms TWS records (VDDU); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-104",
+  "passwordMs": "KWNL",
+  "title": "Jailer",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 235,
+  "minChipMoves": 65,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/104/ms",
+  "moveSource": "CC1-ms TWS records (KWNL); pending engine verify",
+  "moveVerified": false
+}

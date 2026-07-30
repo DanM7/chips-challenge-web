@@ -1,0 +1,12 @@
+{
+  "levelId": "level-055",
+  "passwordMs": "SJES",
+  "title": "Potpourri",
+  "timeLimitSeconds": 100,
+  "boldTimeRemaining": 70,
+  "minChipMoves": 30,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/55/ms",
+  "moveSource": "CC1-ms TWS records (SJES); pending engine verify",
+  "moveVerified": false
+}

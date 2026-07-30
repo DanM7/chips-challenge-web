@@ -1,0 +1,12 @@
+{
+  "levelId": "level-146",
+  "passwordMs": "JHEN",
+  "title": "Cake Walk",
+  "timeLimitSeconds": 999,
+  "boldTimeRemaining": 717,
+  "minChipMoves": 282,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/146/ms",
+  "moveSource": "CC1-ms TWS records (JHEN); pending engine verify",
+  "moveVerified": false
+}

@@ -1,0 +1,12 @@
+{
+  "levelId": "level-124",
+  "passwordMs": "TASX",
+  "title": "Firetrap",
+  "timeLimitSeconds": 800,
+  "boldTimeRemaining": 667,
+  "minChipMoves": 133,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/124/ms",
+  "moveSource": "CC1-ms TWS records (TASX); pending engine verify",
+  "moveVerified": false
+}

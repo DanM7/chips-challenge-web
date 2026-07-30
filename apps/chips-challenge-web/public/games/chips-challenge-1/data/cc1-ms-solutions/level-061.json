@@ -1,0 +1,12 @@
+{
+  "levelId": "level-061",
+  "passwordMs": "RMOW",
+  "title": "Rink",
+  "timeLimitSeconds": null,
+  "boldTimeRemaining": 950,
+  "minChipMoves": null,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/61/ms",
+  "moveSource": "CC1-ms TWS records (RMOW); pending engine verify",
+  "moveVerified": false
+}

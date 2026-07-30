@@ -1,0 +1,12 @@
+{
+  "levelId": "level-063",
+  "passwordMs": "GOHX",
+  "title": "Block Factory",
+  "timeLimitSeconds": 500,
+  "boldTimeRemaining": 477,
+  "minChipMoves": 23,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/63/ms",
+  "moveSource": "CC1-ms TWS records (GOHX); pending engine verify",
+  "moveVerified": false
+}

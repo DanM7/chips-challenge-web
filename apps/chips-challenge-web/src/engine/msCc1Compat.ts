@@ -21,6 +21,25 @@ export function getForceFloorTileAt(
 }
 
 /** Works with published engine before `hasActiveDirection` was added. */
+export function getHeldDirection(input: DirectionInput | undefined): Direction | null {
+  if (!input) {
+    return null;
+  }
+  const extended = input as DirectionInput & {
+    getActiveDirection?: () => Direction | null;
+    hasActiveDirection?: () => boolean;
+    activeDirection?: Direction | null;
+  };
+  if (typeof extended.getActiveDirection === "function") {
+    return extended.getActiveDirection();
+  }
+  if (typeof extended.hasActiveDirection === "function" && !extended.hasActiveDirection()) {
+    return null;
+  }
+  const legacy = extended.activeDirection;
+  return legacy ?? null;
+}
+
 export function directionInputIsActive(input: DirectionInput | undefined): boolean {
   if (!input) {
     return false;
