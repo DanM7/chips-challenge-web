@@ -1,6 +1,8 @@
-import type { Direction } from "@engine/types";
-import { decodeSolutionMoves } from "@engine/solutionMoves";
 import { GAME_PACK_BASE } from "../config/gamePack";
+import {
+  decodeSolutionMoves,
+  type SolutionAction,
+} from "./solutionMoves";
 
 interface SolutionEntry {
   levelId: string;
@@ -8,11 +10,11 @@ interface SolutionEntry {
   moveVerified?: boolean;
 }
 
-let solutionCache = new Map<number, Promise<Direction[] | null>>();
+let solutionCache = new Map<number, Promise<SolutionAction[] | null>>();
 
 function loadLevelSolutionEntry(levelNumber: number): Promise<SolutionEntry | null> {
   const id = String(levelNumber).padStart(3, "0");
-  return fetch(`${GAME_PACK_BASE}/data/cc1-ms-solutions/level-${id}.json?v=14`)
+  return fetch(`${GAME_PACK_BASE}/data/cc1-ms-solutions/level-${id}.json?v=15`)
     .then((res) => {
       if (!res.ok) {
         console.warn(`Failed to load solution for level ${levelNumber}: ${res.status}`);
@@ -26,8 +28,10 @@ function loadLevelSolutionEntry(levelNumber: number): Promise<SolutionEntry | nu
     });
 }
 
-/** Recorded solution moves for auto-play / integration (may be null while unsolved). */
-export async function loadSolutionMoves(levelNumber: number): Promise<Direction[] | null> {
+/** Recorded solution actions for auto-play (directions + waits). */
+export async function loadSolutionMoves(
+  levelNumber: number,
+): Promise<SolutionAction[] | null> {
   let pending = solutionCache.get(levelNumber);
   if (!pending) {
     pending = loadLevelSolutionEntry(levelNumber).then((entry) => {

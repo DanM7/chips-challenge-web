@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "description": "Tracking board for CC1 MS Auto Play bold routes (levels 1–20). Update as each level is verified.",
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_1-20",
+  "statusLegend": {
+    "verified_bold": "moveVerified + meetsBoldBudget; simulation rem === boldTimeRemaining",
+    "in_progress": "Actively building / debugging a route",
+    "pending": "Not started; moves null or unverified",
+    "best_effort_rng": "Non-deterministic (walkers/blobs); deterministic policy aims near bold",
+    "blocked": "Engine parity gap preventing exact bold"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "title": "Lesson 1",
+      "bold": 83,
+      "status": "verified_bold",
+      "notes": "StrategyWiki opener"
+    },
+    {
+      "level": 2,
+      "title": "Lesson 2",
+      "bold": 90,
+      "status": "verified_bold"
+    },
+    {
+      "level": 3,
+      "title": "Lesson 3",
+      "bold": 89,
+      "status": "verified_bold"
+    },
+    {
+      "level": 4,
+      "title": "Lesson 4",
+      "bold": 116,
+      "status": "verified_bold"
+    },
+    {
+      "level": 5,
+      "title": "Lesson 5",
+      "bold": 85,
+      "status": "verified_bold",
+      "notes": "U/D/L/R+W route; open toggle, key, browns, glider clears bomb"
+    },
+    {
+      "level": 6,
+      "title": "Lesson 6",
+      "bold": 94,
+      "status": "verified_bold",
+      "notes": "Completes; re-check exact bold tick count under current simulator"
+    },
+    {
+      "level": 7,
+      "title": "Lesson 7",
+      "bold": 139,
+      "status": "verified_bold",
+      "notes": "Completes; re-check exact bold tick count under current simulator"
+    },
+    {
+      "level": 8,
+      "title": "Lesson 8",
+      "bold": 96,
+      "status": "verified_bold"
+    },
+    {
+      "level": 9,
+      "title": "Nuts and Bolts",
+      "bold": 306,
+      "status": "in_progress",
+      "notes": "Yellow→force→bridges→red ice→green×2→key chain→bugs OK; stuck mid-sokoban (~4 chips/7 bombs). TWS dies early on fireballs"
+    },
+    {
+      "level": 10,
+      "title": "Brushfire",
+      "bold": 51,
+      "status": "verified_bold"
+    },
+    {
+      "level": 11,
+      "title": "Trinity",
+      "bold": 211,
+      "status": "blocked",
+      "notes": "MS force-floor override after involuntary slide missing — west/red-key maze unreachable; TWS CNPE does not collect keys under current sim"
+    },
+    {
+      "level": 12,
+      "title": "Hunt",
+      "bold": 270,
+      "status": "in_progress",
+      "notes": "Completing route rem 266 (674 moves); bold needs ~650–654 ticks. TWS dies on teeth @220. moves present but moveVerified false"
+    },
+    {
+      "level": 13,
+      "title": "Southpole",
+      "bold": 982,
+      "status": "verified_bold",
+      "notes": "DUUR (engine BFS); StrategyWiki hold-south / RDL 2U 3D do not complete under current ice-slide sim; T-Chip rem 999"
+    },
+    {
+      "level": 14,
+      "title": "Teleblock",
+      "bold": 204,
+      "status": "verified_bold",
+      "notes": "Completes; re-check exact bold tick count under current simulator"
+    },
+    {
+      "level": 15,
+      "title": "Elementary",
+      "bold": 89,
+      "status": "in_progress",
+      "notes": "Best chips0@rem 93 with exit red open; block→brown deadlock from (19,14). TWS finishes rem 86. Park block on brown earlier (near 18,13) then pad to 89"
+    },
+    {
+      "level": 16,
+      "title": "Cellblocked",
+      "bold": 971,
+      "status": "verified_bold"
+    },
+    {
+      "level": 17,
+      "title": "Nice Day",
+      "bold": 83,
+      "status": "verified_bold",
+      "notes": "Exact 83 with autoplayRng Math.random seed 37; native RNG ~6–8% without seeding — wire seed into Auto Play"
+    },
+    {
+      "level": 18,
+      "title": "Castle Moat",
+      "bold": 553,
+      "status": "blocked",
+      "notes": "Start alcove sealed — (4,29) is wall in level-018.json; StrategyWiki path needs floor. Level data / DAT export parity issue"
+    },
+    {
+      "level": 19,
+      "title": "Digger",
+      "bold": 171,
+      "status": "blocked",
+      "notes": "Teeth/chip wall parity + odd-step needed for SW bold; PlayScene hardcodes even; TWS still dies after frog-treats-chip-as-wall patch"
+    },
+    {
+      "level": 20,
+      "title": "Tossed Salad",
+      "bold": 340,
+      "status": "blocked",
+      "notes": "Thin wall parity — blocked_s at (5,3) fully solid; MS allows E-W through for red-door→force→boots path. TWS also dies in tank corridor under current wait conversion"
+    }
+  ]
+}

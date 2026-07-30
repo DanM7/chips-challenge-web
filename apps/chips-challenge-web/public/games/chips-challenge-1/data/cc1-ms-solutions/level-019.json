@@ -7,6 +7,18 @@
   "minChipMoves": 39,
   "moves": null,
   "source": "https://scores.bitbusters.club/levels/cc1/19/ms",
-  "moveSource": "CC1-ms TWS records (MRHR); pending engine verify",
-  "moveVerified": false
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_1-20",
+  "boldRouteHint": "Odd step; follow chips to exit 8U, 6L 2D, 3U 11R, teeth R 5U, 5L 5D 8R, L 7D, 8L 2U, 4D 5L UD 8L D; escape U 3R 5U 5L 3U; NE then CCW chips → 171",
+  "moveSource": "StrategyWiki Digger bold (odd step); engine verify failed — see blockers",
+  "moveVerified": false,
+  "meetsBoldBudget": false,
+  "stepParity": "odd",
+  "blockers": [
+    "Teeth (frog) must treat chips as acting walls; engine patched locally (monsterTreatsChipAsWall includes frog) — without this TWS dies at move 69",
+    "Even with chips-as-walls, imported TWS still dies (odd@119, even@216) — remaining teeth AI / dig-path mismatch vs MS",
+    "StrategyWiki numeric route partially works (odd) through 5L5D8RL7D8L2U then escape U3R dies (head-on with teeth at 2,18)",
+    "Greedy chip-corridor search (odd) stuck at 28 chips rem 175; even reached ~17 chips past rem 171 then hung",
+    "PlayScene hardcodes stepParity even; SW bold assumes odd",
+    "Bold 171 needs mb∈[195,199] (~195 chip ticks); TWS ghost completes at 345 ticks → rem 141 only"
+  ]
 }

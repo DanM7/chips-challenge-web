@@ -21,7 +21,7 @@
     "levels:compact": "npx tsx apps/chips-challenge-web/scripts/compactLevelJson.ts"
   },
   "dependencies": {
-    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#e3a0e61",
+    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#c4d639e",
     "phaser": "^3.80.1"
   },
   "devDependencies": {

@@ -88,6 +88,27 @@ See [mobile-landscape-touch-layout.md](./mobile-landscape-touch-layout.md) — s
 
 ## Open
 
+## MS force-floor override (blocks Trinity / level 11 bold)
+
+**Status:** Open — **priority after levels 1–20 Auto Play wave**  
+**Severity:** Engine parity — blocks bold Auto Play for Trinity and any level needing post-slide override  
+**Repos:** `2d-tile-engine` (`msCc1Sliding` / `msCc1Movement`), consumed by `chips-challenge-web`
+
+### Symptom
+
+After an involuntary force-floor slide, Chip cannot override onto a new force direction the way MS allows. On Trinity, after the opening path Chip sticks around `(11,20)`: stepping north into `force_s` at `(11,19)` bounces back, so the west / red-key maze never opens (~55 reachable cells). TWS CNPE also fails to collect keys/tools under current simulation.
+
+### Expected (MS)
+
+Chip may override force floors (including after an involuntary slide / boost timing) so routes like StrategyWiki Trinity (bold **211**) are reachable.
+
+### Notes
+
+- Flagged while solving levels 1–20; level 11 status is `blocked` in `cc1-ms-solutions/status-1-20.json`.
+- Related playtests: level 9 force-hold input tests already exist; override-after-slide is the gap for Trinity.
+
+---
+
 ## Lesson 5 (TQKB): glider not visible on the board
 
 **Status:** Open (paused March 2026)  

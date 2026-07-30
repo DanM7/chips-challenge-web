@@ -4,9 +4,19 @@
   "title": "Southpole",
   "timeLimitSeconds": null,
   "boldTimeRemaining": 982,
-  "minChipMoves": null,
-  "moves": null,
+  "minChipMoves": 4,
+  "moves": [
+    "D",
+    "U",
+    "U",
+    "R"
+  ],
   "source": "https://scores.bitbusters.club/levels/cc1/13/ms",
-  "moveSource": "CC1-ms TWS records (OCKS); pending engine verify",
-  "moveVerified": false
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_1-20",
+  "boldRouteHint": "StrategyWiki: hold south (5D) or RDL 2U 3D → theoretical 982; engine completes via BFS DUUR (RDL/hold-south do not finish under current ice slide chaining)",
+  "moveVerified": true,
+  "meetsBoldBudget": true,
+  "moveSource": "Engine BFS DUUR; StrategyWiki T-Chip bold 982 (untimed / 999). RDL 2U 3D and hold-south TWS do not complete in simulator",
+  "simulatedTicks": 3,
+  "simulatedSecondsRemaining": 999
 }

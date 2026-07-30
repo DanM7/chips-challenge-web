@@ -7,6 +7,9 @@
   "minChipMoves": 89,
   "moves": null,
   "source": "https://scores.bitbusters.club/levels/cc1/11/ms",
-  "moveSource": "CC1-ms TWS records (CNPE); pending engine verify",
-  "moveVerified": false
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_1-20",
+  "boldRouteHint": "Begin D 3L D, west for red key from fireball (boosting), southwest yellow key, ice skates at start when passing, north path last key, force floors back to start, flippers+chip, fire boots+chip, skate to third chip, exit right → 211",
+  "moveVerified": false,
+  "meetsBoldBudget": false,
+  "moveSource": "StrategyWiki Trinity bold 211 pending; blocked by missing MS force-floor override (cannot enter west/red-key maze from post-open 11,20). TWS CNPE unverified under engine."
 }

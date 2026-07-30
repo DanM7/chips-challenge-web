@@ -49,6 +49,7 @@ import { MsLevelCompleteDialog } from "../ui/MsLevelCompleteDialog";
 import { buildMsLevelScoreBreakdown } from "@engine/msCc1/msCc1Scoring";
 import { GO_TO_LEVEL_EVENT, AUTO_PLAY_LEVEL_EVENT, RESTART_LEVEL_EVENT } from "../ui/AppHeaderMenu";
 import { loadSolutionMoves } from "../data/loadLevelSolution";
+import { isWaitAction, type SolutionAction } from "../data/solutionMoves";
 import { showGameToast } from "../ui/gameToast";
 import {
   AUTOPLAY_LEVEL_START_DELAY_MS,
@@ -146,7 +147,7 @@ export class PlayScene extends Phaser.Scene {
   private chipMoveQueue = new ChipMoveQueue();
   private chipMoveChain: Promise<void> = Promise.resolve();
   private autoplayActive = false;
-  private autoplayMoves: Direction[] | null = null;
+  private autoplayMoves: SolutionAction[] | null = null;
   private autoplayIndex = 0;
   private autoplayBlockedStreak = 0;
   private autoplayTimer: Phaser.Time.TimerEvent | null = null;
@@ -818,15 +819,34 @@ export class PlayScene extends Phaser.Scene {
       }
       return;
     }
-    const direction = this.autoplayMoves[this.autoplayIndex]!;
+    const action = this.autoplayMoves[this.autoplayIndex]!;
     this.autoplayIndex += 1;
     void (this.chipMoveChain = this.chipMoveChain.then(async () => {
       if (!this.autoplayActive) {
         return;
       }
+      if (isWaitAction(action)) {
+        // Idle monster tick only — matches PlayScene monster clock (no moveBoundary).
+        this.tickMonstersAfterChip(false);
+        if (
+          !this.autoplayActive ||
+          this.inputLocked ||
+          this.deathSequenceActive ||
+          !this.autoplayMoves
+        ) {
+          return;
+        }
+        this.autoplayBlockedStreak = 0;
+        this.autoplayTimer?.destroy();
+        this.autoplayTimer = this.time.delayedCall(
+          MS_CHIP_WALK_STEP_MS,
+          () => this.scheduleNextAutoplayStep(),
+        );
+        return;
+      }
       const beforeGx = this.playerGx;
       const beforeGy = this.playerGy;
-      await this.performChipMove(direction);
+      await this.performChipMove(action);
       if (
         !this.autoplayActive ||
         this.inputLocked ||
