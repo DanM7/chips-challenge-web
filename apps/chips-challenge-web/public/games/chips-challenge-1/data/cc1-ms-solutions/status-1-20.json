@@ -79,8 +79,8 @@
       "level": 11,
       "title": "Trinity",
       "bold": 211,
-      "status": "blocked",
-      "notes": "MS force-floor override after involuntary slide missing — west/red-key maze unreachable; TWS CNPE does not collect keys under current sim"
+      "status": "verified_bold",
+      "notes": "Force override + thin-wall blocked_e corridor; segment BFS + 44 LR pads on the east column before exit"
     },
     {
       "level": 12,
@@ -108,7 +108,7 @@
       "title": "Elementary",
       "bold": 89,
       "status": "in_progress",
-      "notes": "Best chips0@rem 93 with exit red open; block→brown deadlock from (19,14). TWS finishes rem 86. Park block on brown earlier (near 18,13) then pad to 89"
+      "notes": "Completing route rem 88 (811 ticks); bold needs 805. TWS to chips0@756 + thief-slide hold-brown exit. Prefix already shortest to that chips0 state"
     },
     {
       "level": 16,
@@ -142,7 +142,7 @@
       "title": "Tossed Salad",
       "bold": 340,
       "status": "blocked",
-      "notes": "Thin wall parity — blocked_s at (5,3) fully solid; MS allows E-W through for red-door→force→boots path. TWS also dies in tank corridor under current wait conversion"
+      "notes": "Thin wall Chip path may now work (blocked_e/s directional as of Trinity); TWS still dies in tank corridor under current wait conversion"
     }
   ]
 }

@@ -1,0 +1,275 @@
+{
+  "levelId": "level-006",
+  "passwordMs": "WNLD",
+  "title": "Lesson 6",
+  "timeLimitSeconds": 100,
+  "boldTimeRemaining": 94,
+  "minChipMoves": 6,
+  "moves": [
+    "L",
+    "L",
+    "L",
+    "L",
+    "L",
+    "U",
+    "U",
+    "U",
+    "U",
+    "L",
+    "U",
+    "R",
+    "U",
+    "U",
+    "L",
+    "L",
+    "L",
+    "D",
+    "D",
+    "L",
+    "D",
+    "D",
+    "D",
+    "U",
+    "U",
+    "U",
+    "R",
+    "U",
+    "U",
+    "R",
+    "R",
+    "D",
+    "R",
+    "D",
+    "D",
+    "D",
+    "D",
+    "R",
+    "R",
+    "R",
+    "D",
+    "D",
+    "D"
+  ],
+  "source": "https://scores.bitbusters.club/levels/cc1/6/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 5,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 9,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 14,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 18,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 22,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 27,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 31,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 35,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 40,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 45,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 49,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 53,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 57,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 61,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 65,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 70,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 74,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 81,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 85,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 89,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 93,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 97,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 102,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 106,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 110,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 114,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 118,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 122,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 127,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 131,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 135,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 140,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 144,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 148,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 152,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 156,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 159,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 164,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 168,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 171,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 175,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 179,
+      "direction": 2,
+      "dir": "down"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (WNLD); pending engine verify; promoted after engine TWS replay pass",
+  "moveVerified": true,
+  "meetsBoldBudget": false
+}

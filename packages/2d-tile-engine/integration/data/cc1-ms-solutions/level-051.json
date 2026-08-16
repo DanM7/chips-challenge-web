@@ -1,0 +1,235 @@
+{
+  "levelId": "level-051",
+  "passwordMs": "IGGJ",
+  "title": "I Slide",
+  "timeLimitSeconds": 750,
+  "boldTimeRemaining": 655,
+  "minChipMoves": 95,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/51/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 5,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 27,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 76,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 123,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 145,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 150,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 241,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 327,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 413,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 505,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 509,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 513,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 593,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 741,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 831,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 921,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 1069,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1149,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 1173,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 1247,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1319,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1343,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1345,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1352,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 1355,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 1435,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1438,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 1481,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 1573,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 1643,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1695,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 1751,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 1807,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 1859,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 1929,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 2021,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 2050,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 2143,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 2246,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 2259,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 2330,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 2341,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 2349,
+      "direction": 0,
+      "dir": "up"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (IGGJ); pending engine verify",
+  "moveVerified": false
+}

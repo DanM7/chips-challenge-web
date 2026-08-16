@@ -8,7 +8,7 @@ Portfolio-quality structure for the three-repo Chip's Challenge stack. This file
 |-------|-----|------|
 | **Extract (local)** | You + **cc1-asset-extraction-pipeline** | Read licensed `CHIPS.DAT` / `CHIPS.EXE`; write into the web game pack |
 | **Play (deployed)** | **chips-challenge-web** only | Static build + Phaser; works on phone browser without DAT or pipeline |
-| **Simulate** | **2d-tile-engine** | Owns `LevelData`, tile ids, MS rules; consumed by web (and pipeline for export) |
+| **Simulate** | **packages/2d-tile-engine** | Owns `LevelData`, tile ids, MS rules; consumed by the web app (and pipeline for export) |
 
 See [architecture.md](../architecture.md) for data flow. Mobile deployment gaps are tracked in [mobile-readiness.md](./mobile-readiness.md) (Phase A follow-up doc after cleanup).
 
@@ -38,7 +38,7 @@ See [architecture.md](../architecture.md) for data flow. Mobile deployment gaps 
 
 | Task | Status | Notes |
 |------|--------|-------|
-| Pipeline depends on `@danm7/2d-tile-engine` | **done** | `file:../2d-tile-engine` |
+| Pipeline depends on `@danm7/2d-tile-engine` | **done** | Point at `chips-challenge-web/packages/2d-tile-engine` |
 | Remove `gameLevelTypes`, `layerCompact`, `countCollectibles` duplicates | **done** | Use `@engine/*` |
 | `pipeline/tiles.ts` re-exports `@tile-engine/tiles` | **done** | |
 | `tools/gamePackOut.mjs` — output only to web game pack | **done** | `CC1_GAME_PACK_OUT` override |
@@ -72,7 +72,7 @@ See [architecture.md](../architecture.md) for data flow. Mobile deployment gaps 
 |------|--------|-------|
 | pnpm workspace: `packages/{engine,pipeline,web}` | | |
 | Shared `cc1-install.local.json` at root | | |
-| Drop repeated `file:../2d-tile-engine` paths | | |
+| Drop repeated `file:../2d-tile-engine` paths | **done** | Engine vendored in `packages/2d-tile-engine` |
 
 **Not required** for solo deploy or portfolio if sibling repos stay documented.
 
@@ -98,6 +98,6 @@ See [mobile-readiness.md](./mobile-readiness.md).
 
 | Repo | Role in cleanup |
 |------|-----------------|
-| [2d-tile-engine](https://github.com/danm7/2d-tile-engine) | Schema + simulation owner |
+| [packages/2d-tile-engine](../../packages/2d-tile-engine) | Schema + simulation (in this repo) |
 | [cc1-asset-extraction-pipeline](https://github.com/danm7/cc1-asset-extraction-pipeline) | Standalone extractor; no committed game levels |
 | **chips-challenge-web** (this repo) | Committed game pack + Phaser client |

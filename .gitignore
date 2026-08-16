@@ -3,6 +3,9 @@ dist
 *.local
 .DS_Store
 
+# Engine solver scratch (TWS dumps, probe output)
+packages/2d-tile-engine/.tmp/
+
 # Proprietary Chip's Challenge (MS) — place zip/DAT/EXE here; never commit
 vendor/
 chips_challenge.zip

@@ -1060,7 +1060,8 @@ export class PlayScene extends Phaser.Scene {
   }
 
   /**
-   * One force-floor push (respects held input via resolveForceSlideIntent).
+   * One force-floor push. Held input is passed into tryMsCc1Move so MS can
+   * override an opposing pad; force-only when nothing is held.
    * Does not re-enter continueForceFloorSlide — callers loop if still on a pad.
    */
   private async performInvoluntaryForceSlide(): Promise<boolean> {

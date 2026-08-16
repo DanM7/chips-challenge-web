@@ -1,0 +1,425 @@
+{
+  "levelId": "level-102",
+  "passwordMs": "VDDU",
+  "title": "Icehouse",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 177,
+  "minChipMoves": 23,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/102/ms",
+  "twsRecords": [
+    {
+      "tick": 4,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 190,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 210,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 214,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 218,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 222,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 225,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 229,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 233,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 237,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 241,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 245,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 249,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 254,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 258,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 267,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 272,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 275,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 281,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 293,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 307,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 310,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 314,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 318,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 321,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 325,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 329,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 334,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 339,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 343,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 347,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 350,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 353,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 361,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 376,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 381,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 385,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 394,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 400,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 404,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 408,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 416,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 434,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 438,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 443,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 447,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 452,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 455,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 458,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 461,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 468,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 472,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 477,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 481,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 485,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 491,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 509,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 513,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 518,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 522,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 526,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 531,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 536,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 541,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 546,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 551,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 562,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 566,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 577,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 596,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 600,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 604,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 608,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 612,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 616,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 620,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 624,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 628,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 637,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 647,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 650,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 654,
+      "direction": 2,
+      "dir": "down"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (VDDU); pending engine verify",
+  "moveVerified": false
+}

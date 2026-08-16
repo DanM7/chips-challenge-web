@@ -1,0 +1,22 @@
+{
+  "levelId": "level-013",
+  "passwordMs": "OCKS",
+  "title": "Southpole",
+  "timeLimitSeconds": 999,
+  "boldTimeRemaining": 982,
+  "minChipMoves": 4,
+  "moves": [
+    "D",
+    "U",
+    "U",
+    "R"
+  ],
+  "source": "https://scores.bitbusters.club/levels/cc1/13/ms",
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_1-20",
+  "boldRouteHint": "StrategyWiki faster RDL 2U 3D or hold 5D; engine BFS DUUR (T-Chip 999)",
+  "moveVerified": true,
+  "meetsBoldBudget": true,
+  "moveSource": "Engine BFS; StrategyWiki T-Chip bold 982",
+  "simulatedTicks": 3,
+  "simulatedSecondsRemaining": 999
+}

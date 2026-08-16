@@ -1,0 +1,445 @@
+{
+  "levelId": "level-095",
+  "passwordMs": "BIFQ",
+  "title": "Four Square",
+  "timeLimitSeconds": 350,
+  "boldTimeRemaining": 335,
+  "minChipMoves": 15,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/95/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 12,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 15,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 19,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 23,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 27,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 32,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 35,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 40,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 43,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 48,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 52,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 55,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 59,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 85,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 90,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 95,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 98,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 102,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 106,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 110,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 114,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 118,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 123,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 126,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 130,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 134,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 138,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 142,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 145,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 149,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 153,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 157,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 161,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 166,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 169,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 173,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 177,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 181,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 185,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 193,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 197,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 201,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 205,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 211,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 221,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 245,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 249,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 254,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 258,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 262,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 266,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 270,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 275,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 281,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 295,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 299,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 304,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 312,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 315,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 319,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 322,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 326,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 337,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 341,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 345,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 349,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 353,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 357,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 361,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 374,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 377,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 382,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 386,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 390,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 393,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 397,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 401,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 405,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 410,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 414,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 419,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 422,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 426,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 430,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 433,
+      "direction": 3,
+      "dir": "right"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (BIFQ); pending engine verify",
+  "moveVerified": false
+}

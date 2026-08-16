@@ -1,0 +1,31 @@
+{
+  "seq": [
+    "up",
+    "right",
+    "right",
+    "right",
+    "up",
+    "right",
+    "right",
+    "right",
+    "right",
+    "down",
+    "down",
+    "down",
+    "up",
+    "up",
+    "left",
+    "left",
+    "left",
+    "left",
+    "left",
+    "left",
+    "down",
+    "down",
+    "left",
+    "down",
+    "down"
+  ],
+  "ticks": 24,
+  "rem": 96
+}

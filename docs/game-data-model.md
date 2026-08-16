@@ -176,7 +176,7 @@ Today's `public/.../levels/level-NNN.json` use MS tile ids in **compact** layers
 }
 ```
 
-`loadLevel()` (in **2d-tile-engine**) expands to full `width×height` arrays before play. **cc1-asset-extraction-pipeline** imports the same schema and writes JSON into this game pack; it does not commit levels under the pipeline repo. Inventory slot order is in `ui/ms-window-layout.json` (`inventory.slots`), not per level.
+`loadLevel()` (in **packages/2d-tile-engine**) expands to full `width×height` arrays before play. **cc1-asset-extraction-pipeline** imports the same schema and writes JSON into this game pack; it does not commit levels under the pipeline repo. Inventory slot order is in `ui/ms-window-layout.json` (`inventory.slots`), not per level.
 
 Migration:
 

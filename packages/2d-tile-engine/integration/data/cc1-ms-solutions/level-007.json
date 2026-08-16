@@ -1,0 +1,407 @@
+{
+  "levelId": "level-007",
+  "passwordMs": "FXQO",
+  "title": "Lesson 7",
+  "timeLimitSeconds": 150,
+  "boldTimeRemaining": 139,
+  "minChipMoves": 11,
+  "moves": [
+    "D",
+    "D",
+    "R",
+    "R",
+    "L",
+    "D",
+    "D",
+    "R",
+    "U",
+    "U",
+    "R",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R",
+    "R",
+    "L",
+    "D",
+    "D",
+    "D",
+    "D",
+    "R",
+    "R",
+    "U",
+    "L",
+    "R",
+    "U",
+    "U",
+    "L",
+    "R",
+    "D",
+    "D",
+    "L",
+    "R",
+    "L",
+    "D",
+    "D",
+    "D",
+    "L",
+    "L",
+    "L",
+    "L",
+    "R",
+    "D",
+    "D",
+    "D",
+    "R",
+    "D",
+    "R",
+    "D",
+    "L",
+    "D",
+    "D",
+    "R",
+    "R",
+    "R",
+    "L",
+    "L",
+    "L",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R"
+  ],
+  "source": "https://scores.bitbusters.club/levels/cc1/7/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 5,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 9,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 13,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 28,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 35,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 39,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 43,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 47,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 54,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 62,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 66,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 70,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 74,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 78,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 82,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 86,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 105,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 115,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 120,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 124,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 127,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 131,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 135,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 140,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 148,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 156,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 164,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 168,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 172,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 176,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 180,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 184,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 188,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 199,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 208,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 214,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 218,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 222,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 225,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 229,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 233,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 237,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 261,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 270,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 274,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 279,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 283,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 287,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 291,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 307,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 310,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 314,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 318,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 322,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 326,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 330,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 334,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 339,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 343,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 347,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 351,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 355,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 359,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 362,
+      "direction": 3,
+      "dir": "right"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (FXQO); pending engine verify; promoted after engine TWS replay pass",
+  "moveVerified": true,
+  "meetsBoldBudget": false
+}

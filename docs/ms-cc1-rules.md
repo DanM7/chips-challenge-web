@@ -1,6 +1,6 @@
 # MS Chip's Challenge rules checklist
 
-Living reference for **Microsoft CC1** gameplay behavior in this project. Use it to find gaps before playtesting, to add regression tests, and to align `content/ms-cc1.json` with `tryMsCc1Move` in **2d-tile-engine**.
+Living reference for **Microsoft CC1** gameplay behavior in this project. Use it to find gaps before playtesting, to add regression tests, and to align `content/ms-cc1.json` with `tryMsCc1Move` in **packages/2d-tile-engine**.
 
 Related: [game-data-model.md](./game-data-model.md) (target JSON/ruleset architecture), [ui-and-hud.md](./ui-and-hud.md) (HUD only).
 
@@ -17,12 +17,12 @@ Related: [game-data-model.md](./game-data-model.md) (target JSON/ruleset archite
 
 | Layer | Location |
 |-------|----------|
-| Player step (keys, doors, socket, blocks, exit) | `2d-tile-engine/engine/msCc1/msCc1Movement.ts` → `tryMsCc1Move` |
-| Static blocking / layers | `2d-tile-engine/engine/levelRuntime.ts` |
-| Tile ids, door↔key, green key rule | `2d-tile-engine/tile-engine/tiles.ts` |
+| Player step (keys, doors, socket, blocks, exit) | `packages/2d-tile-engine/engine/msCc1/msCc1Movement.ts` → `tryMsCc1Move` |
+| Static blocking / layers | `packages/2d-tile-engine/engine/levelRuntime.ts` |
+| Tile ids, door↔key, green key rule | `packages/2d-tile-engine/tile-engine/tiles.ts` |
 | Content mapping (intended behavior) | `apps/.../content/ms-cc1.json` |
 | Phaser wiring | `apps/chips-challenge-web/src/scenes/PlayScene.ts` |
-| Regression tests | `2d-tile-engine/test/msCc1Movement.test.ts`, `msKeyRules.test.ts` |
+| Regression tests | `packages/2d-tile-engine/test/msCc1Movement.test.ts`, `msKeyRules.test.ts` |
 | DAT fidelity (counts, not rules) | `cc1-asset-extraction-pipeline/test/lesson1Keys.test.ts` |
 
 Long term, rows below should compile from **ruleset + content pack** instead of growing ad-hoc branches in `tryMsCc1Move`.
@@ -82,6 +82,7 @@ Long term, rows below should compile from **ruleset + content pack** instead of 
 | Fire / fire boots | Burn vs immunity | **todo** | |
 | Ice / ice skates | Slide until floor or ice corner; skates cancel slide | **done** | `msCc1Sliding.ts`, movement tests |
 | Force floors | Slide in arrow direction without suction boots | **done** | `force_n/s/e/w` |
+| Force override | MS: Chip walks against/off a force floor with voluntary input; involuntary slides still ride the arrow | **done** | `msCc1Movement.test.ts` override cases; Trinity (11,20)→north |
 | Teleport | Blue teleport network (see **Blue teleport (MS CC1)** below) | **done** | `msCc1Teleports.ts`, `msCc1Teleports.test.ts` |
 | Thin walls (`blocked_*`) | Directional blocking | **todo** | In `BLOCKING_TILE_IDS` for static block only |
 | Invisible wall | Blocks like wall | **partial** | Blocked if in `BLOCKING_TILE_IDS` |
@@ -138,7 +139,7 @@ Tiles on maps but not in content pack yet should get entries when behavior is im
 
 ## Level smoke tests (exported CC1 lessons)
 
-Run engine tests: `cd 2d-tile-engine && npm test -- test/msCc1Movement.test.ts`
+Run engine tests: `npm run test:engine -- test/msCc1Movement.test.ts`
 
 | Level | Title | Hint (abridged) | Scenarios to keep green | Status |
 |-------|-------|-----------------|-------------------------|--------|
@@ -232,9 +233,9 @@ Blocking the **exit face** of a teleport (block, wall, chip, closed toggle, etc.
 
 ### Implementation (engine)
 
-- `2d-tile-engine/engine/msCc1/msCc1Teleports.ts` — `reverseWrappableNext`, `resolveBlueTeleport`, `canChipStepOnto`.
+- `packages/2d-tile-engine/engine/msCc1/msCc1Teleports.ts` — `reverseWrappableNext`, `resolveBlueTeleport`, `canChipStepOnto`.
 - `tryMsCc1Move` — `tryTeleportAfterLanding` after each step onto a pad (warp / through / bounce).
-- Tests: `2d-tile-engine/test/msCc1Teleports.test.ts`.
+- Tests: `packages/2d-tile-engine/test/msCc1Teleports.test.ts`.
 - PlayScene: optional `teleport` sound on non-adjacent step (if wired).
 
 ### CC2-only (out of scope)
@@ -266,7 +267,7 @@ Use when scanning new levels or writing tests:
 1. Add a row to the **Rules matrix** above (status **todo**).
 2. Map tile(s) in `content/ms-cc1.json` if not already present.
 3. Implement in `tryMsCc1Move` (or future ruleset system).
-4. Add a focused test in `2d-tile-engine/test/msCc1Movement.test.ts` (minimal grid) or pipeline DAT test if extraction-related.
+4. Add a focused test in `packages/2d-tile-engine/test/msCc1Movement.test.ts` (minimal grid) or pipeline DAT test if extraction-related.
 5. If a lesson level teaches it, add a **Level smoke tests** checklist line and coordinates.
 6. Mark row **done** in this file.
 
@@ -276,4 +277,4 @@ Use when scanning new levels or writing tests:
 
 - [Tile World](https://wiki.tileworld.dev/) / CC1 behavior notes
 - Original `CHIPS.EXE` (disassembly / comparison) — ultimate arbiter for disputes
-- `2d-tile-engine/tile-engine/tiles.ts` — `TILE_NAMES` for all object codes `$00–$6F`
+- `packages/2d-tile-engine/tile-engine/tiles.ts` — `TILE_NAMES` for all object codes `$00–$6F`

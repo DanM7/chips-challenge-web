@@ -33,23 +33,9 @@ Repo root includes [`netlify.toml`](../netlify.toml):
 
 You do **not** add separate Netlify steps for mobile (D-pad, swipe, manifest are already in the build).
 
-### Private `2d-tile-engine` repo
+## Engine (in this repo)
 
-If the engine repo is private, configure Netlify so `npm install` can read GitHub (build token / Netlify–GitHub integration). See [Netlify env docs](https://docs.netlify.com/environment-variables/get-started/).
-
-`package-lock.json` resolves the engine via **`git+https://`** (not `git+ssh://`) so Netlify can clone without SSH keys. If `npm install` rewrites the lockfile back to SSH on your machine, change it again before pushing or set `git config url.https://github.com/.insteadOf git@github.com:` locally.
-
-## Engine dependency (GitHub, not sibling folder)
-
-Web `package.json` pins the engine from GitHub:
-
-```json
-"@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#d59a26a"
-```
-
-Netlify runs `npm install` and clones that commit. **Push engine changes to GitHub**, then bump the hash, run `npm install`, commit `package-lock.json`.
-
-**Local engine work (optional):** clone `2d-tile-engine` beside this repo. `apps/chips-challenge-web/scripts/engineRoot.mjs` falls back to the sibling if needed for Vite; TypeScript paths use `node_modules` from the GitHub install.
+Simulation lives in [`packages/2d-tile-engine`](../packages/2d-tile-engine). Vite and TypeScript resolve it through `apps/chips-challenge-web/scripts/engineRoot.mjs` (`@engine` / `@tile-engine`). Netlify does not need a GitHub token for a second repo.
 
 ## `npm run sync:ms-pack`
 

@@ -1,0 +1,315 @@
+{
+  "levelId": "level-060",
+  "passwordMs": "ZYVI",
+  "title": "Scoundrel",
+  "timeLimitSeconds": 294,
+  "boldTimeRemaining": 288,
+  "minChipMoves": 6,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/60/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 5,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 9,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 13,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 17,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 21,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 25,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 29,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 33,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 37,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 41,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 45,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 49,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 53,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 57,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 61,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 66,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 70,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 75,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 79,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 82,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 86,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 90,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 95,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 99,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 102,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 106,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 109,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 113,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 117,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 121,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 125,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 130,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 134,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 137,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 141,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 145,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 149,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 153,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 157,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 161,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 167,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 171,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 176,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 179,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 184,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 188,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 192,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 195,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 197,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 199,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 201,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 205,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 209,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 213,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 217,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 221,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 225,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 229,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 231,
+      "direction": 3,
+      "dir": "right"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (ZYVI); pending engine verify",
+  "moveVerified": false
+}

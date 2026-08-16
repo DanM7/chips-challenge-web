@@ -4,7 +4,7 @@ This document describes how the Chip's Challenge web prototype is structured: ma
 
 ## System overview
 
-The project splits into three cooperating planes:
+The project splits into three cooperating planes (engine is in this repo):
 
 | Plane | Role |
 |-------|------|
@@ -86,7 +86,7 @@ main.ts
   └── bindZoomControls(game) → pixelZoom registry + "pixel-zoom-changed"
 ```
 
-`GameEngine` (`@engine/GameEngine.ts` via 2d-tile-engine):
+`GameEngine` (`@engine/GameEngine.ts` via `packages/2d-tile-engine`):
 
 - Merges base Phaser config (1024×1080, `FIT`, pixelArt, roundPixels) with `manifest.phaser`
 - Instantiates `Phaser.Game` with parent `#game-container`
@@ -123,7 +123,7 @@ DOM keydown / d-pad click
 
 ### Display zoom
 
-`@engine/pixelZoom` (2d-tile-engine) holds user zoom level in `game.registry` and applies **integer** `scale.setZoom()` based on `#game-container` size. It must not call `scale.refresh()` from a resize handler (that caused a `resize` event loop). See [known-issues.md](./known-issues.md).
+`@engine/pixelZoom` (`packages/2d-tile-engine`) holds user zoom level in `game.registry` and applies **integer** `scale.setZoom()` based on `#game-container` size. It must not call `scale.refresh()` from a resize handler (that caused a `resize` event loop). See [known-issues.md](./known-issues.md).
 
 ### Config loading
 
@@ -136,7 +136,7 @@ DOM keydown / d-pad click
 | `LevelsIndex` | `/games/chips-challenge-1/levels/index.json` |
 | `LevelData` | per-level JSON under `levels/` |
 
-Shared TypeScript shapes live in **2d-tile-engine** (`engine/types.ts`).
+Shared TypeScript shapes live in **packages/2d-tile-engine** (`engine/types.ts`).
 
 ## DAT pipeline (levels)
 
@@ -244,23 +244,18 @@ level-001.json (LevelData)
   └── monsters (optional)
 ```
 
-To add a level: export JSON, add an entry to `levels/index.json`, set `defaultLevelId` if needed. That field is the **launch default** for the web app (`resolveDefaultLaunchLevelNumber` in `2d-tile-engine`); `?password=` only overrides for dev/deep links.
+To add a level: export JSON, add an entry to `levels/index.json`, set `defaultLevelId` if needed. That field is the **launch default** for the web app (`resolveDefaultLaunchLevelNumber` in `packages/2d-tile-engine`); `?password=` only overrides for dev/deep links.
 
 ## Layering and dependencies
 
-Three repositories; the web app imports simulation from **2d-tile-engine** via `@engine` / `@tile-engine` aliases.
+The web app imports simulation from **`packages/2d-tile-engine`** via `@engine` / `@tile-engine` aliases. DAT extraction stays in a sibling pipeline repo.
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │  chips-challenge-web                                    │
-│  index.html / style.css / main.ts                       │
-│  scenes/PlayScene.ts, ui/MsWindowHud.ts                 │
-│  scripts/ (predev, cc1Paths, vendor, level sync)        │
-├─────────────────────────────────────────────────────────┤
-│  2d-tile-engine (@engine, @tile-engine)                 │
-│  GameEngine, ConfigLoader, levelRuntime, RunSession     │
-│  msCc1/* (movement, monsters, buttons, scoring)         │
-│  types, levelLayers, pixelZoom, msTileFrames            │
+│  apps/chips-challenge-web (Phaser client)               │
+│  packages/2d-tile-engine (@engine, @tile-engine)        │
+│    GameEngine, levelRuntime, RunSession, msCc1/*        │
 ├─────────────────────────────────────────────────────────┤
 │  cc1-asset-extraction-pipeline (offline only)           │
 │  DAT parse → chipToGameLevel → public/games/.../levels  │
@@ -272,7 +267,7 @@ Three repositories; the web app imports simulation from **2d-tile-engine** via `
 
 **Dependency rule of thumb:**
 
-- **2d-tile-engine** must not import Phaser scenes; it exposes types and simulation.
+- **`packages/2d-tile-engine`** must not import Phaser scenes; it exposes types and simulation. Extract it again when a second game is a real consumer.
 - **cc1-asset-extraction-pipeline** depends on the engine for `LevelData`, tile ids, and `compactLayer`; it does not ship level JSON as its own product.
 - **PlayScene** is the integration point: manifest + JSON levels + MS spritesheet + event bus.
 
@@ -280,13 +275,13 @@ Game pack id and paths for scripts: `GAME_PACK_ID` in `apps/chips-challenge-web/
 
 ## Tests
 
-| Repo | What it guards |
-|------|----------------|
+| Location | What it guards |
+|----------|----------------|
 | **cc1-asset-extraction-pipeline** | DAT parse, level export, lesson smoke cases |
-| **2d-tile-engine** | MS movement, monsters, keys, compact layers, run session |
-| **chips-challenge-web** | Manual play + optional future smoke tests (see [status/cleanup.md](./status/cleanup.md)) |
+| **packages/2d-tile-engine** | MS movement, monsters, keys, compact layers, run session |
+| **apps/chips-challenge-web** | Auto Play bold routes, pack/touch smoke tests (see [status/cleanup.md](./status/cleanup.md)) |
 
-Vitest runs in engine and pipeline; vendor files are optional where tests read `CHIPS.DAT`.
+`npm test` at the repo root runs web and engine Vitest suites. Vendor files are optional where tests read `CHIPS.DAT`.
 
 ## Extension points
 

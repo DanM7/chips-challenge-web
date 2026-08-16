@@ -1,0 +1,320 @@
+{
+  "levelId": "level-066",
+  "passwordMs": "ZIKZ",
+  "title": "Victim",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 292,
+  "minChipMoves": 8,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/66/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 5,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 8,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 25,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 43,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 47,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 51,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 60,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 67,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 70,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 74,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 78,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 82,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 86,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 90,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 95,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 99,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 105,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 109,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 113,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 117,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 121,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 125,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 129,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 133,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 137,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 141,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 147,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 153,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 157,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 161,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 165,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 169,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 173,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 179,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 189,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 193,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 200,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 205,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 211,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 215,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 218,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 223,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 230,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 235,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 239,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 243,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 250,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 256,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 260,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 264,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 267,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 270,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 273,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 277,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 281,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 285,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 289,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 293,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 297,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 301,
+      "direction": 0,
+      "dir": "up"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (ZIKZ); pending engine verify",
+  "moveVerified": false
+}

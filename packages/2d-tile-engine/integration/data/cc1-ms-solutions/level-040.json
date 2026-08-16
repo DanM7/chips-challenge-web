@@ -1,0 +1,260 @@
+{
+  "levelId": "level-040",
+  "passwordMs": "YWFH",
+  "title": "Floorgasborg",
+  "timeLimitSeconds": 200,
+  "boldTimeRemaining": 195,
+  "minChipMoves": 5,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/40/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 5,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 9,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 17,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 19,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 21,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 23,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 30,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 35,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 37,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 46,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 50,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 54,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 58,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 61,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 65,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 69,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 73,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 80,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 84,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 99,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 110,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 113,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 117,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 121,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 125,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 129,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 136,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 139,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 141,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 145,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 162,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 166,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 168,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 171,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 175,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 178,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 182,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 186,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 189,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 193,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 198,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 202,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 205,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 209,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 214,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 218,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 221,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 225,
+      "direction": 0,
+      "dir": "up"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (YWFH); pending engine verify",
+  "moveVerified": false
+}

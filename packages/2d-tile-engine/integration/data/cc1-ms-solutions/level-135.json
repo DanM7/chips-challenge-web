@@ -1,0 +1,195 @@
+{
+  "levelId": "level-135",
+  "passwordMs": "LYWO",
+  "title": "Trust Me",
+  "timeLimitSeconds": 300,
+  "boldTimeRemaining": 293,
+  "minChipMoves": 7,
+  "moves": null,
+  "source": "https://scores.bitbusters.club/levels/cc1/135/ms",
+  "twsRecords": [
+    {
+      "tick": 1,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 6,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 10,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 14,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 18,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 22,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 26,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 30,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 34,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 38,
+      "direction": 3,
+      "dir": "right"
+    },
+    {
+      "tick": 42,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 45,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 49,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 55,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 59,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 63,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 67,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 71,
+      "direction": 2,
+      "dir": "down"
+    },
+    {
+      "tick": 75,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 78,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 81,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 85,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 89,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 93,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 97,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 101,
+      "direction": 0,
+      "dir": "up"
+    },
+    {
+      "tick": 105,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 109,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 113,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 117,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 121,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 125,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 129,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 133,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 137,
+      "direction": 1,
+      "dir": "left"
+    },
+    {
+      "tick": 141,
+      "direction": 1,
+      "dir": "left"
+    }
+  ],
+  "twsRecordSource": "C:\\dev\\DanM7\\2d-tile-engine\\.tmp\\tws\\CC1-ms.dac.tws",
+  "moveSource": "CC1-ms TWS records (LYWO); pending engine verify",
+  "moveVerified": false
+}

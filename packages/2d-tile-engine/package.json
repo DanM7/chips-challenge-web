@@ -1,0 +1,34 @@
+{
+  "name": "@danm7/2d-tile-engine",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./engine/index.ts",
+    "./engine/*": "./engine/*",
+    "./tile-engine/*": "./tile-engine/*"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:integration": "vitest run test/integration",
+    "sync:bitbusters": "node scripts/bootstrapSolutionsFromReference.mjs && node scripts/syncBitBustersSolutions.mjs && node scripts/copySolutionsToWeb.mjs",
+    "copy:solutions": "node scripts/copySolutionsToWeb.mjs",
+    "import:tws": "npx tsx scripts/importTwsSolutions.mjs && node scripts/copySolutionsToWeb.mjs",
+    "fetch:cc1-tws": "node scripts/fetchCc1MsTws.mjs",
+    "export:cc1-tws": "python scripts/exportCc1MsTwsRecords.py",
+    "import:cc1-tws": "node scripts/importTwsRecords.mjs 5 149 && node scripts/copySolutionsToWeb.mjs",
+    "setup:cc1-tws": "node scripts/fetchCc1MsTws.mjs && python scripts/exportCc1MsTwsRecords.py && node scripts/importTwsRecords.mjs 5 149 && node scripts/copySolutionsToWeb.mjs",
+    "verify:batch": "npx tsx scripts/batchVerifySolutions.ts",
+    "verify:batch:5-149": "npx tsx scripts/batchVerifySolutions.ts 5 149",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "pngjs": "^7.0.0",
+    "typescript": "~5.4.5",
+    "vitest": "^2.0.5"
+  }
+}

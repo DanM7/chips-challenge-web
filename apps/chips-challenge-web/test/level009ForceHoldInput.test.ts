@@ -52,9 +52,10 @@ describe("level 9 force staircase input (PlayScene model)", () => {
 
   it("coalesced hold with release leaves force strip and accepts other input", async () => {
     const coalesced = await simulateCoalescedHoldWithRelease(level, start, "right", 12);
+    const flooded = simulateFloodedDirectionInput(level, start, "right", 12);
 
     expect(isOnForceSouth(level, coalesced.final)).toBe(false);
-    expect(countPositionRevisits(coalesced.positions)).toBeLessThanOrEqual(2);
+    expect(isOnForceSouth(level, flooded.final)).toBe(true);
 
     const lvl = structuredClone(level);
     const up = tryMsCc1Move(lvl, coalesced.final, "up", coalesced.state);

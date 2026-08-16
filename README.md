@@ -7,16 +7,16 @@ Browser client for MS Chip's Challenge: Phaser 3 play window, HUD, and level pla
 | Path | Role |
 |------|------|
 | `apps/chips-challenge-web/` | Vite app (`src/`, `public/games/chips-challenge-1/`) |
+| `packages/2d-tile-engine/` | Grid engine (`@engine` / `@tile-engine`): movement, monsters, `LevelData` |
 | `docs/` | Architecture and HUD notes |
 
 ## Prerequisites
 
-Optional sibling clones for DAT extraction and engine hacking:
+Optional sibling clone for DAT extraction:
 
 ```text
 DanM7/
-  2d-tile-engine/              ← optional; web installs engine from GitHub by default
-  chips-challenge-web/         ← this repo
+  chips-challenge-web/         ← this repo (app + engine)
   cc1-asset-extraction-pipeline/
 ```
 
@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Uses **[@danm7/2d-tile-engine](https://github.com/danm7/2d-tile-engine)** via a pinned GitHub dependency (`package.json`). Level JSON and sprites ship under `public/`. **Publishing:** [docs/deployment.md](docs/deployment.md).
+The tile engine lives in `packages/2d-tile-engine` (no GitHub pin). Level JSON and sprites ship under `public/`. **Publishing:** [docs/deployment.md](docs/deployment.md).
 
 ### Licensed MS game files (your install folder)
 
@@ -65,8 +65,7 @@ On phones: D-pad + swipe on the playfield. Desktop: keyboard (WASD / arrows).
 
 ## Related repos
 
-- **[2d-tile-engine](https://github.com/danm7/2d-tile-engine)** — grid engine dependency
-- **[cc1-asset-extraction-pipeline](https://github.com/danm7/cc1-asset-extraction-pipeline)** — DAT/EXE extraction
+- **[cc1-asset-extraction-pipeline](https://github.com/danm7/cc1-asset-extraction-pipeline)** — DAT/EXE extraction (still a sibling clone)
 
 ## Remote
 

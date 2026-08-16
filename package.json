@@ -11,6 +11,7 @@
     "preview:lan": "vite preview --config apps/chips-challenge-web/vite.config.ts --host",
     "dev:lan": "node apps/chips-challenge-web/scripts/predev.mjs && vite --config apps/chips-challenge-web/vite.config.ts --host",
     "test": "vitest run",
+    "test:engine": "vitest run --config packages/2d-tile-engine/vitest.config.ts",
     "vendor:ensure": "node apps/chips-challenge-web/scripts/ensureVendor.mjs",
     "ms:extract": "node apps/chips-challenge-web/scripts/runMsExtract.mjs",
     "ms:digits": "node apps/chips-challenge-web/scripts/runMsDigits.mjs",
@@ -21,11 +22,12 @@
     "levels:compact": "npx tsx apps/chips-challenge-web/scripts/compactLevelJson.ts"
   },
   "dependencies": {
-    "@danm7/2d-tile-engine": "github:danm7/2d-tile-engine#c4d639e",
+    "@danm7/2d-tile-engine": "file:packages/2d-tile-engine",
     "phaser": "^3.80.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
+    "pngjs": "^7.0.0",
     "tsx": "^4.16.2",
     "typescript": "~5.4.5",
     "vite": "^5.4.10",

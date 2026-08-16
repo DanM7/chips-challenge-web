@@ -1,0 +1,3449 @@
+{
+  "generatedAt": "2026-07-02T00:51:15.505Z",
+  "range": {
+    "from": 5,
+    "to": 149
+  },
+  "elapsedMs": 24732,
+  "totalLevels": 145,
+  "autoplayPass": 0,
+  "autoplayFail": 0,
+  "autoplaySkip": 145,
+  "twsPass": 23,
+  "twsFail": 122,
+  "twsSkip": 0,
+  "firstAutoplayFail": null,
+  "firstAutoplaySkip": 5,
+  "firstTwsFail": 5,
+  "levels": [
+    {
+      "level": 5,
+      "levelId": "level-005",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 35,
+        "waitTicks": 141,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 6,
+      "levelId": "level-006",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 43,
+        "waitTicks": 179,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 16,
+          "y": 17
+        }
+      }
+    },
+    {
+      "level": 7,
+      "levelId": "level-007",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 65,
+        "waitTicks": 362,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 20,
+          "y": 17
+        }
+      }
+    },
+    {
+      "level": 8,
+      "levelId": "level-008",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 25,
+        "waitTicks": 97,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 20,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 9,
+      "levelId": "level-009",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 4,
+        "waitTicks": 13,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 3,
+          "y": 26
+        }
+      }
+    },
+    {
+      "level": 10,
+      "levelId": "level-010",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 204,
+        "waitTicks": 870,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 20,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 11,
+      "levelId": "level-011",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 581,
+        "waitTicks": 2397,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 26,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 12,
+      "levelId": "level-012",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 220,
+        "waitTicks": 881,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 28,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 13,
+      "levelId": "level-013",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 6,
+        "waitTicks": 139,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 15,
+          "y": 8
+        }
+      }
+    },
+    {
+      "level": 14,
+      "levelId": "level-014",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 356,
+        "waitTicks": 1601,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 9,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 15,
+      "levelId": "level-015",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 819,
+        "waitTicks": 3505,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 7,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 16,
+      "levelId": "level-016",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 144,
+        "waitTicks": 641,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 30,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 17,
+      "levelId": "level-017",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 35,
+        "waitTicks": 140,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 22,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 18,
+      "levelId": "level-018",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 247,
+        "waitTicks": 1014,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 6,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 19,
+      "levelId": "level-019",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 69,
+        "waitTicks": 314,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 21,
+          "y": 7
+        }
+      }
+    },
+    {
+      "level": 20,
+      "levelId": "level-020",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 4,
+        "waitTicks": 15,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 29
+        }
+      }
+    },
+    {
+      "level": 21,
+      "levelId": "level-021",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 20,
+        "waitTicks": 82,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 5,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 22,
+      "levelId": "level-022",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 256,
+        "waitTicks": 1109,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 28,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 23,
+      "levelId": "level-023",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 513,
+        "waitTicks": 3393,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 15,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 24,
+      "levelId": "level-024",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 21,
+        "waitTicks": 108,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 12,
+          "y": 26
+        }
+      }
+    },
+    {
+      "level": 25,
+      "levelId": "level-025",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1220,
+        "waitTicks": 5257,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 29,
+          "y": 3
+        }
+      }
+    },
+    {
+      "level": 26,
+      "levelId": "level-026",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 23,
+        "waitTicks": 94,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 19,
+          "y": 6
+        }
+      }
+    },
+    {
+      "level": 27,
+      "levelId": "level-027",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 284,
+        "waitTicks": 1525,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 13,
+          "y": 9
+        }
+      }
+    },
+    {
+      "level": 28,
+      "levelId": "level-028",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 385,
+        "waitTicks": 1597,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 29,
+      "levelId": "level-029",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 216,
+        "waitTicks": 963,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 30,
+          "y": 13
+        }
+      }
+    },
+    {
+      "level": 30,
+      "levelId": "level-030",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 1493,
+        "waitTicks": 6467,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 16,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 31,
+      "levelId": "level-031",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 14,
+        "waitTicks": 49,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't step in the fire without fire boots!",
+        "finalPosition": {
+          "x": 10,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 32,
+      "levelId": "level-032",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1187,
+        "waitTicks": 4983,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 16,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 33,
+      "levelId": "level-033",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 5,
+        "waitTicks": 17,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 4,
+          "y": 9
+        }
+      }
+    },
+    {
+      "level": 34,
+      "levelId": "level-034",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 8,
+        "waitTicks": 31,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 19,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 35,
+      "levelId": "level-035",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 32,
+        "waitTicks": 136,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 24,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 36,
+      "levelId": "level-036",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 152,
+        "waitTicks": 625,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 10,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 37,
+      "levelId": "level-037",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 1183,
+        "waitTicks": 5041,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 3,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 38,
+      "levelId": "level-038",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 35,
+        "waitTicks": 165,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 5,
+          "y": 26
+        }
+      }
+    },
+    {
+      "level": 39,
+      "levelId": "level-039",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 32,
+        "waitTicks": 125,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 15,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 40,
+      "levelId": "level-040",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 3,
+        "waitTicks": 9,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 22,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 41,
+      "levelId": "level-041",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 417,
+        "waitTicks": 2061,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 9,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 42,
+      "levelId": "level-042",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 78,
+        "waitTicks": 473,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 18,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 43,
+      "levelId": "level-043",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 11,
+        "waitTicks": 65,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 26,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 44,
+      "levelId": "level-044",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 10,
+        "waitTicks": 55,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 10
+        }
+      }
+    },
+    {
+      "level": 45,
+      "levelId": "level-045",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 57,
+        "waitTicks": 227,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 8,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 46,
+      "levelId": "level-046",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 15,
+        "waitTicks": 214,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 28,
+          "y": 29
+        }
+      }
+    },
+    {
+      "level": 47,
+      "levelId": "level-047",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 115,
+        "waitTicks": 608,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 9,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 48,
+      "levelId": "level-048",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 53,
+        "waitTicks": 233,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 29,
+          "y": 8
+        }
+      }
+    },
+    {
+      "level": 49,
+      "levelId": "level-049",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 222,
+        "waitTicks": 890,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 3,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 50,
+      "levelId": "level-050",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 15,
+        "waitTicks": 84,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 20,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 51,
+      "levelId": "level-051",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 44,
+        "waitTicks": 2349,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 17,
+          "y": 17
+        }
+      }
+    },
+    {
+      "level": 52,
+      "levelId": "level-052",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 9,
+        "waitTicks": 37,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 12,
+          "y": 20
+        }
+      }
+    },
+    {
+      "level": 53,
+      "levelId": "level-053",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 121,
+        "waitTicks": 535,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 27,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 54,
+      "levelId": "level-054",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 7,
+        "waitTicks": 32,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't step in the fire without fire boots!",
+        "finalPosition": {
+          "x": 24,
+          "y": 3
+        }
+      }
+    },
+    {
+      "level": 55,
+      "levelId": "level-055",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 10,
+        "waitTicks": 38,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 21,
+          "y": 8
+        }
+      }
+    },
+    {
+      "level": 56,
+      "levelId": "level-056",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 9,
+        "waitTicks": 30,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 17,
+          "y": 2
+        }
+      }
+    },
+    {
+      "level": 57,
+      "levelId": "level-057",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 305,
+        "waitTicks": 1269,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 19,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 58,
+      "levelId": "level-058",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 282,
+        "waitTicks": 2157,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 4,
+          "y": 29
+        }
+      }
+    },
+    {
+      "level": 59,
+      "levelId": "level-059",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1,
+        "waitTicks": 19,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 1,
+          "y": 23
+        }
+      }
+    },
+    {
+      "level": 60,
+      "levelId": "level-060",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 60,
+        "waitTicks": 231,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 15,
+          "y": 29
+        }
+      }
+    },
+    {
+      "level": 61,
+      "levelId": "level-061",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1158,
+        "waitTicks": 22498,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 13,
+          "y": 0
+        }
+      }
+    },
+    {
+      "level": 62,
+      "levelId": "level-062",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 135,
+        "waitTicks": 549,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 26,
+          "y": 3
+        }
+      }
+    },
+    {
+      "level": 63,
+      "levelId": "level-063",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 16,
+        "waitTicks": 99,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 14,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 64,
+      "levelId": "level-064",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 546,
+        "waitTicks": 2473,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 31
+        }
+      }
+    },
+    {
+      "level": 65,
+      "levelId": "level-065",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 509,
+        "waitTicks": 4225,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 31,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 66,
+      "levelId": "level-066",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2,
+        "waitTicks": 5,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 10,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 67,
+      "levelId": "level-067",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 1497,
+        "waitTicks": 6560,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 23,
+          "y": 17
+        }
+      }
+    },
+    {
+      "level": 68,
+      "levelId": "level-068",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 939,
+        "waitTicks": 4125,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 16,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 69,
+      "levelId": "level-069",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 11,
+        "waitTicks": 43,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 11,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 70,
+      "levelId": "level-070",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 6,
+        "waitTicks": 25,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 7,
+          "y": 2
+        }
+      }
+    },
+    {
+      "level": 71,
+      "levelId": "level-071",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 809,
+        "waitTicks": 4052,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 72,
+      "levelId": "level-072",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2,
+        "waitTicks": 25,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 6,
+          "y": 4
+        }
+      }
+    },
+    {
+      "level": 73,
+      "levelId": "level-073",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 257,
+        "waitTicks": 1090,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 17,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 74,
+      "levelId": "level-074",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 4,
+        "waitTicks": 14,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 10,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 75,
+      "levelId": "level-075",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 131,
+        "waitTicks": 737,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 76,
+      "levelId": "level-076",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 811,
+        "waitTicks": 4438,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 6,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 77,
+      "levelId": "level-077",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 42,
+        "waitTicks": 285,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 4
+        }
+      }
+    },
+    {
+      "level": 78,
+      "levelId": "level-078",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 361,
+        "waitTicks": 2089,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 7,
+          "y": 24
+        }
+      }
+    },
+    {
+      "level": 79,
+      "levelId": "level-079",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 141,
+        "waitTicks": 611,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 9,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 80,
+      "levelId": "level-080",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 483,
+        "waitTicks": 2229,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 29,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 81,
+      "levelId": "level-081",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 3531,
+        "waitTicks": 16187,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 13,
+          "y": 6
+        }
+      }
+    },
+    {
+      "level": 82,
+      "levelId": "level-082",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 11,
+        "waitTicks": 70,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 25,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 83,
+      "levelId": "level-083",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 83,
+        "waitTicks": 335,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 11,
+          "y": 8
+        }
+      }
+    },
+    {
+      "level": 84,
+      "levelId": "level-084",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 7,
+        "waitTicks": 40,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 18,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 85,
+      "levelId": "level-085",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 116,
+        "waitTicks": 496,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 26,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 86,
+      "levelId": "level-086",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 43,
+        "waitTicks": 185,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 25,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 87,
+      "levelId": "level-087",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2905,
+        "waitTicks": 13630,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 28,
+          "y": 5
+        }
+      }
+    },
+    {
+      "level": 88,
+      "levelId": "level-088",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2,
+        "waitTicks": 8,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 9,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 89,
+      "levelId": "level-089",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 53,
+        "waitTicks": 259,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "level": 90,
+      "levelId": "level-090",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 18,
+        "waitTicks": 75,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't step in the fire without fire boots!",
+        "finalPosition": {
+          "x": 13,
+          "y": 24
+        }
+      }
+    },
+    {
+      "level": 91,
+      "levelId": "level-091",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 9,
+        "waitTicks": 36,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 30,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 92,
+      "levelId": "level-092",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 43,
+        "waitTicks": 268,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 27,
+          "y": 19
+        }
+      }
+    },
+    {
+      "level": 93,
+      "levelId": "level-093",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1214,
+        "waitTicks": 5585,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 15
+        }
+      }
+    },
+    {
+      "level": 94,
+      "levelId": "level-094",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1947,
+        "waitTicks": 8501,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 23,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 95,
+      "levelId": "level-095",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 31,
+        "waitTicks": 153,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 13,
+          "y": 3
+        }
+      }
+    },
+    {
+      "level": 96,
+      "levelId": "level-096",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 3,
+        "waitTicks": 12,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 7,
+          "y": 7
+        }
+      }
+    },
+    {
+      "level": 97,
+      "levelId": "level-097",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 43,
+        "waitTicks": 176,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 15,
+          "y": 6
+        }
+      }
+    },
+    {
+      "level": 98,
+      "levelId": "level-098",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 16,
+        "waitTicks": 97,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 13,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 99,
+      "levelId": "level-099",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 14,
+        "waitTicks": 54,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 4,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 100,
+      "levelId": "level-100",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1,
+        "waitTicks": 7,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 28,
+          "y": 2
+        }
+      }
+    },
+    {
+      "level": 101,
+      "levelId": "level-101",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 49,
+        "waitTicks": 210,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 13,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 102,
+      "levelId": "level-102",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 33,
+        "waitTicks": 360,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 30,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 103,
+      "levelId": "level-103",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 1070,
+        "waitTicks": 4737,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 2
+        }
+      }
+    },
+    {
+      "level": 104,
+      "levelId": "level-104",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2,
+        "waitTicks": 5,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 105,
+      "levelId": "level-105",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 485,
+        "waitTicks": 2569,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 12,
+          "y": 0
+        }
+      }
+    },
+    {
+      "level": 106,
+      "levelId": "level-106",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 10,
+        "waitTicks": 269,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't touch the bombs!",
+        "finalPosition": {
+          "x": 22,
+          "y": 26
+        }
+      }
+    },
+    {
+      "level": 107,
+      "levelId": "level-107",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 3,
+        "waitTicks": 9,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 19,
+          "y": 13
+        }
+      }
+    },
+    {
+      "level": 108,
+      "levelId": "level-108",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 48,
+        "waitTicks": 215,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 12,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 109,
+      "levelId": "level-109",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2,
+        "waitTicks": 8,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 8,
+          "y": 10
+        }
+      }
+    },
+    {
+      "level": 110,
+      "levelId": "level-110",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 19,
+        "waitTicks": 174,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 3,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 111,
+      "levelId": "level-111",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 6,
+        "waitTicks": 479,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't touch the bombs!",
+        "finalPosition": {
+          "x": 13,
+          "y": 21
+        }
+      }
+    },
+    {
+      "level": 112,
+      "levelId": "level-112",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 16,
+        "waitTicks": 62,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 10,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 113,
+      "levelId": "level-113",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 134,
+        "waitTicks": 556,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 8,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 114,
+      "levelId": "level-114",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 12,
+        "waitTicks": 162,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 15,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 115,
+      "levelId": "level-115",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 656,
+        "waitTicks": 4410,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 7,
+          "y": 7
+        }
+      }
+    },
+    {
+      "level": 116,
+      "levelId": "level-116",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 22,
+        "waitTicks": 135,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 20,
+          "y": 22
+        }
+      }
+    },
+    {
+      "level": 117,
+      "levelId": "level-117",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 304,
+        "waitTicks": 1788,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 30,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 118,
+      "levelId": "level-118",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1,
+        "waitTicks": 17,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 15,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 119,
+      "levelId": "level-119",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 51,
+        "waitTicks": 241,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 23
+        }
+      }
+    },
+    {
+      "level": 120,
+      "levelId": "level-120",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1,
+        "waitTicks": 2,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 24,
+          "y": 23
+        }
+      }
+    },
+    {
+      "level": 121,
+      "levelId": "level-121",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 781,
+        "waitTicks": 3948,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 2,
+          "y": 23
+        }
+      }
+    },
+    {
+      "level": 122,
+      "levelId": "level-122",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 181,
+        "waitTicks": 957,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 11,
+          "y": 13
+        }
+      }
+    },
+    {
+      "level": 123,
+      "levelId": "level-123",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 3,
+        "waitTicks": 31,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 16,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 124,
+      "levelId": "level-124",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 35,
+        "waitTicks": 213,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 27,
+          "y": 7
+        }
+      }
+    },
+    {
+      "level": 125,
+      "levelId": "level-125",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 112,
+        "waitTicks": 551,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 7,
+          "y": 4
+        }
+      }
+    },
+    {
+      "level": 126,
+      "levelId": "level-126",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 348,
+        "waitTicks": 1459,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 13,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 127,
+      "levelId": "level-127",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 381,
+        "waitTicks": 2804,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 4,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 128,
+      "levelId": "level-128",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 78,
+        "waitTicks": 348,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 18
+        }
+      }
+    },
+    {
+      "level": 129,
+      "levelId": "level-129",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 125,
+        "waitTicks": 531,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 29,
+          "y": 23
+        }
+      }
+    },
+    {
+      "level": 130,
+      "levelId": "level-130",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 63,
+        "waitTicks": 1811,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 3,
+          "y": 29
+        }
+      }
+    },
+    {
+      "level": 131,
+      "levelId": "level-131",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 147,
+        "waitTicks": 1125,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 27,
+          "y": 8
+        }
+      }
+    },
+    {
+      "level": 132,
+      "levelId": "level-132",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 334,
+        "waitTicks": 1567,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 21,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 133,
+      "levelId": "level-133",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 40,
+        "waitTicks": 169,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 21,
+          "y": 3
+        }
+      }
+    },
+    {
+      "level": 134,
+      "levelId": "level-134",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 34,
+        "waitTicks": 137,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 27,
+          "y": 6
+        }
+      }
+    },
+    {
+      "level": 135,
+      "levelId": "level-135",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 36,
+        "waitTicks": 141,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 2,
+          "y": 1
+        }
+      }
+    },
+    {
+      "level": 136,
+      "levelId": "level-136",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1230,
+        "waitTicks": 9355,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 6,
+          "y": 27
+        }
+      }
+    },
+    {
+      "level": 137,
+      "levelId": "level-137",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 19,
+        "waitTicks": 78,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 24
+        }
+      }
+    },
+    {
+      "level": 138,
+      "levelId": "level-138",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 511,
+        "waitTicks": 2862,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 7,
+          "y": 4
+        }
+      }
+    },
+    {
+      "level": 139,
+      "levelId": "level-139",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 5,
+        "waitTicks": 18,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 29,
+          "y": 6
+        }
+      }
+    },
+    {
+      "level": 140,
+      "levelId": "level-140",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 121,
+        "waitTicks": 1478,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 14,
+          "y": 12
+        }
+      }
+    },
+    {
+      "level": 141,
+      "levelId": "level-141",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 65,
+        "waitTicks": 502,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 6,
+          "y": 10
+        }
+      }
+    },
+    {
+      "level": 142,
+      "levelId": "level-142",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 165,
+        "waitTicks": 793,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 13,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 143,
+      "levelId": "level-143",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 1755,
+        "waitTicks": 9809,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 0,
+          "y": 30
+        }
+      }
+    },
+    {
+      "level": 144,
+      "levelId": "level-144",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 25,
+        "waitTicks": 97,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 20,
+          "y": 10
+        }
+      }
+    },
+    {
+      "level": 145,
+      "levelId": "level-145",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "pass",
+        "moveCount": 47,
+        "waitTicks": 241,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 31,
+          "y": 31
+        }
+      }
+    },
+    {
+      "level": 146,
+      "levelId": "level-146",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 6,
+        "waitTicks": 22,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 20,
+          "y": 10
+        }
+      }
+    },
+    {
+      "level": 147,
+      "levelId": "level-147",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 2598,
+        "waitTicks": 15237,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 12,
+          "y": 11
+        }
+      }
+    },
+    {
+      "level": 148,
+      "levelId": "level-148",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 13,
+        "waitTicks": 50,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't touch the bombs!",
+        "finalPosition": {
+          "x": 17,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 149,
+      "levelId": "level-149",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 69,
+        "waitTicks": 735,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Chip can't swim without flippers!",
+        "finalPosition": {
+          "x": 5,
+          "y": 24
+        }
+      }
+    }
+  ]
+}

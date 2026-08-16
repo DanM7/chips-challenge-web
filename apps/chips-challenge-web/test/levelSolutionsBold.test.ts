@@ -9,6 +9,7 @@ import {
   encodeSolutionMoves,
 } from "../src/data/solutionMoves";
 import { simulateSolutionLetters } from "./helpers/simulateSolution";
+import { deterministicAutoplayChoice } from "../src/data/autoplayRng";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const pack = path.join(
@@ -38,6 +39,7 @@ function loadSolution(n: number) {
     boldTimeRemaining: number;
     timeLimitSeconds: number;
     simulatedSecondsRemaining?: number;
+    rngSeed?: number;
   };
 }
 
@@ -88,17 +90,26 @@ describe("verified bold routes (levels 1-20)", () => {
       expect(sol.moveVerified).toBe(true);
       expect(sol.moves?.length).toBeGreaterThan(0);
       const level = loadLevel(entry.level);
-      const result = simulateSolutionLetters(level, sol.moves!);
-      expect(result.playerDied, result.deathMessage).toBe(false);
-      expect(result.completed).toBe(true);
-      // Exact bold when the solution recorded a simulated remaining time.
-      if (
-        level.timeLimit != null &&
-        level.timeLimit > 0 &&
-        sol.simulatedSecondsRemaining != null
-      ) {
-        expect(result.secondsRemaining).toBe(sol.simulatedSecondsRemaining);
-        expect(result.secondsRemaining).toBe(entry.bold);
+      const origRandom = Math.random;
+      if (sol.rngSeed != null) {
+        let step = 0;
+        Math.random = () =>
+          deterministicAutoplayChoice(sol.rngSeed!, step++, 0x10000000) / 0x10000000;
+      }
+      try {
+        const result = simulateSolutionLetters(level, sol.moves!);
+        expect(result.playerDied, result.deathMessage).toBe(false);
+        expect(result.completed).toBe(true);
+        if (
+          level.timeLimit != null &&
+          level.timeLimit > 0 &&
+          sol.simulatedSecondsRemaining != null
+        ) {
+          expect(result.secondsRemaining).toBe(sol.simulatedSecondsRemaining);
+          expect(result.secondsRemaining).toBe(entry.bold);
+        }
+      } finally {
+        Math.random = origRandom;
       }
     });
   }

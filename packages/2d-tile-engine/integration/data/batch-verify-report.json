@@ -1,0 +1,2901 @@
+{
+  "generatedAt": "2026-07-01T22:55:23.439Z",
+  "elapsedMs": 1071,
+  "totalLevels": 149,
+  "autoplayPass": 3,
+  "autoplayFail": 1,
+  "autoplaySkip": 145,
+  "twsPass": 0,
+  "twsFail": 9,
+  "twsSkip": 140,
+  "firstAutoplayFail": 2,
+  "firstAutoplaySkip": 5,
+  "levels": [
+    {
+      "level": 1,
+      "levelId": "level-001",
+      "levelMissing": false,
+      "moveVerified": true,
+      "autoplay": {
+        "status": "pass",
+        "moveCount": 106,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 15,
+          "y": 10
+        }
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 59,
+        "waitTicks": 131,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 13,
+          "y": 16
+        }
+      }
+    },
+    {
+      "level": 2,
+      "levelId": "level-002",
+      "levelMissing": false,
+      "moveVerified": true,
+      "autoplay": {
+        "status": "fail",
+        "moveCount": 51,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 14,
+          "y": 11
+        }
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 52,
+        "waitTicks": 85,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 21,
+          "y": 13
+        }
+      }
+    },
+    {
+      "level": 3,
+      "levelId": "level-003",
+      "levelMissing": false,
+      "moveVerified": true,
+      "autoplay": {
+        "status": "pass",
+        "moveCount": 60,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 16,
+          "y": 6
+        }
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 4,
+        "waitTicks": 4,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Don't step in the fire without fire boots!",
+        "finalPosition": {
+          "x": 18,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 4,
+      "levelId": "level-004",
+      "levelMissing": false,
+      "moveVerified": true,
+      "autoplay": {
+        "status": "pass",
+        "moveCount": 175,
+        "completed": true,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 17,
+          "y": 7
+        }
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 51,
+        "waitTicks": 76,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 18,
+          "y": 13
+        }
+      }
+    },
+    {
+      "level": 5,
+      "levelId": "level-005",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 5,
+        "waitTicks": 10,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "level": 6,
+      "levelId": "level-006",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 14,
+        "waitTicks": 53,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 22,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 7,
+      "levelId": "level-007",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 34,
+        "waitTicks": 79,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 18,
+          "y": 19
+        }
+      }
+    },
+    {
+      "level": 8,
+      "levelId": "level-008",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 11,
+        "waitTicks": 24,
+        "completed": false,
+        "playerDied": true,
+        "deathMessage": "Ooops! Look out for creatures!",
+        "finalPosition": {
+          "x": 6,
+          "y": 14
+        }
+      }
+    },
+    {
+      "level": 9,
+      "levelId": "level-009",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "fail",
+        "moveCount": 1,
+        "waitTicks": 2,
+        "completed": false,
+        "playerDied": false,
+        "finalPosition": {
+          "x": 1,
+          "y": 24
+        }
+      }
+    },
+    {
+      "level": 10,
+      "levelId": "level-010",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 11,
+      "levelId": "level-011",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 12,
+      "levelId": "level-012",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 13,
+      "levelId": "level-013",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 14,
+      "levelId": "level-014",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 15,
+      "levelId": "level-015",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 16,
+      "levelId": "level-016",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 17,
+      "levelId": "level-017",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 18,
+      "levelId": "level-018",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 19,
+      "levelId": "level-019",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 20,
+      "levelId": "level-020",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 21,
+      "levelId": "level-021",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 22,
+      "levelId": "level-022",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 23,
+      "levelId": "level-023",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 24,
+      "levelId": "level-024",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 25,
+      "levelId": "level-025",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 26,
+      "levelId": "level-026",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 27,
+      "levelId": "level-027",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 28,
+      "levelId": "level-028",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 29,
+      "levelId": "level-029",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 30,
+      "levelId": "level-030",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 31,
+      "levelId": "level-031",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 32,
+      "levelId": "level-032",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 33,
+      "levelId": "level-033",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 34,
+      "levelId": "level-034",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 35,
+      "levelId": "level-035",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 36,
+      "levelId": "level-036",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 37,
+      "levelId": "level-037",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 38,
+      "levelId": "level-038",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 39,
+      "levelId": "level-039",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 40,
+      "levelId": "level-040",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 41,
+      "levelId": "level-041",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 42,
+      "levelId": "level-042",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 43,
+      "levelId": "level-043",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 44,
+      "levelId": "level-044",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 45,
+      "levelId": "level-045",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 46,
+      "levelId": "level-046",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 47,
+      "levelId": "level-047",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 48,
+      "levelId": "level-048",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 49,
+      "levelId": "level-049",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 50,
+      "levelId": "level-050",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 51,
+      "levelId": "level-051",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 52,
+      "levelId": "level-052",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 53,
+      "levelId": "level-053",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 54,
+      "levelId": "level-054",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 55,
+      "levelId": "level-055",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 56,
+      "levelId": "level-056",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 57,
+      "levelId": "level-057",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 58,
+      "levelId": "level-058",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 59,
+      "levelId": "level-059",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 60,
+      "levelId": "level-060",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 61,
+      "levelId": "level-061",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 62,
+      "levelId": "level-062",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 63,
+      "levelId": "level-063",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 64,
+      "levelId": "level-064",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 65,
+      "levelId": "level-065",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 66,
+      "levelId": "level-066",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 67,
+      "levelId": "level-067",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 68,
+      "levelId": "level-068",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 69,
+      "levelId": "level-069",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 70,
+      "levelId": "level-070",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 71,
+      "levelId": "level-071",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 72,
+      "levelId": "level-072",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 73,
+      "levelId": "level-073",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 74,
+      "levelId": "level-074",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 75,
+      "levelId": "level-075",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 76,
+      "levelId": "level-076",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 77,
+      "levelId": "level-077",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 78,
+      "levelId": "level-078",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 79,
+      "levelId": "level-079",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 80,
+      "levelId": "level-080",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 81,
+      "levelId": "level-081",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 82,
+      "levelId": "level-082",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 83,
+      "levelId": "level-083",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 84,
+      "levelId": "level-084",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 85,
+      "levelId": "level-085",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 86,
+      "levelId": "level-086",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 87,
+      "levelId": "level-087",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 88,
+      "levelId": "level-088",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 89,
+      "levelId": "level-089",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 90,
+      "levelId": "level-090",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 91,
+      "levelId": "level-091",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 92,
+      "levelId": "level-092",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 93,
+      "levelId": "level-093",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 94,
+      "levelId": "level-094",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 95,
+      "levelId": "level-095",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 96,
+      "levelId": "level-096",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 97,
+      "levelId": "level-097",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 98,
+      "levelId": "level-098",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 99,
+      "levelId": "level-099",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 100,
+      "levelId": "level-100",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 101,
+      "levelId": "level-101",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 102,
+      "levelId": "level-102",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 103,
+      "levelId": "level-103",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 104,
+      "levelId": "level-104",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 105,
+      "levelId": "level-105",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 106,
+      "levelId": "level-106",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 107,
+      "levelId": "level-107",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 108,
+      "levelId": "level-108",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 109,
+      "levelId": "level-109",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 110,
+      "levelId": "level-110",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 111,
+      "levelId": "level-111",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 112,
+      "levelId": "level-112",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 113,
+      "levelId": "level-113",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 114,
+      "levelId": "level-114",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 115,
+      "levelId": "level-115",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 116,
+      "levelId": "level-116",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 117,
+      "levelId": "level-117",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 118,
+      "levelId": "level-118",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 119,
+      "levelId": "level-119",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 120,
+      "levelId": "level-120",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 121,
+      "levelId": "level-121",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 122,
+      "levelId": "level-122",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 123,
+      "levelId": "level-123",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 124,
+      "levelId": "level-124",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 125,
+      "levelId": "level-125",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 126,
+      "levelId": "level-126",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 127,
+      "levelId": "level-127",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 128,
+      "levelId": "level-128",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 129,
+      "levelId": "level-129",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 130,
+      "levelId": "level-130",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 131,
+      "levelId": "level-131",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 132,
+      "levelId": "level-132",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 133,
+      "levelId": "level-133",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 134,
+      "levelId": "level-134",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 135,
+      "levelId": "level-135",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 136,
+      "levelId": "level-136",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 137,
+      "levelId": "level-137",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 138,
+      "levelId": "level-138",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 139,
+      "levelId": "level-139",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 140,
+      "levelId": "level-140",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 141,
+      "levelId": "level-141",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 142,
+      "levelId": "level-142",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 143,
+      "levelId": "level-143",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 144,
+      "levelId": "level-144",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 145,
+      "levelId": "level-145",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 146,
+      "levelId": "level-146",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 147,
+      "levelId": "level-147",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 148,
+      "levelId": "level-148",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    },
+    {
+      "level": 149,
+      "levelId": "level-149",
+      "levelMissing": false,
+      "moveVerified": false,
+      "autoplay": {
+        "status": "skip",
+        "moveCount": 0,
+        "completed": false,
+        "playerDied": false
+      },
+      "tws": {
+        "status": "skip",
+        "moveCount": 0,
+        "waitTicks": 0,
+        "completed": false,
+        "playerDied": false
+      }
+    }
+  ]
+}

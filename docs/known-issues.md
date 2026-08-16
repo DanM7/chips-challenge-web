@@ -6,6 +6,15 @@ Active bugs and investigation notes for the chips-challenge-web prototype. Remov
 
 ## Resolved
 
+### MS force-floor override (Trinity / level 11)
+
+**Status:** Resolved (August 2026)  
+**Repos:** `packages/2d-tile-engine` (`msCc1Movement` / `msCc1Sliding`)
+
+Opposing held input now overrides a force pad (MS). Adjacent/upstream force boosts fall back to walking straight if the diagonal is blocked. Orthogonal thin walls (`blocked_e` etc.) are directional so Chip can use the east corridor to Trinity's exit. Auto Play bold **211** is in `cc1-ms-solutions/level-011.json`.
+
+---
+
 ### Mobile landscape: input pane split / D-pad misaligned
 
 **Status:** Resolved (May 2026)  
@@ -88,32 +97,13 @@ See [mobile-landscape-touch-layout.md](./mobile-landscape-touch-layout.md) — s
 
 ## Open
 
-## MS force-floor override (blocks Trinity / level 11 bold)
-
-**Status:** Open — **priority after levels 1–20 Auto Play wave**  
-**Severity:** Engine parity — blocks bold Auto Play for Trinity and any level needing post-slide override  
-**Repos:** `2d-tile-engine` (`msCc1Sliding` / `msCc1Movement`), consumed by `chips-challenge-web`
-
-### Symptom
-
-After an involuntary force-floor slide, Chip cannot override onto a new force direction the way MS allows. On Trinity, after the opening path Chip sticks around `(11,20)`: stepping north into `force_s` at `(11,19)` bounces back, so the west / red-key maze never opens (~55 reachable cells). TWS CNPE also fails to collect keys/tools under current simulation.
-
-### Expected (MS)
-
-Chip may override force floors (including after an involuntary slide / boost timing) so routes like StrategyWiki Trinity (bold **211**) are reachable.
-
-### Notes
-
-- Flagged while solving levels 1–20; level 11 status is `blocked` in `cc1-ms-solutions/status-1-20.json`.
-- Related playtests: level 9 force-hold input tests already exist; override-after-slide is the gap for Trinity.
-
 ---
 
 ## Lesson 5 (TQKB): glider not visible on the board
 
 **Status:** Open (paused March 2026)  
 **Severity:** Blocks Lesson 5 trap puzzle  
-**Repos:** `chips-challenge-web`, `2d-tile-engine`
+**Repos:** `apps/chips-challenge-web`, `packages/2d-tile-engine`
 
 ### Expected behavior (MS Chip’s Challenge)
 
@@ -142,10 +132,10 @@ These work in **Node/vitest** against the committed `level-005.json`:
 | `trapLinks` present (2 links) | Yes |
 | Map has `ghost_n` at (18, 11) before runtime | Yes |
 | `createMsCc1Monsters` + `parkGliderOnFirstBrownButton` | Glider ends at **(16, 7)**, `button_brown` on lower, `ghost_n` on upper |
-| Mask/overlay columns in `vendor/.../generated/tiles.png` for `ghost_n` (0x50) | Non-empty (see `2d-tile-engine/test/msGhostMask.test.ts`) |
-| `compositeMsMaskedPixels` ghost over `button_brown` floor | Non-empty output (see `2d-tile-engine/test/msGhostComposite.test.ts`) |
+| Mask/overlay columns in `vendor/.../generated/tiles.png` for `ghost_n` (0x50) | Non-empty (see `packages/2d-tile-engine/test/msGhostMask.test.ts`) |
+| `compositeMsMaskedPixels` ghost over `button_brown` floor | Non-empty output (see `packages/2d-tile-engine/test/msGhostComposite.test.ts`) |
 
-Tests added in `2d-tile-engine`:
+Tests added in `packages/2d-tile-engine`:
 
 - `test/level005Glider.test.ts` — real level JSON parking
 - `test/msCc1Traps.test.ts` — trap / parking behavior
@@ -177,7 +167,7 @@ Creatures in object-code **columns 4–6** use MS “masked” layout on `tiles.
 
 Pink ball and fireball use the same masked/compositing code paths as the glider in most iterations; glider-specific failure suggests **position/parking**, **wrong frame/column**, or **browser-only composite/texture failure**, not “monsters disabled globally.”
 
-### Engine work already merged (`2d-tile-engine`)
+### Engine work already merged (`packages/2d-tile-engine`)
 
 Trap / brown-button / glider parking:
 
@@ -220,9 +210,9 @@ Related wiring (kept): `buttonPressCtx.openTraps`, `createMsCc1Monsters` before 
 | Level 5 data | `apps/chips-challenge-web/public/games/chips-challenge-1/levels/level-005.json` |
 | Tile sheet (generated) | `apps/chips-challenge-web/vendor/chips-challenge-ms/generated/tiles.png` |
 | Asset manifest | `apps/chips-challenge-web/public/games/chips-challenge-1/assets.json` |
-| Traps / parking | `2d-tile-engine/engine/msCc1/msCc1Traps.ts` |
-| Monsters | `2d-tile-engine/engine/msCc1/msCc1Monsters.ts` |
-| Masked compositing | `2d-tile-engine/engine/msMaskedComposite.ts` |
+| Traps / parking | `packages/2d-tile-engine/engine/msCc1/msCc1Traps.ts` |
+| Monsters | `packages/2d-tile-engine/engine/msCc1/msCc1Monsters.ts` |
+| Masked compositing | `packages/2d-tile-engine/engine/msMaskedComposite.ts` |
 | Architecture context | `docs/architecture.md` |
 
 ### Suggested next steps (when resuming)
