@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "description": "Tracking board for CC1 MS Auto Play bold routes (levels 21–40). First sweep: replay TWS + existing letters only, no engine changes.",
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_21-40",
+  "statusLegend": {
+    "verified_bold": "moveVerified + simulation rem === boldTimeRemaining",
+    "in_progress": "Completing route but rem !== bold",
+    "pending": "No route to replay",
+    "blocked": "TWS/existing route dies or sticks under current engine — second sweep",
+    "best_effort_rng": "Non-deterministic (walkers/blobs)"
+  },
+  "summary": {
+    "verified_bold": 0,
+    "in_progress": 4,
+    "blocked": 15,
+    "pending": 0,
+    "best_effort_rng": 1
+  },
+  "levels": [
+    {
+      "level": 21,
+      "title": "Iceberg",
+      "bold": 119,
+      "status": "blocked",
+      "notes": "TWS drowns @ (5,22) after 19 ticks (no flippers). Ice-slide / boot-order parity — second sweep"
+    },
+    {
+      "level": 22,
+      "title": "Forced Entry",
+      "bold": 293,
+      "status": "blocked",
+      "notes": "TWS stuck @ (28,30) after 557 ticks (near SE). Force-floor / exit approach — second sweep"
+    },
+    {
+      "level": 23,
+      "title": "Blobnet",
+      "bold": 436,
+      "status": "best_effort_rng",
+      "notes": "TWS dies on blob @ (15,18) after 511 ticks. Needs seeded autoplay like Nice Day (17)"
+    },
+    {
+      "level": 24,
+      "title": "Oorto Geld",
+      "bold": 430,
+      "status": "blocked",
+      "notes": "TWS creature death @ (12,26) after 21 ticks. Early tank/ball sync — second sweep"
+    },
+    {
+      "level": 25,
+      "title": "Blink",
+      "bold": 435,
+      "status": "in_progress",
+      "notes": "Completing TWS rem 359 (bold 435, −76s, 1205 ticks). Route exists; shorten or engine wait conversion"
+    },
+    {
+      "level": 26,
+      "title": "Chchchips",
+      "bold": 254,
+      "status": "blocked",
+      "notes": "TWS creature death @ (23,6) after 27 ticks. Teeth/ball opening — second sweep"
+    },
+    {
+      "level": 27,
+      "title": "Go with the Flow",
+      "bold": 147,
+      "status": "blocked",
+      "notes": "TWS creature death @ (24,10) after 182 ticks. Force + monsters — second sweep"
+    },
+    {
+      "level": 28,
+      "title": "Ping Pong",
+      "bold": 239,
+      "status": "blocked",
+      "notes": "TWS stuck @ (1,1) after 680 ticks. Teleport wrap (same class as other blue-teleport gaps) — second sweep"
+    },
+    {
+      "level": 29,
+      "title": "Arcticflow",
+      "bold": 302,
+      "status": "blocked",
+      "notes": "TWS creature death @ (30,13) after 215 ticks. Ice + monsters — second sweep"
+    },
+    {
+      "level": 30,
+      "title": "Mishmesh",
+      "bold": 454,
+      "status": "in_progress",
+      "notes": "Completing web rem 369 (bold 454, −85s, 1158 ticks / 1493 letters). Maze route exists; not bold"
+    },
+    {
+      "level": 31,
+      "title": "Knot",
+      "bold": 6,
+      "status": "blocked",
+      "notes": "TWS burns @ (10,15) after 13 ticks (no fire boots). 6s bold is tight; boot order — second sweep"
+    },
+    {
+      "level": 32,
+      "title": "Scavenger Hunt",
+      "bold": 379,
+      "status": "blocked",
+      "notes": "TWS stuck @ (16,16) after 493 ticks. Center lock / item order — second sweep"
+    },
+    {
+      "level": 33,
+      "title": "On the Rocks",
+      "bold": 684,
+      "status": "blocked",
+      "notes": "TWS drowns @ (4,9) after 4 ticks. Ice into water at start — second sweep"
+    },
+    {
+      "level": 34,
+      "title": "Cypher",
+      "bold": 297,
+      "status": "blocked",
+      "notes": "TWS creature death @ (11,12) after 39 ticks. Password-room monsters — second sweep"
+    },
+    {
+      "level": 35,
+      "title": "Lemmings",
+      "bold": 577,
+      "status": "blocked",
+      "notes": "TWS creature death @ (23,19) after 36 ticks. Clone/walker parking — second sweep"
+    },
+    {
+      "level": 36,
+      "title": "Ladder",
+      "bold": 232,
+      "status": "blocked",
+      "notes": "TWS creature death @ (10,18) after 151 ticks. Bug/ladder sync — second sweep"
+    },
+    {
+      "level": 37,
+      "title": "Seeing Stars",
+      "bold": 597,
+      "status": "in_progress",
+      "notes": "Completing web rem 566 (bold 597, −31s, 1170 ticks). Closest large-map complete besides Glut"
+    },
+    {
+      "level": 38,
+      "title": "Sampler",
+      "bold": 462,
+      "status": "blocked",
+      "notes": "TWS creature death @ (5,26) after 33 ticks. Multi-mechanic sampler opening — second sweep"
+    },
+    {
+      "level": 39,
+      "title": "Glut",
+      "bold": 17,
+      "status": "in_progress",
+      "notes": "Completing web rem 14 (bold 17, −3s, 30 ticks). Closest miss in this batch; likely 3 wasted chip-seconds"
+    },
+    {
+      "level": 40,
+      "title": "Floorgasborg",
+      "bold": 195,
+      "status": "blocked",
+      "notes": "TWS drowns @ (22,11) after 5 ticks. Water/floor at start — second sweep"
+    }
+  ]
+}

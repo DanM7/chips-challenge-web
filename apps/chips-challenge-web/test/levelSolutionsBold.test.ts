@@ -62,6 +62,20 @@ describe("levels 1-20 status board", () => {
   });
 });
 
+describe("levels 21-40 status board", () => {
+  it("lists all twenty levels with a status", () => {
+    const status = JSON.parse(
+      readFileSync(path.join(solutionsDir, "status-21-40.json"), "utf8"),
+    ) as {
+      levels: Array<{ level: number; status: string; bold: number }>;
+    };
+    expect(status.levels).toHaveLength(20);
+    expect(status.levels.map((l) => l.level)).toEqual(
+      Array.from({ length: 20 }, (_, i) => i + 21),
+    );
+  });
+});
+
 describe("level 5 Lesson 5 bold autoplay route", () => {
   it("finishes with exact bold 85 remaining", () => {
     const sol = loadSolution(5);

@@ -41,6 +41,7 @@
   ],
   "source": "https://scores.bitbusters.club/levels/cc1/39/ms",
   "moveSource": "CC1-ms TWS records (ICXY); pending engine verify; promoted after engine TWS replay pass",
-  "moveVerified": true,
-  "meetsBoldBudget": false
+  "moveVerified": false,
+  "meetsBoldBudget": false,
+  "simulatedSecondsRemaining": 14
 }
