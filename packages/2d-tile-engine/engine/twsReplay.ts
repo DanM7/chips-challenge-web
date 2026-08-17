@@ -4,6 +4,7 @@ import {
   runnerToResult,
   type MsCc1SimulationResult,
   stepMsCc1Simulation,
+  stepMsCc1SlideOnce,
   stepMsCc1Wait,
 } from "./msCc1/msCc1Simulation.js";
 
@@ -25,6 +26,7 @@ export interface TwsTickMove {
 export interface TwsReplayResult extends MsCc1SimulationResult {
   chipMoves: Direction[];
   waitTicks: number;
+  moveBoundary: number;
 }
 
 /**
@@ -44,18 +46,20 @@ export function replayTwsRecords(level: LevelData, records: TwsTickMove[]): TwsR
     }
     const gap = Math.max(0, rec.tick - prevTick - 1);
     for (let i = 0; i < gap; i += 1) {
-      stepMsCc1Wait(runner);
+      if (!stepMsCc1SlideOnce(runner)) {
+        stepMsCc1Wait(runner);
+      }
       waitTicks += 1;
       if (runner.completed || runner.playerDied) {
-        return { ...runnerToResult(runner), chipMoves, waitTicks };
+        return {
+          ...runnerToResult(runner),
+          chipMoves,
+          waitTicks,
+          moveBoundary: runner.buttonPressCtx.moveBoundary,
+        };
       }
     }
-    stepMsCc1Wait(runner);
-    waitTicks += 1;
-    if (runner.completed || runner.playerDied) {
-      return { ...runnerToResult(runner), chipMoves, waitTicks };
-    }
-    stepMsCc1Simulation(runner, dir);
+    stepMsCc1Simulation(runner, dir, { chainSlides: false });
     chipMoves.push(dir);
     prevTick = rec.tick;
     if (runner.completed || runner.playerDied) {
@@ -63,7 +67,12 @@ export function replayTwsRecords(level: LevelData, records: TwsTickMove[]): TwsR
     }
   }
 
-  return { ...runnerToResult(runner), chipMoves, waitTicks };
+  return {
+    ...runnerToResult(runner),
+    chipMoves,
+    waitTicks,
+    moveBoundary: runner.buttonPressCtx.moveBoundary,
+  };
 }
 
 /**
@@ -125,5 +134,10 @@ export function replayTwsMs(level: LevelData, tws: string): TwsReplayResult {
     i += 1;
   }
 
-  return { ...runnerToResult(runner), chipMoves, waitTicks };
+  return {
+    ...runnerToResult(runner),
+    chipMoves,
+    waitTicks,
+    moveBoundary: runner.buttonPressCtx.moveBoundary,
+  };
 }

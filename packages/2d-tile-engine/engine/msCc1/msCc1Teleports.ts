@@ -8,13 +8,13 @@ import {
   isMonsterTile,
   isSocketTile,
 } from "../../tile-engine/tiles.js";
+import type { MsCc1PlayerState } from "./types.js";
 
 const EXIT_TILE_IDS = new Set(["exit", "chip_exit", "exit_3a", "exit_3b"]);
 
 function isExitTile(tileId: string): boolean {
   return EXIT_TILE_IDS.has(tileId);
 }
-import type { MsCc1PlayerState } from "./types.js";
 
 export const TELEPORT_TILE_ID = "teleport";
 
@@ -84,9 +84,6 @@ export function canChipStepOnto(
     return false;
   }
   if (isSocketTile(tile) && state.chipsRemainingOnMap > 0) {
-    return false;
-  }
-  if (isExitTile(tile) && state.chipsRemainingOnMap > 0) {
     return false;
   }
   if (CHIP_TILE_IDS.has(tile)) {

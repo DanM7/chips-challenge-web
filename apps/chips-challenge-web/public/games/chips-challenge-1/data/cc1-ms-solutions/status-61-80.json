@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "description": "Tracking board for CC1 MS Auto Play bold routes (levels 61–80). First sweep: TWS tick-slide replay + existing Auto Play letters; exact rem === bold for verified_bold. T-Chip remaining time scored as if the clock were 999. Bold times from https://scores.bitbusters.club/levels/cc1 (MS Bold column).",
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_61-80",
+  "statusLegend": {
+    "verified_bold": "moveVerified + Auto Play simulation rem === boldTimeRemaining",
+    "in_progress": "Completing Auto Play or TWS tick-slide route but rem !== bold",
+    "pending": "No route to replay",
+    "blocked": "TWS tick-slide dies or sticks under current engine",
+    "best_effort_rng": "Non-deterministic (walkers/blobs)"
+  },
+  "summary": {
+    "verified_bold": 0,
+    "in_progress": 6,
+    "blocked": 12,
+    "pending": 0,
+    "best_effort_rng": 2
+  },
+  "levels": [
+    {
+      "level": 61,
+      "title": "Rink",
+      "bold": 950,
+      "status": "blocked",
+      "notes": "TWS tick-slide stuck @ 13,0 after 3265 ticks"
+    },
+    {
+      "level": 62,
+      "title": "Slo Mo",
+      "bold": 282,
+      "status": "best_effort_rng",
+      "notes": "Blob RNG: TWS dies @ 12,18 (Ooops! Look out for creatures!) after 22 ticks"
+    },
+    {
+      "level": 63,
+      "title": "Block Factory",
+      "bold": 477,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 14,11: Ooops! Chip can't swim without flippers! after 17 ticks"
+    },
+    {
+      "level": 64,
+      "title": "Spooks",
+      "bold": 548,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 491 (bold 548, -57s, 545 ticks)"
+    },
+    {
+      "level": 65,
+      "title": "Amsterdam",
+      "bold": 397,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 400 (bold 397, +3s, 503 ticks)"
+    },
+    {
+      "level": 66,
+      "title": "Victim",
+      "bold": 292,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 10,18: Ooops! Look out for creatures! after 2 ticks"
+    },
+    {
+      "level": 67,
+      "title": "Chipmine",
+      "bold": 518,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 487 (bold 518, -31s, 1065 ticks)"
+    },
+    {
+      "level": 68,
+      "title": "Eeny Miny Moe",
+      "bold": 489,
+      "status": "blocked",
+      "notes": "TWS tick-slide stuck @ 16,30 after 601 ticks"
+    },
+    {
+      "level": 69,
+      "title": "Bounce City",
+      "bold": 229,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 10,27: Ooops! Look out for creatures! after 10 ticks"
+    },
+    {
+      "level": 70,
+      "title": "Nightmare",
+      "bold": 136,
+      "status": "best_effort_rng",
+      "notes": "Blob RNG: TWS dies @ 23,29 (Ooops! Look out for creatures!) after 132 ticks"
+    },
+    {
+      "level": 71,
+      "title": "Corridor",
+      "bold": 355,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 336 (bold 355, -19s, 820 ticks)"
+    },
+    {
+      "level": 72,
+      "title": "Reverse Alley",
+      "bold": 961,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 6,4: Ooops! Look out for creatures! after 1 ticks"
+    },
+    {
+      "level": 73,
+      "title": "Morton",
+      "bold": 485,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 17,18: Ooops! Look out for creatures! after 250 ticks"
+    },
+    {
+      "level": 74,
+      "title": "Playtime",
+      "bold": 359,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 30,22: Ooops! Look out for creatures! after 93 ticks"
+    },
+    {
+      "level": 75,
+      "title": "Steam",
+      "bold": 479,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 474 (bold 479, -5s, 130 ticks)"
+    },
+    {
+      "level": 76,
+      "title": "Four Plex",
+      "bold": 416,
+      "status": "blocked",
+      "notes": "TWS tick-slide stuck @ 9,19 after 522 ticks"
+    },
+    {
+      "level": 77,
+      "title": "Invincible Champion",
+      "bold": 481,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 14,4: Ooops! Look out for creatures! after 41 ticks"
+    },
+    {
+      "level": 78,
+      "title": "Force Square",
+      "bold": 480,
+      "status": "blocked",
+      "notes": "TWS tick-slide stuck @ 7,24 after 1017 ticks"
+    },
+    {
+      "level": 79,
+      "title": "Drawn and Quartered",
+      "bold": 220,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 9,18: Ooops! Look out for creatures! after 138 ticks"
+    },
+    {
+      "level": 80,
+      "title": "Vanishing Act",
+      "bold": 733,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 710 (bold 733, -23s, 453 ticks)"
+    }
+  ]
+}

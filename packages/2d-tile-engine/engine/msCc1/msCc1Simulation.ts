@@ -15,8 +15,14 @@ import {
   tryMsCc1Move,
   type MsCc1MoveResult,
 } from "./msCc1Movement.js";
-import { getForceFloorIntentAt } from "./msCc1Sliding.js";
+import {
+  getForceFloorIntentAt,
+  getForceFloorTileAt,
+  getTerrainTileUnderChip,
+  slideDirectionAfterLanding,
+} from "./msCc1Sliding.js";
 import { directionFromMoveIntent } from "../moveIntent.js";
+import { getCompositeTile } from "../levelRuntime.js";
 
 import type { MsCc1PlayerState } from "./types.js";
 
@@ -31,6 +37,8 @@ export interface MsCc1SimulationRunner {
   completed: boolean;
   playerDied: boolean;
   deathMessage?: string;
+  /** Last successful step direction (ice continuation). */
+  slideDir: Direction | null;
 }
 
 export interface MsCc1SimulationResult {
@@ -77,6 +85,7 @@ function cloneRunner(runner: MsCc1SimulationRunner): MsCc1SimulationRunner {
     completed: runner.completed,
     playerDied: runner.playerDied,
     deathMessage: runner.deathMessage,
+    slideDir: runner.slideDir,
   };
 }
 
@@ -124,6 +133,7 @@ export function createMsCc1SimulationRunner(level: LevelData): MsCc1SimulationRu
     chipMoves: 0,
     completed: false,
     playerDied: false,
+    slideDir: null,
   };
 }
 
@@ -185,7 +195,21 @@ function continueForceFloorMoves(
   return { result, chipDied };
 }
 
-function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): boolean {
+function rememberSlideDir(runner: MsCc1SimulationRunner, entryDir: Direction): void {
+  const force = getForceFloorTileAt(runner.level, runner.gx, runner.gy);
+  const tile =
+    force ??
+    getTerrainTileUnderChip(runner.level, runner.gx, runner.gy) ??
+    getCompositeTile(runner.level, runner.gx, runner.gy);
+  runner.slideDir = slideDirectionAfterLanding(tile, runner.playerState, entryDir);
+}
+
+function runOneChipMove(
+  runner: MsCc1SimulationRunner,
+  direction: Direction,
+  options?: { chainSlides?: boolean },
+): boolean {
+  const chainSlides = options?.chainSlides !== false;
   const result = tryMsCc1Move(
     runner.level,
     { x: runner.gx, y: runner.gy },
@@ -193,6 +217,7 @@ function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): bo
     runner.playerState,
     runner.buttonPressCtx,
     runner.monsters,
+    { maxSlideSteps: chainSlides ? undefined : 0 },
   );
   if (!result.moved) {
     return false;
@@ -200,6 +225,7 @@ function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): bo
   runner.gx = result.position.x;
   runner.gy = result.position.y;
   runner.playerState = result.state;
+  rememberSlideDir(runner, result.direction);
   if (result.playerDied) {
     runner.playerDied = true;
     runner.deathMessage = result.deathMessage;
@@ -213,6 +239,9 @@ function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): bo
     runner.playerDied = true;
     runner.deathMessage = "Ooops! Look out for creatures!";
     return true;
+  }
+  if (!chainSlides) {
+    return false;
   }
   let forceSteps = 0;
   const forceLimit = runner.level.width * runner.level.height;
@@ -233,6 +262,7 @@ function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): bo
     runner.gx = cont.result.position.x;
     runner.gy = cont.result.position.y;
     runner.playerState = cont.result.state;
+    rememberSlideDir(runner, cont.result.direction);
     if (cont.result.playerDied) {
       runner.playerDied = true;
       runner.deathMessage = cont.result.deathMessage;
@@ -256,12 +286,41 @@ function runOneChipMove(runner: MsCc1SimulationRunner, direction: Direction): bo
 export function stepMsCc1Simulation(
   runner: MsCc1SimulationRunner,
   direction: Direction,
+  options?: { chainSlides?: boolean },
 ): boolean {
   if (runner.completed || runner.playerDied) {
     return true;
   }
   runner.chipMoves += 1;
-  return runOneChipMove(runner, direction);
+  return runOneChipMove(runner, direction, options);
+}
+
+/**
+ * One ice/force cell if Chip is sliding; otherwise no-op.
+ * Returns true when a slide step was applied (or the run already ended),
+ * so TWS gap ticks do not also idle-wait on the same tick.
+ */
+export function stepMsCc1SlideOnce(runner: MsCc1SimulationRunner): boolean {
+  if (runner.completed || runner.playerDied) {
+    return true;
+  }
+  const force = getForceFloorIntentAt(
+    runner.level,
+    runner.gx,
+    runner.gy,
+    runner.playerState,
+  );
+  const dir = force ? directionFromMoveIntent(force) : runner.slideDir;
+  if (!dir) {
+    return false;
+  }
+  const x = runner.gx;
+  const y = runner.gy;
+  const ended = runOneChipMove(runner, dir, { chainSlides: false });
+  if (ended) {
+    return true;
+  }
+  return runner.gx !== x || runner.gy !== y;
 }
 
 /** Idle monster clock tick (Chip holds position). */
@@ -351,15 +410,4 @@ export function simulateMsCc1AutoplayLevel(
     }
   }
   return runnerToResult(runner);
-}
-
-/** Apply one direction and return whether the run ended (death or win). */
-export function simulateMsCc1Step(
-  level: LevelData,
-  moves: Direction[],
-  startIndex: number,
-): MsCc1SimulationResult & { nextIndex: number } {
-  const slice = moves.slice(startIndex);
-  const result = simulateMsCc1Level(level, slice);
-  return { ...result, nextIndex: startIndex + slice.length };
 }

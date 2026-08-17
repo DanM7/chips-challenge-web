@@ -6,8 +6,8 @@
   "set": "cc1",
   "description": "Confirmed (and optional unconfirmed) MS public/bold times from BitBusters.club. Values are seconds remaining on the clock at exit. Bracketed times are T-Chip (untimed levels scored as if time limit were 999). StrategyWiki Levels 1–20 describes the bold routes in prose (e.g. Lesson 1: 2L 2U L, then counterclockwise for 83).",
   "msMovesPerSecond": 5,
-  "syncedFrom": "user-provided table (scores.bitbusters.club/scores/cc1/ms)",
-  "syncedAt": "2026-07-29",
+  "syncedFrom": "https://scores.bitbusters.club/levels/cc1 (MS Bold column; 61–80 rechecked 2026-08-16)",
+  "syncedAt": "2026-08-16",
   "levels": [
     { "level": 1, "confirmedTimeRemaining": 83, "confirmedBy": "Alice Voith", "isTChip": false },
     { "level": 2, "confirmedTimeRemaining": 90, "confirmedBy": "Unknown", "isTChip": false },

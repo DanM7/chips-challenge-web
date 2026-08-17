@@ -1,4 +1,5 @@
 import type { LevelData } from "../types.js";
+import type { MsCc1CellChange } from "./types.js";
 import {
   cellTile,
   getCompositeTile,
@@ -25,20 +26,6 @@ import {
   type TrapMechanicsCtx,
 } from "./msCc1Traps.js";
 import type { MsCc1ButtonPressContext } from "./msCc1Buttons.js";
-
-/** Called after a creature step (Chip or monster) for button / clone / trap effects. */
-export type MsCc1AfterStepHook = (
-  from: { x: number; y: number },
-  to: { x: number; y: number },
-  cellChanges: MsCc1CellChange[],
-) => void;
-
-const EXIT_TILE_IDS = new Set(["exit", "chip_exit", "exit_3a", "exit_3b"]);
-
-function isExitTile(tileId: string): boolean {
-  return EXIT_TILE_IDS.has(tileId);
-}
-import type { MsCc1CellChange } from "./types.js";
 import {
   facingFromMonsterTileId,
   monsterFacingDelta,
@@ -54,6 +41,19 @@ import {
   chooseTeethStepFacing,
   teethMovesThisBoundary,
 } from "./msCc1Teeth.js";
+
+/** Called after a creature step (Chip or monster) for button / clone / trap effects. */
+export type MsCc1AfterStepHook = (
+  from: { x: number; y: number },
+  to: { x: number; y: number },
+  cellChanges: MsCc1CellChange[],
+) => void;
+
+const EXIT_TILE_IDS = new Set(["exit", "chip_exit", "exit_3a", "exit_3b"]);
+
+function isExitTile(tileId: string): boolean {
+  return EXIT_TILE_IDS.has(tileId);
+}
 
 /** Options for {@link tickMsCc1Monsters} (client idle clock vs Chip-move tick). */
 export interface MsCc1MonsterTickOptions {

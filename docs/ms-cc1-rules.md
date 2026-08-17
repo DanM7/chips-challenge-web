@@ -47,7 +47,7 @@ Long term, rows below should compile from **ruleset + content pack** instead of 
 |------|-------------|--------|----------------|
 | Collect chip | Pick up `chip`; decrement chips remaining | **done** | `tryMsCc1Move` + run session counter |
 | Chip socket | Block Chip while any chips remain on map; clear socket when 0 | **done** | `msCc1Movement.test.ts` socket case |
-| Exit | Enter exit only when chips remaining = 0; complete level | **done** | exit blocked / complete tests |
+| Exit | Entering an exit always completes the level (chips remaining does not block) | **done** | `msCc1Movement.test.ts`; Glut corner exits |
 | Timer | Level fails when time hits 0 | **todo** | HUD shows timer; no fail state |
 | Password / score | MS password screen | **n/a** | Out of scope for web prototype |
 
@@ -158,7 +158,7 @@ Run engine tests: `npm run test:engine -- test/msCc1Movement.test.ts`
 - [x] Cannot pass socket with chips remaining on map.
 - [x] Socket clears when stepping on it with 0 chips left.
 - [x] Green key stays in inventory after opening two green doors.
-- [x] Exit completes only when chips remaining = 0.
+- [x] Exit completes on entry; chips remaining do not block the exit (the socket does).
 - [x] DAT: 1× `key_green`, 2× `door_green` (extraction) — `lesson1Keys.test.ts`.
 
 ### LESSON 2 — regression checklist

@@ -50,31 +50,26 @@ describe("solutionMoves wait letter", () => {
   });
 });
 
-describe("levels 1-20 status board", () => {
-  it("lists all twenty levels with a status", () => {
-    const status = JSON.parse(readFileSync(statusPath, "utf8")) as {
-      levels: Array<{ level: number; status: string; bold: number }>;
-    };
-    expect(status.levels).toHaveLength(20);
-    expect(status.levels.map((l) => l.level)).toEqual(
-      Array.from({ length: 20 }, (_, i) => i + 1),
-    );
+function expectStatusBoard(fileName: string, startLevel: number) {
+  describe(`levels ${startLevel}-${startLevel + 19} status board`, () => {
+    it("lists all twenty levels with a status", () => {
+      const status = JSON.parse(
+        readFileSync(path.join(solutionsDir, fileName), "utf8"),
+      ) as {
+        levels: Array<{ level: number; status: string; bold: number }>;
+      };
+      expect(status.levels).toHaveLength(20);
+      expect(status.levels.map((l) => l.level)).toEqual(
+        Array.from({ length: 20 }, (_, i) => i + startLevel),
+      );
+    });
   });
-});
+}
 
-describe("levels 21-40 status board", () => {
-  it("lists all twenty levels with a status", () => {
-    const status = JSON.parse(
-      readFileSync(path.join(solutionsDir, "status-21-40.json"), "utf8"),
-    ) as {
-      levels: Array<{ level: number; status: string; bold: number }>;
-    };
-    expect(status.levels).toHaveLength(20);
-    expect(status.levels.map((l) => l.level)).toEqual(
-      Array.from({ length: 20 }, (_, i) => i + 21),
-    );
-  });
-});
+expectStatusBoard("status-1-20.json", 1);
+expectStatusBoard("status-21-40.json", 21);
+expectStatusBoard("status-41-60.json", 41);
+expectStatusBoard("status-61-80.json", 61);
 
 describe("level 5 Lesson 5 bold autoplay route", () => {
   it("finishes with exact bold 85 remaining", () => {

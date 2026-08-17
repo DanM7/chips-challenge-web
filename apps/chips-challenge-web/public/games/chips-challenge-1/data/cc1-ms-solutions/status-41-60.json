@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "description": "Tracking board for CC1 MS Auto Play bold routes (levels 41–60). First sweep: TWS tick-slide replay + existing Auto Play letters; exact rem === bold for verified_bold. Bold times from https://scores.bitbusters.club/levels/cc1 (MS Bold column).",
+  "walkthroughUrl": "https://strategywiki.org/wiki/Chip%27s_Challenge/Levels_41-60",
+  "statusLegend": {
+    "verified_bold": "moveVerified + Auto Play simulation rem === boldTimeRemaining",
+    "in_progress": "Completing Auto Play or TWS tick-slide route but rem !== bold",
+    "pending": "No route to replay",
+    "blocked": "TWS tick-slide dies or sticks under current engine",
+    "best_effort_rng": "Non-deterministic (walkers/blobs)"
+  },
+  "summary": {
+    "verified_bold": 0,
+    "in_progress": 2,
+    "blocked": 15,
+    "pending": 0,
+    "best_effort_rng": 3
+  },
+  "levels": [
+    {
+      "level": 41,
+      "title": "I.C. You",
+      "bold": 172,
+      "status": "best_effort_rng",
+      "notes": "Blob RNG: TWS dies @ 9,15 (Ooops! Look out for creatures!) after 412 ticks"
+    },
+    {
+      "level": 42,
+      "title": "Beware of Bug",
+      "bold": 187,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 18,30: Ooops! Look out for creatures! after 76 ticks"
+    },
+    {
+      "level": 43,
+      "title": "Lock Block",
+      "bold": 126,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 26,23: Ooops! Look out for creatures! after 9 ticks"
+    },
+    {
+      "level": 44,
+      "title": "Refraction",
+      "bold": 146,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 12,10: Ooops! Look out for creatures! after 12 ticks"
+    },
+    {
+      "level": 45,
+      "title": "Monster Lab",
+      "bold": 292,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 8,11: Ooops! Look out for creatures! after 56 ticks"
+    },
+    {
+      "level": 46,
+      "title": "Three Doors",
+      "bold": 222,
+      "status": "best_effort_rng",
+      "notes": "Blob RNG: TWS dies @ 4,25 (Ooops! Look out for creatures!) after 110 ticks"
+    },
+    {
+      "level": 47,
+      "title": "Pier Seven",
+      "bold": 231,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 9,22: Ooops! Chip can't swim without flippers! after 137 ticks"
+    },
+    {
+      "level": 48,
+      "title": "Mugger Square",
+      "bold": 277,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 29,8: Ooops! Look out for creatures! after 58 ticks"
+    },
+    {
+      "level": 49,
+      "title": "Problems",
+      "bold": 162,
+      "status": "in_progress",
+      "notes": "Completing Auto Play rem 156 (bold 162, -6s, 220 ticks)"
+    },
+    {
+      "level": 50,
+      "title": "Digdirt",
+      "bold": 318,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 20,27: Ooops! Look out for creatures! after 15 ticks"
+    },
+    {
+      "level": 51,
+      "title": "I Slide",
+      "bold": 655,
+      "status": "in_progress",
+      "notes": "TWS tick-slide completes rem 605 (bold 655, -50s, 728 ticks); Auto Play letters cannot encode 1-cell slides"
+    },
+    {
+      "level": 52,
+      "title": "The Last Laugh",
+      "bold": 382,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 12,20: Ooops! Look out for creatures! after 12 ticks"
+    },
+    {
+      "level": 53,
+      "title": "Traffic Cop",
+      "bold": 478,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 27,30: Ooops! Chip can't swim without flippers! after 118 ticks"
+    },
+    {
+      "level": 54,
+      "title": "Grail",
+      "bold": 326,
+      "status": "blocked",
+      "notes": "TWS tick-slide stuck @ 9,15: Ooops! Don't step in the fire without fire boots! after 95 ticks"
+    },
+    {
+      "level": 55,
+      "title": "Potpourri",
+      "bold": 70,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 21,8: Ooops! Look out for creatures! after 9 ticks"
+    },
+    {
+      "level": 56,
+      "title": "Deepfreeze",
+      "bold": 162,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 24,13: Ooops! Look out for creatures! after 29 ticks"
+    },
+    {
+      "level": 57,
+      "title": "Strange Maze",
+      "bold": 229,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 19,15: Ooops! Look out for creatures! after 304 ticks"
+    },
+    {
+      "level": 58,
+      "title": "Loop Around",
+      "bold": 550,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 16,17: Ooops! Look out for creatures! after 638 ticks"
+    },
+    {
+      "level": 59,
+      "title": "Hidden Danger",
+      "bold": 368,
+      "status": "blocked",
+      "notes": "TWS tick-slide dies @ 18,30: Ooops! Look out for creatures! after 40 ticks"
+    },
+    {
+      "level": 60,
+      "title": "Scoundrel",
+      "bold": 288,
+      "status": "best_effort_rng",
+      "notes": "Completing Auto Play rem 285 (bold 288, -3s, 49 ticks)"
+    }
+  ]
+}

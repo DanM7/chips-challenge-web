@@ -622,7 +622,8 @@ function completeSuccessfulMove(
   }
 
   const standingTile = getCompositeTile(level, to.x, to.y);
-  const completedLevel = isExitTile(standingTile) && state.chipsRemainingOnMap === 0;
+  // MS: the exit always finishes the level. The socket is what requires chips.
+  const completedLevel = isExitTile(standingTile);
 
   if (trapCtx) {
     stickCreatureOnTrap(level, to.x, to.y, trapCtx);
@@ -768,10 +769,6 @@ export function tryMsCc1StepDelta(
     }
     removeTileAt(level, nx, ny, SOCKET_TILE_ID);
     recordRemoval(cellChanges, nx, ny, SOCKET_TILE_ID);
-  } else if (isExitTile(destTile)) {
-    if (chipsLeft > 0) {
-      return noMove(position, nextState, cellChanges, stepDirection);
-    }
   } else if (THIN_WALL_ORTHOGONAL_TILE_IDS.has(destThin) || THIN_WALL_ORTHOGONAL_TILE_IDS.has(destTile)) {
     // Directional thin wall: allowed edges already passed thinWallBlocksMove.
   } else if (
@@ -925,11 +922,13 @@ export function tryMsCc1Move(
   state: MsCc1PlayerState,
   trapCtx?: MsCc1ButtonPressContext,
   monsters?: MsCc1MonsterState[],
+  options?: { maxSlideSteps?: number },
 ): MsCc1MoveResult {
   const steps: MsCc1MoveStep[] = [];
   let pos = { ...position };
   let playerState = clonePlayerState(state);
   const inputIntent = moveIntentFromDirection(direction);
+  const maxSlideSteps = options?.maxSlideSteps ?? MAX_SLIDE_STEPS;
 
   if (trapCtx && isCreatureStuckOnTrap(trapCtx, position.x, position.y)) {
     return {
@@ -1001,7 +1000,7 @@ export function tryMsCc1Move(
     }
   }
 
-  for (let i = 0; i < MAX_SLIDE_STEPS; i++) {
+  for (let i = 0; i < maxSlideSteps; i++) {
     const teleportStep = tryTeleportAfterLanding(
       level,
       prevPos,

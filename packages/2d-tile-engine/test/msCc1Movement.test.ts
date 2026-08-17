@@ -257,7 +257,7 @@ describe("tryMsCc1Move", () => {
     expect(r.completedLevel).toBe(true);
   });
 
-  it("blocks exit while chips remain on the map", () => {
+  it("completes on exit even when chips remain (MS socket is the gate)", () => {
     const level = levelFromGrid({
       "0,0": "chip_s",
       "0,1": "exit",
@@ -265,8 +265,8 @@ describe("tryMsCc1Move", () => {
     });
     const state = msCc1StateFromRun([], 1);
     const r = tryMsCc1Move(level, { x: 0, y: 0 }, "down", state);
-    expect(r.moved).toBe(false);
-    expect(r.completedLevel).toBe(false);
+    expect(r.moved).toBe(true);
+    expect(r.completedLevel).toBe(true);
   });
 
   it("LESSON 2 layout: push west from Chip start into water", () => {
